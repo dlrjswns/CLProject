@@ -53,13 +53,13 @@ class MainSearchViewController:UITableViewController{
     }
     
     //MARK: -Helper
-    func filteredWhenScopeButtonTapped(_ searchText: String, scope: String = "All") {
+    func filteredCandy(_ searchText: String, scope: String = "All") {
           filteredCandies = candies.filter { candy in
             if !(candy.candyType == scope) && scope != "All" {
                   return false
               }
               
-            return candy.candyName.lowercased().contains(searchText.lowercased()) || searchText == ""
+            return candy.candyName.lowercased().contains(searchText.lowercased()) || searchText == "" //여기서 searchText = "" 의미는 scopeButton에 All을 눌러도 isFiltering이 true이기때문에 모든 데이터가 filteredCandies에 삽입될 수 있게 하기위한 코드
           }
           print("filteredCandies = \(filteredCandies)")
           tableView.reloadData()
@@ -116,7 +116,7 @@ extension MainSearchViewController:UISearchResultsUpdating{
 //            candy.candyName.lowercased().contains(searchbarText)
 //        })
         let scope = searchController.searchBar.scopeButtonTitles![searchController.searchBar.selectedScopeButtonIndex]
-        filteredWhenScopeButtonTapped(searchbarText, scope: scope)
+        filteredCandy(searchbarText, scope: scope)
 //        print("filteredCandies = \(filteredCandies)")
     }
 }
@@ -125,6 +125,6 @@ extension MainSearchViewController:UISearchResultsUpdating{
 extension MainSearchViewController:UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         print(selectedScope)
-        filteredWhenScopeButtonTapped(searchBar.text!, scope: scopeButtons[selectedScope])
+        filteredCandy(searchBar.text!, scope: scopeButtons[selectedScope])
     }
 }
