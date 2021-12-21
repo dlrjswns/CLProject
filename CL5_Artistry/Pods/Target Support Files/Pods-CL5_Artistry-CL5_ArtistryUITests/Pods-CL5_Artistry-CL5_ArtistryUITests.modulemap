@@ -1,0 +1,6 @@
+framework module Pods_CL5_Artistry_CL5_ArtistryUITests {
+  umbrella header "Pods-CL5_Artistry-CL5_ArtistryUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

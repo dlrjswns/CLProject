@@ -1,0 +1,6 @@
+framework module Pods_CL5_Artistry {
+  umbrella header "Pods-CL5_Artistry-umbrella.h"
+
+  export *
+  module * { export * }
+}

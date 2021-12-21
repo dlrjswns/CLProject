@@ -1,0 +1,684 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		702EA05A276D77CA008CA43B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EA059276D77CA008CA43B /* AppDelegate.swift */; };
+		702EA05C276D77CA008CA43B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EA05B276D77CA008CA43B /* SceneDelegate.swift */; };
+		702EA061276D77CA008CA43B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 702EA05F276D77CA008CA43B /* Main.storyboard */; };
+		702EA063276D77CB008CA43B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 702EA062276D77CB008CA43B /* Assets.xcassets */; };
+		702EA066276D77CB008CA43B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 702EA064276D77CB008CA43B /* LaunchScreen.storyboard */; };
+		702EA071276D77CB008CA43B /* CL6_CandySearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EA070276D77CB008CA43B /* CL6_CandySearchTests.swift */; };
+		702EA07C276D77CB008CA43B /* CL6_CandySearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EA07B276D77CB008CA43B /* CL6_CandySearchUITests.swift */; };
+		702EA08B276D782F008CA43B /* MainSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EA08A276D782F008CA43B /* MainSearchViewController.swift */; };
+		702EA08E276D78A1008CA43B /* Candy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EA08D276D78A1008CA43B /* Candy.swift */; };
+		702EA091276D798E008CA43B /* ForCandy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EA090276D798E008CA43B /* ForCandy.swift */; };
+		702EA094276D7B39008CA43B /* Candy Cane.png in Resources */ = {isa = PBXBuildFile; fileRef = 702EA093276D7B39008CA43B /* Candy Cane.png */; };
+		702EA096276D7B41008CA43B /* Caramel.png in Resources */ = {isa = PBXBuildFile; fileRef = 702EA095276D7B41008CA43B /* Caramel.png */; };
+		702EA098276D7B47008CA43B /* Chocolate Bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 702EA097276D7B47008CA43B /* Chocolate Bar.png */; };
+		702EA09A276D7B4C008CA43B /* Chocolate Chip.png in Resources */ = {isa = PBXBuildFile; fileRef = 702EA099276D7B4C008CA43B /* Chocolate Chip.png */; };
+		702EA09C276D7B54008CA43B /* Dark Chocolate.png in Resources */ = {isa = PBXBuildFile; fileRef = 702EA09B276D7B54008CA43B /* Dark Chocolate.png */; };
+		702EA09E276D7B5A008CA43B /* Gummi Bear.png in Resources */ = {isa = PBXBuildFile; fileRef = 702EA09D276D7B5A008CA43B /* Gummi Bear.png */; };
+		702EA0A0276D7B68008CA43B /* Jaw Breaker.png in Resources */ = {isa = PBXBuildFile; fileRef = 702EA09F276D7B68008CA43B /* Jaw Breaker.png */; };
+		702EA0A2276D7B72008CA43B /* Lollipop.png in Resources */ = {isa = PBXBuildFile; fileRef = 702EA0A1276D7B71008CA43B /* Lollipop.png */; };
+		702EA0A4276D7B77008CA43B /* Sour Chew.png in Resources */ = {isa = PBXBuildFile; fileRef = 702EA0A3276D7B77008CA43B /* Sour Chew.png */; };
+		702EA0A6276D7B80008CA43B /* Inline-Logo.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 702EA0A5276D7B80008CA43B /* Inline-Logo.pdf */; };
+		702EA0A8276DAC8E008CA43B /* candyLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 702EA0A7276DAC8E008CA43B /* candyLogo.png */; };
+		702EA0AA276DB5E6008CA43B /* ForNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EA0A9276DB5E6008CA43B /* ForNavigationBar.swift */; };
+		702EA0AC276F86E9008CA43B /* DetailSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EA0AB276F86E9008CA43B /* DetailSearchController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		702EA06D276D77CB008CA43B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 702EA04E276D77CA008CA43B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 702EA055276D77CA008CA43B;
+			remoteInfo = CL6_CandySearch;
+		};
+		702EA078276D77CB008CA43B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 702EA04E276D77CA008CA43B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 702EA055276D77CA008CA43B;
+			remoteInfo = CL6_CandySearch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		702EA056276D77CA008CA43B /* CL6_CandySearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CL6_CandySearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		702EA059276D77CA008CA43B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		702EA05B276D77CA008CA43B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		702EA060276D77CA008CA43B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		702EA062276D77CB008CA43B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		702EA065276D77CB008CA43B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		702EA067276D77CB008CA43B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		702EA06C276D77CB008CA43B /* CL6_CandySearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CL6_CandySearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		702EA070276D77CB008CA43B /* CL6_CandySearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CL6_CandySearchTests.swift; sourceTree = "<group>"; };
+		702EA072276D77CB008CA43B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		702EA077276D77CB008CA43B /* CL6_CandySearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CL6_CandySearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		702EA07B276D77CB008CA43B /* CL6_CandySearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CL6_CandySearchUITests.swift; sourceTree = "<group>"; };
+		702EA07D276D77CB008CA43B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		702EA08A276D782F008CA43B /* MainSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSearchViewController.swift; sourceTree = "<group>"; };
+		702EA08D276D78A1008CA43B /* Candy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Candy.swift; sourceTree = "<group>"; };
+		702EA090276D798E008CA43B /* ForCandy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForCandy.swift; sourceTree = "<group>"; };
+		702EA093276D7B39008CA43B /* Candy Cane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Candy Cane.png"; sourceTree = "<group>"; };
+		702EA095276D7B41008CA43B /* Caramel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Caramel.png; sourceTree = "<group>"; };
+		702EA097276D7B47008CA43B /* Chocolate Bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Chocolate Bar.png"; sourceTree = "<group>"; };
+		702EA099276D7B4C008CA43B /* Chocolate Chip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Chocolate Chip.png"; sourceTree = "<group>"; };
+		702EA09B276D7B54008CA43B /* Dark Chocolate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dark Chocolate.png"; sourceTree = "<group>"; };
+		702EA09D276D7B5A008CA43B /* Gummi Bear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gummi Bear.png"; sourceTree = "<group>"; };
+		702EA09F276D7B68008CA43B /* Jaw Breaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jaw Breaker.png"; sourceTree = "<group>"; };
+		702EA0A1276D7B71008CA43B /* Lollipop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lollipop.png; sourceTree = "<group>"; };
+		702EA0A3276D7B77008CA43B /* Sour Chew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sour Chew.png"; sourceTree = "<group>"; };
+		702EA0A5276D7B80008CA43B /* Inline-Logo.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Inline-Logo.pdf"; sourceTree = "<group>"; };
+		702EA0A7276DAC8E008CA43B /* candyLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = candyLogo.png; sourceTree = "<group>"; };
+		702EA0A9276DB5E6008CA43B /* ForNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForNavigationBar.swift; sourceTree = "<group>"; };
+		702EA0AB276F86E9008CA43B /* DetailSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSearchController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		702EA053276D77CA008CA43B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		702EA069276D77CB008CA43B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		702EA074276D77CB008CA43B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		702EA04D276D77CA008CA43B = {
+			isa = PBXGroup;
+			children = (
+				702EA092276D7B2E008CA43B /* Image */,
+				702EA08F276D7985008CA43B /* Utility */,
+				702EA08C276D789A008CA43B /* Model */,
+				702EA089276D7809008CA43B /* Controller */,
+				702EA058276D77CA008CA43B /* CL6_CandySearch */,
+				702EA06F276D77CB008CA43B /* CL6_CandySearchTests */,
+				702EA07A276D77CB008CA43B /* CL6_CandySearchUITests */,
+				702EA057276D77CA008CA43B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		702EA057276D77CA008CA43B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				702EA056276D77CA008CA43B /* CL6_CandySearch.app */,
+				702EA06C276D77CB008CA43B /* CL6_CandySearchTests.xctest */,
+				702EA077276D77CB008CA43B /* CL6_CandySearchUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		702EA058276D77CA008CA43B /* CL6_CandySearch */ = {
+			isa = PBXGroup;
+			children = (
+				702EA059276D77CA008CA43B /* AppDelegate.swift */,
+				702EA05B276D77CA008CA43B /* SceneDelegate.swift */,
+				702EA05F276D77CA008CA43B /* Main.storyboard */,
+				702EA062276D77CB008CA43B /* Assets.xcassets */,
+				702EA064276D77CB008CA43B /* LaunchScreen.storyboard */,
+				702EA067276D77CB008CA43B /* Info.plist */,
+			);
+			path = CL6_CandySearch;
+			sourceTree = "<group>";
+		};
+		702EA06F276D77CB008CA43B /* CL6_CandySearchTests */ = {
+			isa = PBXGroup;
+			children = (
+				702EA070276D77CB008CA43B /* CL6_CandySearchTests.swift */,
+				702EA072276D77CB008CA43B /* Info.plist */,
+			);
+			path = CL6_CandySearchTests;
+			sourceTree = "<group>";
+		};
+		702EA07A276D77CB008CA43B /* CL6_CandySearchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				702EA07B276D77CB008CA43B /* CL6_CandySearchUITests.swift */,
+				702EA07D276D77CB008CA43B /* Info.plist */,
+			);
+			path = CL6_CandySearchUITests;
+			sourceTree = "<group>";
+		};
+		702EA089276D7809008CA43B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				702EA08A276D782F008CA43B /* MainSearchViewController.swift */,
+				702EA0AB276F86E9008CA43B /* DetailSearchController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		702EA08C276D789A008CA43B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				702EA08D276D78A1008CA43B /* Candy.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		702EA08F276D7985008CA43B /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				702EA090276D798E008CA43B /* ForCandy.swift */,
+				702EA0A9276DB5E6008CA43B /* ForNavigationBar.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		702EA092276D7B2E008CA43B /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				702EA099276D7B4C008CA43B /* Chocolate Chip.png */,
+				702EA097276D7B47008CA43B /* Chocolate Bar.png */,
+				702EA09D276D7B5A008CA43B /* Gummi Bear.png */,
+				702EA0A1276D7B71008CA43B /* Lollipop.png */,
+				702EA0A7276DAC8E008CA43B /* candyLogo.png */,
+				702EA0A5276D7B80008CA43B /* Inline-Logo.pdf */,
+				702EA09F276D7B68008CA43B /* Jaw Breaker.png */,
+				702EA0A3276D7B77008CA43B /* Sour Chew.png */,
+				702EA09B276D7B54008CA43B /* Dark Chocolate.png */,
+				702EA095276D7B41008CA43B /* Caramel.png */,
+				702EA093276D7B39008CA43B /* Candy Cane.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		702EA055276D77CA008CA43B /* CL6_CandySearch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 702EA080276D77CB008CA43B /* Build configuration list for PBXNativeTarget "CL6_CandySearch" */;
+			buildPhases = (
+				702EA052276D77CA008CA43B /* Sources */,
+				702EA053276D77CA008CA43B /* Frameworks */,
+				702EA054276D77CA008CA43B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CL6_CandySearch;
+			productName = CL6_CandySearch;
+			productReference = 702EA056276D77CA008CA43B /* CL6_CandySearch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		702EA06B276D77CB008CA43B /* CL6_CandySearchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 702EA083276D77CB008CA43B /* Build configuration list for PBXNativeTarget "CL6_CandySearchTests" */;
+			buildPhases = (
+				702EA068276D77CB008CA43B /* Sources */,
+				702EA069276D77CB008CA43B /* Frameworks */,
+				702EA06A276D77CB008CA43B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				702EA06E276D77CB008CA43B /* PBXTargetDependency */,
+			);
+			name = CL6_CandySearchTests;
+			productName = CL6_CandySearchTests;
+			productReference = 702EA06C276D77CB008CA43B /* CL6_CandySearchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		702EA076276D77CB008CA43B /* CL6_CandySearchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 702EA086276D77CB008CA43B /* Build configuration list for PBXNativeTarget "CL6_CandySearchUITests" */;
+			buildPhases = (
+				702EA073276D77CB008CA43B /* Sources */,
+				702EA074276D77CB008CA43B /* Frameworks */,
+				702EA075276D77CB008CA43B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				702EA079276D77CB008CA43B /* PBXTargetDependency */,
+			);
+			name = CL6_CandySearchUITests;
+			productName = CL6_CandySearchUITests;
+			productReference = 702EA077276D77CB008CA43B /* CL6_CandySearchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		702EA04E276D77CA008CA43B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					702EA055276D77CA008CA43B = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					702EA06B276D77CB008CA43B = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 702EA055276D77CA008CA43B;
+					};
+					702EA076276D77CB008CA43B = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 702EA055276D77CA008CA43B;
+					};
+				};
+			};
+			buildConfigurationList = 702EA051276D77CA008CA43B /* Build configuration list for PBXProject "CL6_CandySearch" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 702EA04D276D77CA008CA43B;
+			productRefGroup = 702EA057276D77CA008CA43B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				702EA055276D77CA008CA43B /* CL6_CandySearch */,
+				702EA06B276D77CB008CA43B /* CL6_CandySearchTests */,
+				702EA076276D77CB008CA43B /* CL6_CandySearchUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		702EA054276D77CA008CA43B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				702EA066276D77CB008CA43B /* LaunchScreen.storyboard in Resources */,
+				702EA09C276D7B54008CA43B /* Dark Chocolate.png in Resources */,
+				702EA063276D77CB008CA43B /* Assets.xcassets in Resources */,
+				702EA061276D77CA008CA43B /* Main.storyboard in Resources */,
+				702EA0A0276D7B68008CA43B /* Jaw Breaker.png in Resources */,
+				702EA09A276D7B4C008CA43B /* Chocolate Chip.png in Resources */,
+				702EA09E276D7B5A008CA43B /* Gummi Bear.png in Resources */,
+				702EA0A2276D7B72008CA43B /* Lollipop.png in Resources */,
+				702EA0A8276DAC8E008CA43B /* candyLogo.png in Resources */,
+				702EA0A6276D7B80008CA43B /* Inline-Logo.pdf in Resources */,
+				702EA0A4276D7B77008CA43B /* Sour Chew.png in Resources */,
+				702EA094276D7B39008CA43B /* Candy Cane.png in Resources */,
+				702EA096276D7B41008CA43B /* Caramel.png in Resources */,
+				702EA098276D7B47008CA43B /* Chocolate Bar.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		702EA06A276D77CB008CA43B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		702EA075276D77CB008CA43B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		702EA052276D77CA008CA43B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				702EA05A276D77CA008CA43B /* AppDelegate.swift in Sources */,
+				702EA08E276D78A1008CA43B /* Candy.swift in Sources */,
+				702EA05C276D77CA008CA43B /* SceneDelegate.swift in Sources */,
+				702EA091276D798E008CA43B /* ForCandy.swift in Sources */,
+				702EA08B276D782F008CA43B /* MainSearchViewController.swift in Sources */,
+				702EA0AA276DB5E6008CA43B /* ForNavigationBar.swift in Sources */,
+				702EA0AC276F86E9008CA43B /* DetailSearchController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		702EA068276D77CB008CA43B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				702EA071276D77CB008CA43B /* CL6_CandySearchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		702EA073276D77CB008CA43B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				702EA07C276D77CB008CA43B /* CL6_CandySearchUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		702EA06E276D77CB008CA43B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 702EA055276D77CA008CA43B /* CL6_CandySearch */;
+			targetProxy = 702EA06D276D77CB008CA43B /* PBXContainerItemProxy */;
+		};
+		702EA079276D77CB008CA43B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 702EA055276D77CA008CA43B /* CL6_CandySearch */;
+			targetProxy = 702EA078276D77CB008CA43B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		702EA05F276D77CA008CA43B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				702EA060276D77CA008CA43B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		702EA064276D77CB008CA43B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				702EA065276D77CB008CA43B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		702EA07E276D77CB008CA43B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		702EA07F276D77CB008CA43B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		702EA081276D77CB008CA43B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CL6_CandySearch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Jun.CL6-CandySearch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		702EA082276D77CB008CA43B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CL6_CandySearch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Jun.CL6-CandySearch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		702EA084276D77CB008CA43B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CL6_CandySearchTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Jun.CL6-CandySearchTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CL6_CandySearch.app/CL6_CandySearch";
+			};
+			name = Debug;
+		};
+		702EA085276D77CB008CA43B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CL6_CandySearchTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Jun.CL6-CandySearchTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CL6_CandySearch.app/CL6_CandySearch";
+			};
+			name = Release;
+		};
+		702EA087276D77CB008CA43B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CL6_CandySearchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Jun.CL6-CandySearchUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CL6_CandySearch;
+			};
+			name = Debug;
+		};
+		702EA088276D77CB008CA43B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CL6_CandySearchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Jun.CL6-CandySearchUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CL6_CandySearch;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		702EA051276D77CA008CA43B /* Build configuration list for PBXProject "CL6_CandySearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				702EA07E276D77CB008CA43B /* Debug */,
+				702EA07F276D77CB008CA43B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		702EA080276D77CB008CA43B /* Build configuration list for PBXNativeTarget "CL6_CandySearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				702EA081276D77CB008CA43B /* Debug */,
+				702EA082276D77CB008CA43B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		702EA083276D77CB008CA43B /* Build configuration list for PBXNativeTarget "CL6_CandySearchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				702EA084276D77CB008CA43B /* Debug */,
+				702EA085276D77CB008CA43B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		702EA086276D77CB008CA43B /* Build configuration list for PBXNativeTarget "CL6_CandySearchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				702EA087276D77CB008CA43B /* Debug */,
+				702EA088276D77CB008CA43B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 702EA04E276D77CA008CA43B /* Project object */;
+}
