@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'CL7_PokeCollection' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  pod 'Alamofire', '~> 5.5'
+
+  # Pods for CL7_PokeCollection
+
+  target 'CL7_PokeCollectionTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'CL7_PokeCollectionUITests' do
+    # Pods for testing
+  end
+
+end

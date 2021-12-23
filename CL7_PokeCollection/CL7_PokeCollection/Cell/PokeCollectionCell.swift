@@ -9,20 +9,20 @@ import UIKit
 
 class PokeCollectionCell:UICollectionViewCell{
     //MARK: -UI Component
-    private lazy var pokeImageView:UIImageView={
-       let vw = UIImageView()
+    lazy var pokeImageView:UIImageView={
+        let vw = UIImageView()
         vw.widthAnchor.constraint(equalToConstant: self.frame.width).isActive = true
         vw.heightAnchor.constraint(equalToConstant: self.frame.height-pokeLabel.frame.height).isActive = true
         vw.contentMode = .scaleAspectFit
-        vw.tag = 1 //private하기때문에 바깥에서 참조하기위한 태그
+        vw.tag = 0 //private하기때문에 바깥에서 참조하기위한 태그
         return vw
     }()
     
-    private lazy var pokeLabel:UILabel={
-       let lb = UILabel()
+    lazy var pokeLabel:UILabel={
+        let lb = UILabel()
         lb.widthAnchor.constraint(equalToConstant: self.frame.width).isActive = true
         lb.heightAnchor.constraint(equalToConstant: 10).isActive = true
-        lb.tag = 2
+        lb.tag = 1
         return lb
     }()
     

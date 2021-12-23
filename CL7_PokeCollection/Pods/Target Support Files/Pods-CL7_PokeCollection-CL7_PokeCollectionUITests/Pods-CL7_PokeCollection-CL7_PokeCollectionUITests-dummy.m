@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_CL7_PokeCollection_CL7_PokeCollectionUITests : NSObject
+@end
+@implementation PodsDummy_Pods_CL7_PokeCollection_CL7_PokeCollectionUITests
+@end
