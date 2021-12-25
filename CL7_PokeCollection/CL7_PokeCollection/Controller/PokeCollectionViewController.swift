@@ -11,78 +11,19 @@ private let reuseIdentifier = "cell"
 //struct PokeCollection:Codable{
 //    let pokeStack:[PokeStack]?
 //}
-struct PokeStack:Decodable{
-//    let attack:Int
-//    let defense:Int
-//    let description:String
-//    let evolutionChain:[EvolutionResult]
-//    let height:Int
-//    let id:Int
-//    let imageUrl:String
-//    let name:String
-//    let type:String
-//    let weight:Int
-    let name:String?
-    let imageUrl:String?
-    let description:String?
-    let height:Int?
-    let weight:Int?
-    let attack:Int?
-    let type:String?
-    let evolutionChain:[EvolutionChain]?
-}
-struct EvolutionChain:Decodable{
-    let id:String
-    let name:String
-}
+
 class PokeCollectionViewController:UICollectionViewController{
+    //MARK: -Model
+    var pokemon = [Pokemon]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.backgroundColor = .systemBackground
         
         setCollectionView()
-            getAPIWithOGSwift()
+        getPokemonModel()
         }
-    
-    //MARK: -Helper API
-    func getAPIWithOGSwift(){
-//        let url:URL! = URL(string: "https://pokedex-bb36f.firebaseio.com/pokemon.json")
-//        let data = try! Data(contentsOf: url)
-//
-//        do{
-//            let rootObject = try JSONSerialization.jsonObject(with: data, options: []) as! [AnyObject]
-//            print("rootObject = \(rootObject)")
-////            for infor in rootObject{
-////                let pokeInfor = infor as! [String:Any]
-////                if let pokeName = pokeInfor["name"] as? String{
-////                print("pokeName = \(pokeName)")
-////                }
-////            }
-//
-//        }catch{
-//
-//        }
-        
-        guard let url = URL(string: "https://pokedex-bb36f.firebaseio.com/pokemon.json") else {return}
-
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data?.parseData(removeString: "null,") else {return}
-                do{
-                    let result = try JSONDecoder().decode([PokeStack].self, from: data)
-                    print("result = \(result)")
-                }catch{
-                    print("error")
-                }
-//                    do {
-//                        //받은 json데이터 파싱
-//                        let result = try JSONDecoder().decode(PokeCollection.self, from: data)
-//                        print("result = \(result)")
-//                    } catch(let e) {
-//                        print(e)
-//                    }
-        }.resume()
-    }
     
     //MARK: -Set CollectionView
     func setCollectionView(){
@@ -90,12 +31,62 @@ class PokeCollectionViewController:UICollectionViewController{
         self.collectionView.dataSource = self
         self.collectionView.register(PokeCollectionCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
+    
+    //MARK: -Helper API
+    func getPokemonModel(){
+        getPokeStackWithOGSwift { pokeStacks in // Codable을 채택한 PokeStack배열을 반환받았기에
+            guard let pokeStacks = pokeStacks else {return}
+            for pokeStack in pokeStacks{ // for문으로 돌려 배열을 벗겨낸다
+                if let name = pokeStack.name,
+                   let imageUrl = pokeStack.imageUrl,
+                   let description = pokeStack.description,
+                   let height = pokeStack.height,
+                   let weight = pokeStack.weight,
+                   let attack = pokeStack.attack,
+                   let type = pokeStack.type{
+                    self.pokemon.append(Pokemon(name: name, imageUrl: imageUrl, description: description, height: height, weight: weight, attack: attack, type: type))
+//                    print("pokemon = \(self.pokemon)")
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                    }
+                }
+            }
+        }
+    }
+    
+    func getPokeStackWithOGSwift(completion: @escaping ([PokeStack]?)->()){
+        guard let url = URL(string: API.BASE_URL) else {return}
+
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data?.parseData(removeString: "null,") else {return}
+                do{
+                    let rootObject = try JSONDecoder().decode([PokeStack].self, from: data)
+                   completion(rootObject)
+                }catch{
+                    print("error")
+                }
+        }.resume()
+    }
+    
+    func fetchImage(imageUrl:String, completion: (UIImage?)->()){
+        guard let url = URL(string: imageUrl) else {return}
+        do{
+            let data = try Data(contentsOf: url)
+            let pokeImage = UIImage(data: data)
+            completion(pokeImage)
+        }catch{
+            print("fetchImage() error")
+        }
+    }
 }
 
 //MARK: -UICollectionViewDataSource
 extension PokeCollectionViewController{
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print("cellForItemAt() called")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PokeCollectionCell
+        let imageUrl = pokemon[indexPath.row].imageUrl
+        print("imageUrl = \(imageUrl)")
 //        if let pokeLabel = cell.viewWithTag(1) as? UILabel,
 //           let pokeImageView = cell.viewWithTag(0) as? UIImageView{
 //            pokeLabel.text = "Trash Data"
@@ -106,15 +97,17 @@ extension PokeCollectionViewController{
 //           let pokeLabel = cell.viewWithTag(1) as? UILabel{
 //            print("성공")
 //        }
-        cell.pokeLabel.text = "dfsdf"
-        
+        fetchImage(imageUrl: imageUrl) { pokeImage in
+            cell.pokeImageView.image = pokeImage
+        }
+        cell.pokeLabel.text = pokemon[indexPath.row].name
         return cell
     }
     
 
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return pokemon.count
     }
 }
 
