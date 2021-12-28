@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 private let reuseIdentifier = "cell"
 //struct PokeCollection:Codable{
@@ -18,11 +19,13 @@ class PokeCollectionViewController:UICollectionViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         collectionView.backgroundColor = .systemBackground
         
         setCollectionView()
         getPokemonModel()
+        
+        AF.request(.get, "https://news.google.com/rss?hl=ko&gl=KR&ceid=KR:ko").response
         }
     
     //MARK: -Set CollectionView
