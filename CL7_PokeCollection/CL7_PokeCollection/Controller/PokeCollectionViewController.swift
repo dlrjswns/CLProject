@@ -19,13 +19,12 @@ class PokeCollectionViewController:UICollectionViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         collectionView.backgroundColor = .systemBackground
         
         setCollectionView()
-        getPokemonModel()
-        
-        AF.request(.get, "https://news.google.com/rss?hl=ko&gl=KR&ceid=KR:ko").response
+//        getPokemonModel()
+        getPokemonWithAlamofire(url: API.BASE_URL)
         }
     
     //MARK: -Set CollectionView
@@ -36,6 +35,27 @@ class PokeCollectionViewController:UICollectionViewController{
     }
     
     //MARK: -Helper API
+    func getPokemonWithAlamofire(url:String){
+        guard let url = URL(string: url) else {return}
+        AF.request(url, method: HTTPMethod.get).responseJSON { response in
+//            print("request = \(response.request)")
+//            print("result = \(response.result)")
+//            print("response = \(response.response)")
+//            print("description = \(response.description)")
+            switch response.result{
+            case .success(let rootObject):
+//                print("rootObject = \(rootObject)")
+                if let rootObject = rootObject as? [[String:Any]?]{
+                    for pokemonStack in rootObject{
+                        print("pokemonStack = \(pokemonStack)")
+                    }
+                }
+            case .failure(let error):
+                print("error = \(error.errorDescription)")
+            }
+        }
+    }
+    
     func getPokemonModel(){
         getPokeStackWithOGSwift { pokeStacks in // Codable을 채택한 PokeStack배열을 반환받았기에
             guard let pokeStacks = pokeStacks else {return}
@@ -69,6 +89,16 @@ class PokeCollectionViewController:UICollectionViewController{
                     print("error")
                 }
         }.resume()
+//        if let data = try? Data(contentsOf: url) {
+//                    do {
+//                        guard let data = data.parseData(removeString: "null,") else {return}
+//                        let result = try JSONDecoder().decode([PokeStack].self, from: data)
+//                        completion(result)
+//                        print(result)
+//                    } catch (let e) {
+//                        print(e)
+//                    }
+//                }
     }
     
     func fetchImage(imageUrl:String, completion: (UIImage?)->()){
@@ -85,6 +115,10 @@ class PokeCollectionViewController:UICollectionViewController{
 
 //MARK: -UICollectionViewDataSource
 extension PokeCollectionViewController{
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         print("cellForItemAt() called")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PokeCollectionCell
@@ -117,7 +151,16 @@ extension PokeCollectionViewController{
 //MARK: -UICollectionViewDelegate
 extension PokeCollectionViewController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 50, height: 50)
+        let length = (self.view.frame.width-4)/3
+        return CGSize(width: length, height: length)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
     }
 }
 
