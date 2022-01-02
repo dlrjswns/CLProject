@@ -1,0 +1,6 @@
+framework module Pods_PRRxSwiftTests {
+  umbrella header "Pods-PRRxSwiftTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
