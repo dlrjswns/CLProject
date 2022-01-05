@@ -23,8 +23,8 @@ class PokeCollectionViewController:UICollectionViewController{
         collectionView.backgroundColor = .systemBackground
         
         setCollectionView()
-//        getPokemonModel()
-        getPokemonWithAlamofire(url: API.BASE_URL)
+        getPokemonModel()
+//        getPokemonWithAlamofire(url: API.BASE_URL)
         }
     
     //MARK: -Set CollectionView
@@ -78,6 +78,7 @@ class PokeCollectionViewController:UICollectionViewController{
     }
     
     func getPokeStackWithOGSwift(completion: @escaping ([PokeStack]?)->()){
+        DispatchQueue.global(qos: .default).async {
         guard let url = URL(string: API.BASE_URL) else {return}
 
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -89,6 +90,7 @@ class PokeCollectionViewController:UICollectionViewController{
                     print("error")
                 }
         }.resume()
+        }
 //        if let data = try? Data(contentsOf: url) {
 //                    do {
 //                        guard let data = data.parseData(removeString: "null,") else {return}
@@ -101,7 +103,8 @@ class PokeCollectionViewController:UICollectionViewController{
 //                }
     }
     
-    func fetchImage(imageUrl:String, completion: (UIImage?)->()){
+    func fetchImage(imageUrl:String, completion: @escaping (UIImage?)->()){
+        DispatchQueue.global(qos: .default).async {
         guard let url = URL(string: imageUrl) else {return}
         do{
             let data = try Data(contentsOf: url)
@@ -109,6 +112,7 @@ class PokeCollectionViewController:UICollectionViewController{
             completion(pokeImage)
         }catch{
             print("fetchImage() error")
+        }
         }
     }
 }
@@ -135,7 +139,9 @@ extension PokeCollectionViewController{
 //            print("성공")
 //        }
         fetchImage(imageUrl: imageUrl) { pokeImage in
+            DispatchQueue.main.async {
             cell.pokeImageView.image = pokeImage
+            }
         }
         cell.pokeLabel.text = pokemon[indexPath.row].name
         return cell
