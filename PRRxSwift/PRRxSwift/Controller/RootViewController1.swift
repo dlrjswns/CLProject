@@ -16,38 +16,56 @@ class RootViewController1:UIViewController{
         super.viewDidLoad()
         configureUI()
         
-        Observable.just("안녕하세요")
-            .subscribe(onNext: { str in 
-                print(str)
-            })
-            .disposed(by: disposeBag)
-        
-        Observable.from([10, 4])
-            .map({ a in
-                a+3
-            })
-            .subscribe(onNext: {str in
-                print(str)
-            })
-        
-        Observable.from(["이건주", "이건준", "이광일", "강은숙"])
-            .observe(on: ConcurrentDispatchQueueScheduler(qos: .default))
-            .map { str in
-                str.count
-            }
+        createObservable()
             .subscribe { event in
                 switch event{
                 case .next(let next):
                     print("next = \(next)")
-                case .error(let err):
-                    print("err = \(err.localizedDescription)")
                 case .completed:
                     print("completed")
+                case .error(let err):
+                    print("err = \(err.localizedDescription)")
                 }
             }
+        
+//        Observable.just("안녕하세요")
+//            .subscribe(onNext: { str in
+//                print(str)
+//            })
+//            .disposed(by: disposeBag)
+//
+//        Observable.from([10, 4])
+//            .map({ a in
+//                a+3
+//            })
+//            .subscribe(onNext: {str in
+//                print(str)
+//            })
+//
+//        Observable.from(["이건주", "이건준", "이광일", "강은숙"])
+//            .observe(on: ConcurrentDispatchQueueScheduler(qos: .default))
+//            .map { str in
+//                str.count
+//            }
+//            .subscribe { event in
+//                switch event{
+//                case .next(let next):
+//                    print("next = \(next)")
+//                case .error(let err):
+//                    print("err = \(err.localizedDescription)")
+//                case .completed:
+//                    print("completed")
+//                }
+//            }
 
     }
-    
+    func createObservable()->Observable<String?>{
+        return Observable.create() { k in 
+            k.onNext("이건준")
+            k.onCompleted()
+            return Disposables.create()
+        }
+    }
     //MARK: -Configure
     func configureUI(){
         view.backgroundColor = .systemBackground

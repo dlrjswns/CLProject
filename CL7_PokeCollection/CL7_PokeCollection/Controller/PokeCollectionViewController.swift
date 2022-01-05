@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import RxSwift
 
 private let reuseIdentifier = "cell"
 //struct PokeCollection:Codable{
@@ -23,7 +24,8 @@ class PokeCollectionViewController:UICollectionViewController{
         collectionView.backgroundColor = .systemBackground
         
         setCollectionView()
-        getPokemonModel()
+       
+//        getPokemonModel()
 //        getPokemonWithAlamofire(url: API.BASE_URL)
         }
     
@@ -35,6 +37,33 @@ class PokeCollectionViewController:UICollectionViewController{
     }
     
     //MARK: -Helper API
+    func getPokemonWithRxSwift()->Observable<[PokeStack]?>{
+        return Observable.create() { stream in
+            self.getPokemon { error, pokestack in
+                if let error = error{
+                    stream.onError(error)
+                }
+                if let pokeStatck = pokestack{
+                    stream.onNext(pokeStatck)
+                    stream.onCompleted()
+                }
+            }
+            return Disposables.create()
+        }
+    }
+    
+    func getPokemon(completion: @escaping (Error?, [PokeStack]?)->()){
+        guard let url = URL(string: API.BASE_URL) else { return }
+        AF.request(url, method: .get).responseDecodable(of: [PokeStack].self) { response in
+            if let error = response.error{
+                completion(error, nil)
+            }
+            if let data = response.value{
+                completion(nil, data)
+            }
+        }
+    }
+    
     func getPokemonWithAlamofire(url:String){
         guard let url = URL(string: url) else {return}
         AF.request(url, method: HTTPMethod.get).responseJSON { response in

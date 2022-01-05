@@ -15,7 +15,7 @@ class Coordinator{
     }
     
     func start(){
-        let rootViewController = RXViewController()
+        let rootViewController = RootViewController1()
         let navigationRootViewController = UINavigationController(rootViewController: rootViewController)
         window.rootViewController = navigationRootViewController
         window.makeKeyAndVisible()
