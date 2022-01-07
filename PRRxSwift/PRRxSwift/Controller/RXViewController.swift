@@ -77,6 +77,7 @@ class RXViewController:UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Login"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         configureUI()
         bindUI()
     }

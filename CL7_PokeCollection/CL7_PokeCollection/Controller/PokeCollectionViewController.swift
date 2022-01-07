@@ -17,14 +17,23 @@ private let reuseIdentifier = "cell"
 class PokeCollectionViewController:UICollectionViewController{
     //MARK: -Model
     var pokemon = [Pokemon]()
+    var disposeBag:DisposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.backgroundColor = .systemBackground
-        
         setCollectionView()
-       
+        
+        getPokemonWithRxSwift() //이 부분 에러나는 이유가 null, 때문인거같은데
+            .subscribe(onNext: { pokeStack in
+                print("pokeStack = \(pokeStack)")
+            }, onError: { error in
+                print("error = \(error.localizedDescription)")
+            }, onCompleted: {
+                print("completed")
+            })
+            .disposed(by: disposeBag)
 //        getPokemonModel()
 //        getPokemonWithAlamofire(url: API.BASE_URL)
         }
@@ -54,7 +63,7 @@ class PokeCollectionViewController:UICollectionViewController{
     
     func getPokemon(completion: @escaping (Error?, [PokeStack]?)->()){
         guard let url = URL(string: API.BASE_URL) else { return }
-        AF.request(url, method: .get).responseDecodable(of: [PokeStack].self) { response in
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil, interceptor: nil, requestModifier: nil).responseDecodable(of: [PokeStack].self) { response in
             if let error = response.error{
                 completion(error, nil)
             }

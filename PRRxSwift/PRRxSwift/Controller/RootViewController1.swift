@@ -11,22 +11,29 @@ import RxSwift
 class RootViewController1:UIViewController{
     //MARK: -Properties
     var disposeBag:DisposeBag = DisposeBag()
+    var ob1:Observable<String?> = Observable.from(["이", "건", "준"])
+    var ob2:Observable<Int?> = Observable.just(123)
+    
     //MARK: -Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        
-        createObservable()
-            .subscribe { event in
-                switch event{
-                case .next(let next):
-                    print("next = \(next)")
-                case .completed:
-                    print("completed")
-                case .error(let err):
-                    print("err = \(err.localizedDescription)")
-                }
-            }
+        Observable.zip(ob1, ob2)
+            .subscribe(onNext: { str in
+                print("str = \(str)")
+            })
+            .disposed(by: disposeBag)
+//        createObservable()
+//            .subscribe { event in
+//                switch event{
+//                case .next(let next):
+//                    print("next = \(next)")
+//                case .completed:
+//                    print("completed")
+//                case .error(let err):
+//                    print("err = \(err.localizedDescription)")
+//                }
+//            }
         
 //        Observable.just("안녕하세요")
 //            .subscribe(onNext: { str in
