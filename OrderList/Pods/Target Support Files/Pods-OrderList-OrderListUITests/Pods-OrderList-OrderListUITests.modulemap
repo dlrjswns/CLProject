@@ -1,0 +1,6 @@
+framework module Pods_OrderList_OrderListUITests {
+  umbrella header "Pods-OrderList-OrderListUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

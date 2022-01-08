@@ -7,14 +7,14 @@
 
 import UIKit
 import RxSwift
-
+import RxCocoa
 class MemberViewController:UITableViewController{
     var members:[Member?] = []
     var disposeBag:DisposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         setNavigationBar()
         registerInTableView()
         setTableViewCell()
@@ -31,11 +31,10 @@ class MemberViewController:UITableViewController{
     
     func setTableViewCell(){
         APIService.shared.getMember()
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: { members in
                 self.members = members
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+                self.tableView.reloadData()
             })
             .disposed(by: disposeBag)
     }
