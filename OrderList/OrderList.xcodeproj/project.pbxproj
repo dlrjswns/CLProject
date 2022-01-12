@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,12 @@
 		70011310278A29B400C3F794 /* OrderListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7001130F278A29B400C3F794 /* OrderListTests.swift */; };
 		7001131B278A29B400C3F794 /* OrderListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7001131A278A29B400C3F794 /* OrderListUITests.swift */; };
 		7001132A278A29EE00C3F794 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70011329278A29EE00C3F794 /* OrderViewController.swift */; };
+		7001132D278AF89C00C3F794 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7001132C278AF89C00C3F794 /* API.swift */; };
+		70011330278AFA5000C3F794 /* Menus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7001132F278AFA5000C3F794 /* Menus.swift */; };
+		70011333278B012C00C3F794 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70011332278B012C00C3F794 /* OrderViewModel.swift */; };
+		70011336278B041000C3F794 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70011335278B041000C3F794 /* OrderCell.swift */; };
+		70011338278B5FCA00C3F794 /* OrderMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70011337278B5FCA00C3F794 /* OrderMenu.swift */; };
+		7001138E278EEB7200C3F794 /* OrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7001138D278EEB7100C3F794 /* OrderService.swift */; };
 		9B122EA99D085156CFFB715C /* Pods_OrderList_OrderListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23F5F9F445A3CA395F070BB5 /* Pods_OrderList_OrderListUITests.framework */; };
 		C1E475B65EDC295AD4FD0CE3 /* Pods_OrderList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB976F1BFFBE9F11508CDA5F /* Pods_OrderList.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +62,12 @@
 		7001131A278A29B400C3F794 /* OrderListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListUITests.swift; sourceTree = "<group>"; };
 		7001131C278A29B400C3F794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70011329278A29EE00C3F794 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		7001132C278AF89C00C3F794 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		7001132F278AFA5000C3F794 /* Menus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menus.swift; sourceTree = "<group>"; };
+		70011332278B012C00C3F794 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		70011335278B041000C3F794 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		70011337278B5FCA00C3F794 /* OrderMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderMenu.swift; sourceTree = "<group>"; };
+		7001138D278EEB7100C3F794 /* OrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderService.swift; sourceTree = "<group>"; };
 		94790901577BC99829FFD3E9 /* Pods-OrderListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderListTests.debug.xcconfig"; path = "Target Support Files/Pods-OrderListTests/Pods-OrderListTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9BDFABF3BF4423CC2FD572AF /* Pods-OrderList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderList.release.xcconfig"; path = "Target Support Files/Pods-OrderList/Pods-OrderList.release.xcconfig"; sourceTree = "<group>"; };
 		C46E32F1FBD44B8C740E72F0 /* Pods-OrderList-OrderListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderList-OrderListUITests.release.xcconfig"; path = "Target Support Files/Pods-OrderList-OrderListUITests/Pods-OrderList-OrderListUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,7 +123,6 @@
 				94790901577BC99829FFD3E9 /* Pods-OrderListTests.debug.xcconfig */,
 				FEA94B61A5BAEC41AC9166C7 /* Pods-OrderListTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -140,6 +151,10 @@
 		700112F7278A29B300C3F794 /* OrderList */ = {
 			isa = PBXGroup;
 			children = (
+				70011334278B040300C3F794 /* Cell */,
+				70011331278AFF8900C3F794 /* ViewModel */,
+				7001132E278AFA1A00C3F794 /* Model */,
+				7001132B278AF57200C3F794 /* Service */,
 				70011328278A29C900C3F794 /* Controller */,
 				700112F8278A29B300C3F794 /* AppDelegate.swift */,
 				700112FA278A29B300C3F794 /* SceneDelegate.swift */,
@@ -175,6 +190,40 @@
 				70011329278A29EE00C3F794 /* OrderViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		7001132B278AF57200C3F794 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7001132C278AF89C00C3F794 /* API.swift */,
+				7001138D278EEB7100C3F794 /* OrderService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7001132E278AFA1A00C3F794 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7001132F278AFA5000C3F794 /* Menus.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		70011331278AFF8900C3F794 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				70011332278B012C00C3F794 /* OrderViewModel.swift */,
+				70011337278B5FCA00C3F794 /* OrderMenu.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		70011334278B040300C3F794 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				70011335278B041000C3F794 /* OrderCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +466,12 @@
 			files = (
 				700112F9278A29B300C3F794 /* AppDelegate.swift in Sources */,
 				700112FB278A29B300C3F794 /* SceneDelegate.swift in Sources */,
+				70011336278B041000C3F794 /* OrderCell.swift in Sources */,
+				70011338278B5FCA00C3F794 /* OrderMenu.swift in Sources */,
+				70011330278AFA5000C3F794 /* Menus.swift in Sources */,
+				7001138E278EEB7200C3F794 /* OrderService.swift in Sources */,
+				70011333278B012C00C3F794 /* OrderViewModel.swift in Sources */,
+				7001132D278AF89C00C3F794 /* API.swift in Sources */,
 				7001132A278A29EE00C3F794 /* OrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

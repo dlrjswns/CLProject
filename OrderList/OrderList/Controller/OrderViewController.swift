@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import RxSwift
 
 class OrderViewController:UIViewController{
+    //MARK: -View Models
+    var orderViewModel = OrderViewModel()
+    var disposeBag = DisposeBag()
+    
     //MARK: -UI Components
     private lazy var headerLabel:UILabel={
         let lb = UILabel()
@@ -96,6 +101,25 @@ class OrderViewController:UIViewController{
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
         configureUI()
+        
+        //RxCocoa로 tableView를 설정할때 반드시 register를 해야만한다
+        orderView.register(OrderCell.self, forCellReuseIdentifier: OrderCell.identifier)
+        
+        orderViewModel.fetchMenus
+            .observe(on: MainScheduler.instance)
+            .bind(to: orderView.rx.items(cellIdentifier: OrderCell.identifier, cellType: OrderCell.self)){ index, item, cell in
+//                cell.orderName.text = item.name
+//                cell.priceLabel.text = "\(item.price!)"
+                cell.orderName.text = item.name
+                cell.priceLabel.text = "\(item.price!)"
+                cell.orderCount.text = "(\(item.count!))"
+                
+                cell.onChange = { [weak self] increase in
+                    self?.orderViewModel.changeCount(item, increase)
+                }
+            }
+            .disposed(by: disposeBag)
+            
     }
     
     //MARK: -Configure
