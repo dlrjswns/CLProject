@@ -21,6 +21,8 @@
 		700112A22781F20F00C3F794 /* ArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700112A12781F20F00C3F794 /* ArticleService.swift */; };
 		700112A4278490DE00C3F794 /* RXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700112A3278490DE00C3F794 /* RXViewController.swift */; };
 		700112EB2789B03100C3F794 /* RxCocoaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700112EA2789B03100C3F794 /* RxCocoaController.swift */; };
+		700113A027939BDE00C3F794 /* PRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7001139F27939BDE00C3F794 /* PRViewController.swift */; };
+		700113A227939C5400C3F794 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700113A127939C5400C3F794 /* NextViewController.swift */; };
 		AB86BEF6E5F152FEFD5A5B1C /* Pods_PRRxSwift_PRRxSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933589B913B0144D1344CD32 /* Pods_PRRxSwift_PRRxSwiftUITests.framework */; };
 		C495224F5B38CDE0D1329926 /* Pods_PRRxSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18AD00B01769CAA9B9399925 /* Pods_PRRxSwiftTests.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +68,8 @@
 		700112A12781F20F00C3F794 /* ArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleService.swift; sourceTree = "<group>"; };
 		700112A3278490DE00C3F794 /* RXViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RXViewController.swift; sourceTree = "<group>"; };
 		700112EA2789B03100C3F794 /* RxCocoaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCocoaController.swift; sourceTree = "<group>"; };
+		7001139F27939BDE00C3F794 /* PRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRViewController.swift; sourceTree = "<group>"; };
+		700113A127939C5400C3F794 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		8FB14F585E38B419DB15A2A0 /* Pods-PRRxSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PRRxSwiftTests.release.xcconfig"; path = "Target Support Files/Pods-PRRxSwiftTests/Pods-PRRxSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		933589B913B0144D1344CD32 /* Pods_PRRxSwift_PRRxSwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PRRxSwift_PRRxSwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1BDFDB3F2AA3A11A90A8DA3 /* Pods-PRRxSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PRRxSwiftTests.debug.xcconfig"; path = "Target Support Files/Pods-PRRxSwiftTests/Pods-PRRxSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 				700112992781ECF400C3F794 /* RootViewController1.swift */,
 				700112A3278490DE00C3F794 /* RXViewController.swift */,
 				700112EA2789B03100C3F794 /* RxCocoaController.swift */,
+				7001139F27939BDE00C3F794 /* PRViewController.swift */,
+				700113A127939C5400C3F794 /* NextViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -446,8 +452,10 @@
 			files = (
 				7001129A2781ECF400C3F794 /* RootViewController1.swift in Sources */,
 				700112672781E68B00C3F794 /* AppDelegate.swift in Sources */,
+				700113A027939BDE00C3F794 /* PRViewController.swift in Sources */,
 				700112A4278490DE00C3F794 /* RXViewController.swift in Sources */,
 				7001129F2781F08B00C3F794 /* Article.swift in Sources */,
+				700113A227939C5400C3F794 /* NextViewController.swift in Sources */,
 				700112A22781F20F00C3F794 /* ArticleService.swift in Sources */,
 				7001129C2781ED4400C3F794 /* Coordinator.swift in Sources */,
 				700112692781E68B00C3F794 /* SceneDelegate.swift in Sources */,

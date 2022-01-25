@@ -20,7 +20,7 @@ class MemberViewController:UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         memberView.frame = UIScreen.main.bounds
         setNavigationBar()
         registerInTableView()
@@ -44,7 +44,6 @@ class MemberViewController:UITableViewController{
 //                self.tableView.reloadData()
 //            })
 //            .disposed(by: disposeBag)
-        
         memberViewModel.memberRelay
             .observe(on: MainScheduler.instance)
             .bind(to: memberView.rx.items(cellIdentifier: "cell", cellType: MemberCell.self)){ index, item, cell in

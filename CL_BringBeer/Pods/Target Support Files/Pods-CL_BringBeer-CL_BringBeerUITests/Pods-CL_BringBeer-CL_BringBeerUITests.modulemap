@@ -1,0 +1,6 @@
+framework module Pods_CL_BringBeer_CL_BringBeerUITests {
+  umbrella header "Pods-CL_BringBeer-CL_BringBeerUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

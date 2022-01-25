@@ -18,11 +18,29 @@ class RootViewController1:UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        Observable.zip(ob1, ob2)
-            .subscribe(onNext: { str in
-                print("str = \(str)")
+        let observable = Observable.of("A", "B", "C")
+             
+             // 2
+             let subscription = observable.subscribe({ (event) in
+                 print(event)
+             })
+        let subject = BehaviorSubject<String>(value: "")
+        
+        
+        
+        Observable.of(1, 2, 3)
+            .subscribe({ event in
+                if let element = event.element{
+                    print("\(element)")
+                }
             })
             .disposed(by: disposeBag)
+        
+//        Observable.zip(ob1, ob2)
+//            .subscribe(onNext: { str in
+//                print("str = \(str)")
+//            })
+//            .disposed(by: disposeBag)
 //        createObservable()
 //            .subscribe { event in
 //                switch event{

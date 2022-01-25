@@ -28,10 +28,10 @@ class RxCocoaController:UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        Observable.just("이건준")
-            .reduce("") { <#A#>, <#String#> in
-                <#code#>
-            }
+//        Observable.just("이건준")
+//            .reduce("") { <#A#>, <#String#> in
+//                <#code#>
+//            }
         viewModel
             .map({ str in
                 str + "df"

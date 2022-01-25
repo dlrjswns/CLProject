@@ -15,7 +15,7 @@ class Coordinator{
     }
     
     func start(){
-        let rootViewController = RxCocoaController()
+        let rootViewController = PRViewController()
         let navigationRootViewController = UINavigationController(rootViewController: rootViewController)
         window.rootViewController = navigationRootViewController
         window.makeKeyAndVisible()
