@@ -8,7 +8,7 @@
 import UIKit
 
 struct MemberModel{
-    var name:String?
-    var avatar:UIImage?
-    var job:String?
+    var name:String
+    var avatar:UIImage
+    var job:String
 }

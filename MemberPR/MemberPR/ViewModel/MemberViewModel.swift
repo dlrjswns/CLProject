@@ -10,8 +10,26 @@ import RxSwift
 import RxRelay
 
 class MemberViewModel{
-    let memberService = MemberService()
+    let memberService:MemberService
+    let disposeBag = DisposeBag()
     var memberRelay = BehaviorRelay<[MemberModel]>(value: [])
+    
+    
+    init(memberService:MemberService){
+        self.memberService = memberService
+        
+        memberService.getMemberModel()
+            .subscribe(onNext:{ result in
+                switch result{
+                case .success(let memberModels):
+                    print("memberModels = \(memberModels)")
+                    self.memberRelay.accept(memberModels)
+                case .failure(let memberError):
+                    print("MemberViewModel ErrorMessage - \(memberError.message)")
+                }
+            })
+            .disposed(by: disposeBag)
+    
     
     //Model -> ViewModel
 //    func fetchImage(_ item:MemberModel){
@@ -19,10 +37,11 @@ class MemberViewModel{
 //        
 //    }
     
-    init(){
-        memberService.fetchMemberModel { [weak self] memberModels in
-//            guard let memberModels = memberModels else {return}
-            self?.memberRelay.accept(memberModels)
-        }
-    }
+//    init(){
+//        memberService.fetchMemberModel { [weak self] memberModels in
+////            guard let memberModels = memberModels else {return}
+//            self?.memberRelay.accept(memberModels)
+//        }
+//    }
+}
 }

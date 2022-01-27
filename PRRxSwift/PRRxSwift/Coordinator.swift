@@ -15,8 +15,10 @@ class Coordinator{
     }
     
     func start(){
-        let rootViewController = PRViewController()
+        let rootViewController = ArticleViewController(viewModel: ArticleViewModel(articleService: ArticleService()))
+        
         let navigationRootViewController = UINavigationController(rootViewController: rootViewController)
+        
         window.rootViewController = navigationRootViewController
         window.makeKeyAndVisible()
         

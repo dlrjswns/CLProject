@@ -9,7 +9,11 @@ import Foundation
 import Alamofire
 import RxSwift
 
-class ArticleService{
+protocol ArticleServiceProtocol{
+    func fetchNews() -> Observable<[Article]>
+}
+
+class ArticleService:ArticleServiceProtocol{
     func fetchNews() -> Observable<[Article]>{
         return Observable.create { (observer) -> Disposable in
             self.fetchNews { error, articles in
@@ -19,9 +23,8 @@ class ArticleService{
                 
                 if let articles = articles{
                     observer.onNext(articles)
+                    observer.onCompleted()
                 }
-                
-                observer.onCompleted()
             }
             return Disposables.create()
         }

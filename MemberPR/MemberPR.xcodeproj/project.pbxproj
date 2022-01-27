@@ -15,13 +15,15 @@
 		700112D427875DFC00C3F794 /* MemberPRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700112D327875DFC00C3F794 /* MemberPRUITests.swift */; };
 		700112E327884E8500C3F794 /* MemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700112E227884E8500C3F794 /* MemberViewController.swift */; };
 		700112E627884F2700C3F794 /* MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700112E527884F2700C3F794 /* MemberCell.swift */; };
-		700112E9278850E700C3F794 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700112E8278850E700C3F794 /* APIService.swift */; };
+		700112E9278850E700C3F794 /* MemberRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700112E8278850E700C3F794 /* MemberRepositoryImpl.swift */; };
 		7001133B278D9D5A00C3F794 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7001133A278D9D5A00C3F794 /* RootViewController.swift */; };
 		7001133D278DA04800C3F794 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7001133C278DA04800C3F794 /* RootViewModel.swift */; };
 		700113952790809800C3F794 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700113942790809800C3F794 /* Member.swift */; };
 		700113992790820200C3F794 /* MemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700113982790820200C3F794 /* MemberModel.swift */; };
 		7001139C2790823F00C3F794 /* MemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7001139B2790823F00C3F794 /* MemberViewModel.swift */; };
-		7001139E2790826200C3F794 /* MemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7001139D2790826200C3F794 /* MemberService.swift */; };
+		7001139E2790826200C3F794 /* MemberServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7001139D2790826200C3F794 /* MemberServiceImpl.swift */; };
+		70F2832F27A27A4D009D4F52 /* MemberRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2832E27A27A4D009D4F52 /* MemberRepository.swift */; };
+		70F2833127A28C29009D4F52 /* MemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2833027A28C29009D4F52 /* MemberService.swift */; };
 		A09AB2FDD47BF70CEACA5417 /* Pods_MemberPRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590BDC839C7F1D3878417623 /* Pods_MemberPRTests.framework */; };
 		B2755ED366A1A9230D461724 /* Pods_MemberPR_MemberPRUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64683ACC7D29B4055FBAE963 /* Pods_MemberPR_MemberPRUITests.framework */; };
 		D9D0ED9EE2B6E60C988B6F96 /* Pods_MemberPR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9FE6E52E19510E7F7992FFC /* Pods_MemberPR.framework */; };
@@ -62,13 +64,15 @@
 		700112D527875DFC00C3F794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		700112E227884E8500C3F794 /* MemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewController.swift; sourceTree = "<group>"; };
 		700112E527884F2700C3F794 /* MemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
-		700112E8278850E700C3F794 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		700112E8278850E700C3F794 /* MemberRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRepositoryImpl.swift; sourceTree = "<group>"; };
 		7001133A278D9D5A00C3F794 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		7001133C278DA04800C3F794 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		700113942790809800C3F794 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		700113982790820200C3F794 /* MemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberModel.swift; sourceTree = "<group>"; };
 		7001139B2790823F00C3F794 /* MemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewModel.swift; sourceTree = "<group>"; };
-		7001139D2790826200C3F794 /* MemberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberService.swift; sourceTree = "<group>"; };
+		7001139D2790826200C3F794 /* MemberServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberServiceImpl.swift; sourceTree = "<group>"; };
+		70F2832E27A27A4D009D4F52 /* MemberRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRepository.swift; sourceTree = "<group>"; };
+		70F2833027A28C29009D4F52 /* MemberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberService.swift; sourceTree = "<group>"; };
 		79772E2AE35EE9DD0619BE89 /* Pods-MemberPR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemberPR.release.xcconfig"; path = "Target Support Files/Pods-MemberPR/Pods-MemberPR.release.xcconfig"; sourceTree = "<group>"; };
 		7CBE8C1E47D7CFD2C44474C3 /* Pods-MemberPR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemberPR.debug.xcconfig"; path = "Target Support Files/Pods-MemberPR/Pods-MemberPR.debug.xcconfig"; sourceTree = "<group>"; };
 		B5ACE304611208140BDB3103 /* Pods-MemberPRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemberPRTests.release.xcconfig"; path = "Target Support Files/Pods-MemberPRTests/Pods-MemberPRTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -185,7 +189,8 @@
 		700112E72788509E00C3F794 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				700112E8278850E700C3F794 /* APIService.swift */,
+				700112E8278850E700C3F794 /* MemberRepositoryImpl.swift */,
+				70F2832E27A27A4D009D4F52 /* MemberRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -201,7 +206,8 @@
 		70011396279081F400C3F794 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				7001139D2790826200C3F794 /* MemberService.swift */,
+				7001139D2790826200C3F794 /* MemberServiceImpl.swift */,
+				70F2833027A28C29009D4F52 /* MemberService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -483,13 +489,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				700112E327884E8500C3F794 /* MemberViewController.swift in Sources */,
+				70F2832F27A27A4D009D4F52 /* MemberRepository.swift in Sources */,
 				7001133D278DA04800C3F794 /* RootViewModel.swift in Sources */,
-				700112E9278850E700C3F794 /* APIService.swift in Sources */,
+				700112E9278850E700C3F794 /* MemberRepositoryImpl.swift in Sources */,
+				70F2833127A28C29009D4F52 /* MemberService.swift in Sources */,
 				7001133B278D9D5A00C3F794 /* RootViewController.swift in Sources */,
 				700112B227875DFB00C3F794 /* AppDelegate.swift in Sources */,
 				700112B427875DFB00C3F794 /* SceneDelegate.swift in Sources */,
 				700112E627884F2700C3F794 /* MemberCell.swift in Sources */,
-				7001139E2790826200C3F794 /* MemberService.swift in Sources */,
+				7001139E2790826200C3F794 /* MemberServiceImpl.swift in Sources */,
 				700113992790820200C3F794 /* MemberModel.swift in Sources */,
 				7001139C2790823F00C3F794 /* MemberViewModel.swift in Sources */,
 				700113952790809800C3F794 /* Member.swift in Sources */,
