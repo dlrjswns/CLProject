@@ -28,6 +28,8 @@ class MemberServiceImpl: MemberService{
 //    }
     private let memberRepository:MemberRepository
     
+    var memberModels : [MemberModel] = []
+    
     init(memberRepository:MemberRepository) {
         self.memberRepository = memberRepository
         print("sucdsfcdsscd")
@@ -46,15 +48,15 @@ class MemberServiceImpl: MemberService{
     }
     
     private func parseData(members:[Member]) -> [MemberModel]{
-        var memberModels:[MemberModel] = []
-        _ = members.map { [weak self] member in
-            self?.fetchImage(member.avatar) { fetchImage in
-                guard let fetchImage = fetchImage else { return }
-                let memberModel = MemberModel(name: member.name ?? "", avatar: fetchImage, job: member.job ?? "")
-                memberModels.append(memberModel)
+        _ = members.map { member in
+            fetchImage(member.avatar) { [weak self] fetchImage in
+                if let fetchImage = fetchImage{
+                    let memberModel = MemberModel(name: member.name ?? "", avatar: fetchImage, job: member.job ?? "")
+                    self?.memberModels.append(memberModel)
                 }
             }
-            return memberModels
+        }
+        return memberModels
     }
     
     private func fetchImage(_ imageName:String?, completion:@escaping (UIImage?)->Void){
