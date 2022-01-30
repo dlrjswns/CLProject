@@ -13,6 +13,8 @@ class MemberViewController:UITableViewController{
     var disposeBag:DisposeBag = DisposeBag()
     var memberViewModel = MemberViewModel(memberService: MemberServiceImpl(memberRepository: MemberRepositoryImpl()))
     
+    var memberRepository = MemberRepositoryImpl()
+    
     private lazy var memberView:UITableView={
         let vw = UITableView()
         return vw

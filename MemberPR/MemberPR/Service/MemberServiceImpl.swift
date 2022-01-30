@@ -48,10 +48,21 @@ class MemberServiceImpl: MemberService{
     }
     
     private func parseData(members:[Member]) -> [MemberModel]{
+//        var memberModels:[MemberModel] = []
+//        _ = members.map { [weak self] member in
+//            self?.fetchImage(member.avatar) { fetchImage in
+//                guard let fetchImage = fetchImage else { return }
+//                let memberModel = MemberModel(name: member.name ?? "", avatar: fetchImage, job: member.job ?? "")
+//                memberModels.append(memberModel)
+//                }
+//            }
+//            return memberModels
+        
         _ = members.map { member in
             fetchImage(member.avatar) { [weak self] fetchImage in
                 if let fetchImage = fetchImage{
                     let memberModel = MemberModel(name: member.name ?? "", avatar: fetchImage, job: member.job ?? "")
+//                    memberModels.append(memberModel)
                     self?.memberModels.append(memberModel)
                 }
             }

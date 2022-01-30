@@ -7,8 +7,8 @@
 
 import UIKit
 
-struct MemberModel:Hashable{
-    var name:String
-    var avatar:UIImage
-    var job:String
+struct MemberModel{
+    var name:String?
+    var avatar:UIImage?
+    var job:String?
 }
