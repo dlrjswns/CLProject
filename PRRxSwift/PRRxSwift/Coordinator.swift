@@ -15,7 +15,8 @@ class Coordinator{
     }
     
     func start(){
-        let rootViewController = ArticleViewController(viewModel: ArticleViewModel(articleService: ArticleService()))
+//        let rootViewController = ArticleViewController(viewModel: ArticleViewModel(articleService: ArticleService()))
+        let rootViewController = RootViewController1()
         
         let navigationRootViewController = UINavigationController(rootViewController: rootViewController)
         
