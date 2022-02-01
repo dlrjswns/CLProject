@@ -6,12 +6,15 @@
 //
 
 import Combine
+import RxSwift
 
 protocol StockRepository {
     func fetchStocksPublisher(keyword: String) -> AnyPublisher<StockResult, Error>
-    func fetchStocksOriginal(keyword: String) -> Result<StockResult, StockError>
+    func fetchStocksRxSwift(keyword: String) -> Observable<Result<StockResult, StockError>>
+//    func fetchStocksOriginal(keyword: String) -> Result<StockResult, StockError>
 }
 
 enum StockError: Error{
     case urlNotFound
+    case decodeFail
 }

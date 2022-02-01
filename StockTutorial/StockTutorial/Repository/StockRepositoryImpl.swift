@@ -7,6 +7,8 @@
 
 import Foundation
 import Combine
+import RxSwift
+import RxCocoa
 
 class StockRepositoryImpl:StockRepository{
     private let session: URLSession
@@ -22,12 +24,31 @@ class StockRepositoryImpl:StockRepository{
         return session.dataTaskPublisher(for: url).map{$0.data}.decode(type: StockResult.self, decoder: decoder).receive(on: RunLoop.main).eraseToAnyPublisher()
     }
     
-    func fetchStocksOriginal(keyword: String) -> Result<StockResult, StockError>{
-        guard let url = getSearchCompanyOrSymbolURLComponents(keywords: keyword).url else {return .failure(StockError.urlNotFound)}
-        
-        session.dataTask(with: url) { data, response, error in
-            
+    func fetchStocksRxSwift(keyword: String) -> Observable<Result<StockResult, StockError>>{
+        guard let url = getSearchCompanyOrSymbolURLComponents(keywords: keyword).url else {return .just(.failure(StockError.urlNotFound))}
+        return session.rx.data(request: URLRequest(url: url)).map { data in
+            do{
+                let stockResult = try self.decoder.decode(StockResult.self, from: data)
+                return .success(stockResult)
+            }catch{
+                return .failure(StockError.decodeFail)
+            }
         }
+    }
+    
+//    func fetchStocksOriginal(keyword: String) -> Result<StockResult, StockError>{
+//        guard let url = getSearchCompanyOrSymbolURLComponents(keywords: keyword).url else {return .failure(StockError.urlNotFound)}
+//        
+//        session.dataTask(with: URLRequest(url: url)) { data, response, error in
+//            guard let data = data else {return}
+//            do{
+//                let stockResult = try self.decoder.decode(StockResult.self, from: data)
+//                retur
+//            }catch{
+//                
+//            }
+//        }
+//    }
 }
 
 extension StockRepositoryImpl{

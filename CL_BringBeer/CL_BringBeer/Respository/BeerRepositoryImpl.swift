@@ -18,7 +18,6 @@ class BeerRepositoryImpl:BeerRepository{
     
     func getBeers(url:String)->Observable<Result<[Beer], BeerError>>{
         guard let url = URL(string: url) else {return .just(.failure(.customError("Url이 올바르지 않습니다")))}
-        
         return session.rx.data(request: URLRequest(url: url))
             .map { data in
                 do{
