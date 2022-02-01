@@ -5,8 +5,13 @@
 //  Created by 이건준 on 2022/02/01.
 //
 
-import Foundation
+import Combine
 
 protocol StockRepository {
-    var apiKey:String { get set }
+    func fetchStocksPublisher(keyword: String) -> AnyPublisher<StockResult, Error>
+    func fetchStocksOriginal(keyword: String) -> Result<StockResult, StockError>
+}
+
+enum StockError: Error{
+    case urlNotFound
 }

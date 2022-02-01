@@ -20,6 +20,7 @@
 		70F2839927A85546009D4F52 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2839827A85546009D4F52 /* MainCoordinator.swift */; };
 		70F283BD27A88140009D4F52 /* StockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F283BC27A88140009D4F52 /* StockRepository.swift */; };
 		70F283BF27A88157009D4F52 /* StockRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F283BE27A88157009D4F52 /* StockRepositoryImpl.swift */; };
+		70F283C127A8E7A5009D4F52 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F283C027A8E7A5009D4F52 /* Stock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		70F2839827A85546009D4F52 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		70F283BC27A88140009D4F52 /* StockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRepository.swift; sourceTree = "<group>"; };
 		70F283BE27A88157009D4F52 /* StockRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRepositoryImpl.swift; sourceTree = "<group>"; };
+		70F283C027A8E7A5009D4F52 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		70F2838827A84038009D4F52 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				70F283C027A8E7A5009D4F52 /* Stock.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			files = (
 				70F2839727A843CC009D4F52 /* CompositionRoot.swift in Sources */,
 				70F2838E27A84191009D4F52 /* StockListController.swift in Sources */,
+				70F283C127A8E7A5009D4F52 /* Stock.swift in Sources */,
 				70F2836F27A83FC2009D4F52 /* AppDelegate.swift in Sources */,
 				70F2839127A841B5009D4F52 /* BaseView.swift in Sources */,
 				70F283BD27A88140009D4F52 /* StockRepository.swift in Sources */,

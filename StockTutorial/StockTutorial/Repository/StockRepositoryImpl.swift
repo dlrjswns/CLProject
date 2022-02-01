@@ -6,11 +6,28 @@
 //
 
 import Foundation
+import Combine
 
 class StockRepositoryImpl:StockRepository{
-    var apiKey: String = "MDJ8Q1EZPTTCY67N"
+    private let session: URLSession
+    let apiKey: String = "MDJ8Q1EZPTTCY67N"
+    let decoder = JSONDecoder()
     
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
     
+    func fetchStocksPublisher(keyword: String) -> AnyPublisher<StockResult, Error> {
+        let url = getSearchCompanyOrSymbolURLComponents(keywords: keyword).url! //원래는 guard let으로 걸러내야하는데 Combine사용법을 잘 모름
+        return session.dataTaskPublisher(for: url).map{$0.data}.decode(type: StockResult.self, decoder: decoder).receive(on: RunLoop.main).eraseToAnyPublisher()
+    }
+    
+    func fetchStocksOriginal(keyword: String) -> Result<StockResult, StockError>{
+        guard let url = getSearchCompanyOrSymbolURLComponents(keywords: keyword).url else {return .failure(StockError.urlNotFound)}
+        
+        session.dataTask(with: url) { data, response, error in
+            
+        }
 }
 
 extension StockRepositoryImpl{
