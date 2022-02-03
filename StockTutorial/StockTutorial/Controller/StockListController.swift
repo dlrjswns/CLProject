@@ -7,6 +7,8 @@
 
 import UIKit
 import Pure
+import RxSwift
+import RxCocoa
 
 class StockListController:BaseViewController, FactoryModule{
     
@@ -29,6 +31,15 @@ class StockListController:BaseViewController, FactoryModule{
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
+//        viewModel.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        enableScrollWhenKeyboardAppeared(scrollView: selfView.tableView)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        removeListeners()
     }
     
     override func configureUI() {
@@ -38,21 +49,45 @@ class StockListController:BaseViewController, FactoryModule{
         selfView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         selfView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         selfView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
+        selfView.tableView.delegate = self
+        selfView.tableView.dataSource = self
         selfView.searchViewController.delegate = self
         selfView.searchViewController.searchResultsUpdater = self
         navigationItem.searchController = selfView.searchViewController
     }
     
     func bind(){
-        viewModel.errorMessage.subscribe(onNext:{ error in
-            guard let error = error else {return}
-            print("error = \(error)")
+        selfView.searchViewController.searchBar.rx.text.debounce(.milliseconds(300), scheduler: MainScheduler.instance).subscribe(onNext:{ [weak self] text in
+            guard let text = text, !text.isEmpty else { return }
+            self?.viewModel.searchQueryChanged(query: text)
         }).disposed(by: disposeBag)
         
-        viewModel.stocks.subscribe(onNext:{ stocks in
-            print("stocks = \(stocks)")
-        }).disposed(by: disposeBag)
+        viewModel.$errorMessage.sink { errorMessage in
+            guard let message = errorMessage, !message.isEmpty else{ return }
+            print("error = \(message)")
+        }.store(in: &subscriber)
+        
+        viewModel.$stocks.sink { [weak self] _ in
+            self?.selfView.tableView.reloadData()
+        }.store(in: &subscriber)
+        
+        viewModel.$loading.sink { [weak self] loading in
+            self?.selfView.loadingView.isHidden = !loading
+            print("loading = \(loading)")
+        }.store(in: &subscriber)
+        
+//        viewModel.loading.subscribe(onNext:{ loading in
+//            print("loading = \(loading)")
+//        }).disposed(by: disposeBag)
+//
+//        viewModel.errorMessage.subscribe(onNext:{ error in
+//            guard let error = error else {return}
+//            print("error = \(error)")
+//        }).disposed(by: disposeBag)
+//
+//        viewModel.stocks.subscribe(onNext:{ stocks in
+//            print("stocks = \(stocks)")
+//        }).disposed(by: disposeBag)
     }
 }
 

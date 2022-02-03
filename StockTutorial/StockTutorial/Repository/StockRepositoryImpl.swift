@@ -21,6 +21,7 @@ class StockRepositoryImpl:StockRepository{
     
     func fetchStocksPublisher(keyword: String) -> AnyPublisher<StockResult, Error> {
         let url = getSearchCompanyOrSymbolURLComponents(keywords: keyword).url! //원래는 guard let으로 걸러내야하는데 Combine사용법을 잘 모름
+        print("url = \(url)")
         return session.dataTaskPublisher(for: url).map{$0.data}.decode(type: StockResult.self, decoder: decoder).receive(on: RunLoop.main).eraseToAnyPublisher()
     }
     
@@ -53,7 +54,7 @@ class StockRepositoryImpl:StockRepository{
 
 extension StockRepositoryImpl{
     struct StockAPI {
-        static let scheme = "https?function=SYMBOL_SEARCH&keywords=tesco&apikey=demo"
+        static let scheme = "https"
         static let host = "www.alphavantage.co"
         static let path = "/query"
     }
