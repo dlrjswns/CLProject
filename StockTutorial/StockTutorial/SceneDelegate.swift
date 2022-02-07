@@ -27,9 +27,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let coordinator = AppDependency.resolve().coordinator
 //        if let window = window{
 //            coordinator.start(window: window, rootViewController: StockListController())
-////            let rootViewController = UINavigationController(rootViewController: StockListController())
-////            window.rootViewController = rootViewController
-////            window.makeKeyAndVisible()
+//            let rootViewController = UINavigationController(rootViewController: StockListController())
+//            window.rootViewController = rootViewController
+//            window.makeKeyAndVisible()
 //        }
     }
 

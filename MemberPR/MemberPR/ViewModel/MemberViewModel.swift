@@ -8,11 +8,13 @@
 import Foundation
 import RxSwift
 import RxRelay
+import RxCocoa
 
 class MemberViewModel{
     let memberService:MemberService
     let disposeBag = DisposeBag()
     var memberRelay = BehaviorRelay<[MemberModel]>(value: [])
+    var viewWillAppear = PublishSubject<[MemberModel]>()
     
     
     init(memberService:MemberService){
@@ -29,7 +31,9 @@ class MemberViewModel{
                 }
             })
             .disposed(by: disposeBag)
-    
+        
+//        self.viewWillAppear.flatMap{_ in memberService.getMemberModel().asDriver(onErrorJustReturn: .success([]))}.bind(to: memberRelay).disposed(by: disposeBag)
+//
     
     //Model -> ViewModel
 //    func fetchImage(_ item:MemberModel){

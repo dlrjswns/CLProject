@@ -45,10 +45,10 @@ class BaseViewController:UIViewController{ //BaseViewController를 만들어주�
     @objc private func keyboardWillShow(notificaton: NSNotification){
         guard let scrollView = scrollView else {return}
         guard let userInfo = notificaton.userInfo else {return}
-        
+
         var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
         keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-        
+
         var contentInset:UIEdgeInsets = scrollView.contentInset
         contentInset.bottom = keyboardFrame.size.height + 20
         scrollView.contentInset = contentInset

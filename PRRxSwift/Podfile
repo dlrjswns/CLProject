@@ -10,6 +10,7 @@ target 'PRRxSwift' do
     pod 'Alamofire', '~> 5.5'
     pod 'SDWebImage', '~> 5.0'
     pod 'RxDataSources', '~> 5.0'
+    pod 'Pure'
   # Pods for PRRxSwift
 
   target 'PRRxSwiftTests' do

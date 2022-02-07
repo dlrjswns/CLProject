@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxDataSources
+import Combine
 
 struct CustomData {
   var anInt: Int
@@ -61,10 +62,31 @@ class RootViewController1:UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        
         self.view = tableView
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        let disposeBag = DisposeBag()
+        var subscriber:Set<AnyCancellable> = .init()
+       let paPr = PassthroughSubject<String, Error>()
+        let crPr = CurrentValueSubject<String, Never>("df")
+//        crPr.value = "dfdf"
+//        let pr = PublishSubject<String>()
+//        pr.subscribe(onNext:{ value in
+//            print(Thread.isMainThread)
+//        }).disposed(by: disposeBag)
+//
+//        pr.onNext("안녕하세요")
+//        DispatchQueue.global().async {
+//            pr.onNext("두근두근")
+//        }
         
-      
+        crPr.receive(on: RunLoop.current).sink { _ in
+            print(Thread.isMainThread)
+        }.store(in: &subscriber)
+        
+//        crPr.send("dfdsfs")
+
+        
         let dataSource = RxTableViewSectionedReloadDataSource<SectionOfCustomData>(
           configureCell: { dataSource, tableView, indexPath, item in
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)

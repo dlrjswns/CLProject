@@ -42,7 +42,6 @@ class BeersViewController:UIViewController{
             })
             .disposed(by: disposeBag)
        
-            
 //        tableView.rx.estimatedRowHeight = 80
 //        tableView.rx.rowHeight = UITableView.automaticDimension
 //        tableView.rx.itemSelected

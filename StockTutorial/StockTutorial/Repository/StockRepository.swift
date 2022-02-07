@@ -15,6 +15,18 @@ protocol StockRepository {
 }
 
 enum StockError: Error{
+    case error(String)
     case urlNotFound
     case decodeFail
+    
+    var message: String{
+        switch self{
+        case .error(let errMsg):
+            return "errMsg = \(errMsg)"
+        case .urlNotFound:
+            return "errMsg = urlNotFound"
+        case .decodeFail:
+            return "errMsg = decodeFail"
+        }
+    }
 }

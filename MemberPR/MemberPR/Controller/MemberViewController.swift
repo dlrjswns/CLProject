@@ -23,10 +23,25 @@ class MemberViewController:UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewcontroller ang gimmofzzi")
-        memberView.frame = UIScreen.main.bounds
-        setNavigationBar()
-        registerTableCell()
-        setTableViewCell()
+//        memberView.frame = UIScreen.main.bounds
+//        setNavigationBar()
+//        registerTableCell()
+//        setTableViewCell()
+        
+        struct Student {
+            var score: BehaviorSubject<Int>
+        }
+
+       
+            let disposeBag = DisposeBag()
+           
+            let ryan = Student(score: BehaviorSubject(value: 80))
+            let charlotte = Student(score: BehaviorSubject(value: 90))
+            
+            let student = PublishSubject<Student>()
+            
+        Observable.of(1, 2, 3).subscri
+            
     }
     
     func registerTableCell(){

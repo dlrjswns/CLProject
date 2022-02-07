@@ -19,6 +19,6 @@ class BaseView:UIView{
     }
     
     func configureUI(){
-        backgroundColor = .systemBackground
+        self.backgroundColor = .systemBackground
     }
 }

@@ -12,6 +12,7 @@ class StockListViewModel{
     @Published var stocks:[Stock] = []
     @Published var errorMessage:String? //RxSwift든 Combine이든 error를 위한 subject나 published를 가지고 각각 내려보내는게 좋은듯, 보통 Result를 이용하니까
     @Published var loading:Bool = false
+    @Published var isEmpty = false
 //    var loading: BehaviorSubject<Bool> = .init(value: false)
 //    var errorMessage:BehaviorSubject<String?> = .init(value: nil)
 //    var stocks:BehaviorSubject<[Stock]> = .init(value: [])
@@ -38,6 +39,17 @@ class StockListViewModel{
     
     init(usecase:StockUseCase) {
         self.usecase = usecase
+        reduce()
+    }
+    
+    func reduce() {
+        $stocks.sink { [weak self] stocks in
+            if stocks.count == 0 {
+                self?.isEmpty = true
+            }else {
+                self?.isEmpty = false
+            }
+        }.store(in: &subscriber)
     }
     
 //    func viewDidLoad(){

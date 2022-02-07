@@ -16,7 +16,7 @@
 		700112892781E68C00C3F794 /* PRRxSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700112882781E68C00C3F794 /* PRRxSwiftUITests.swift */; };
 		700112972781E73C00C3F794 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700112962781E73C00C3F794 /* RootViewController.swift */; };
 		7001129A2781ECF400C3F794 /* RootViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700112992781ECF400C3F794 /* RootViewController1.swift */; };
-		7001129C2781ED4400C3F794 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7001129B2781ED4400C3F794 /* Coordinator.swift */; };
+		7001129C2781ED4400C3F794 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7001129B2781ED4400C3F794 /* MainCoordinator.swift */; };
 		7001129F2781F08B00C3F794 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7001129E2781F08B00C3F794 /* Article.swift */; };
 		700112A22781F20F00C3F794 /* ArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700112A12781F20F00C3F794 /* ArticleService.swift */; };
 		700112A4278490DE00C3F794 /* RXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700112A3278490DE00C3F794 /* RXViewController.swift */; };
@@ -27,6 +27,7 @@
 		70F2832D27A19E98009D4F52 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2832C27A19E97009D4F52 /* ArticleViewController.swift */; };
 		70F2833327A3F215009D4F52 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2833227A3F215009D4F52 /* ArticleViewModel.swift */; };
 		70F2833627A3FC1F009D4F52 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2833527A3FC1F009D4F52 /* ArticleCell.swift */; };
+		70F283CF27AEC0C5009D4F52 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F283CE27AEC0C5009D4F52 /* Coordinator.swift */; };
 		AB86BEF6E5F152FEFD5A5B1C /* Pods_PRRxSwift_PRRxSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933589B913B0144D1344CD32 /* Pods_PRRxSwift_PRRxSwiftUITests.framework */; };
 		C495224F5B38CDE0D1329926 /* Pods_PRRxSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18AD00B01769CAA9B9399925 /* Pods_PRRxSwiftTests.framework */; };
 /* End PBXBuildFile section */
@@ -67,7 +68,7 @@
 		7001128A2781E68C00C3F794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		700112962781E73C00C3F794 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		700112992781ECF400C3F794 /* RootViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController1.swift; sourceTree = "<group>"; };
-		7001129B2781ED4400C3F794 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		7001129B2781ED4400C3F794 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		7001129E2781F08B00C3F794 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		700112A12781F20F00C3F794 /* ArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleService.swift; sourceTree = "<group>"; };
 		700112A3278490DE00C3F794 /* RXViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RXViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 		70F2832C27A19E97009D4F52 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		70F2833227A3F215009D4F52 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		70F2833527A3FC1F009D4F52 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		70F283CE27AEC0C5009D4F52 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8FB14F585E38B419DB15A2A0 /* Pods-PRRxSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PRRxSwiftTests.release.xcconfig"; path = "Target Support Files/Pods-PRRxSwiftTests/Pods-PRRxSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		933589B913B0144D1344CD32 /* Pods_PRRxSwift_PRRxSwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PRRxSwift_PRRxSwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1BDFDB3F2AA3A11A90A8DA3 /* Pods-PRRxSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PRRxSwiftTests.debug.xcconfig"; path = "Target Support Files/Pods-PRRxSwiftTests/Pods-PRRxSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -149,7 +151,7 @@
 				700112712781E68C00C3F794 /* LaunchScreen.storyboard */,
 				700112742781E68C00C3F794 /* Info.plist */,
 				700112962781E73C00C3F794 /* RootViewController.swift */,
-				7001129B2781ED4400C3F794 /* Coordinator.swift */,
+				7001129B2781ED4400C3F794 /* MainCoordinator.swift */,
 			);
 			path = PRRxSwift;
 			sourceTree = "<group>";
@@ -181,6 +183,7 @@
 				7001139F27939BDE00C3F794 /* PRViewController.swift */,
 				700113A127939C5400C3F794 /* NextViewController.swift */,
 				70F2832C27A19E97009D4F52 /* ArticleViewController.swift */,
+				70F283CE27AEC0C5009D4F52 /* Coordinator.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70F283CF27AEC0C5009D4F52 /* Coordinator.swift in Sources */,
 				7001129A2781ECF400C3F794 /* RootViewController1.swift in Sources */,
 				700112672781E68B00C3F794 /* AppDelegate.swift in Sources */,
 				700113A027939BDE00C3F794 /* PRViewController.swift in Sources */,
@@ -487,7 +491,7 @@
 				700113A227939C5400C3F794 /* NextViewController.swift in Sources */,
 				700112A22781F20F00C3F794 /* ArticleService.swift in Sources */,
 				70F2833627A3FC1F009D4F52 /* ArticleCell.swift in Sources */,
-				7001129C2781ED4400C3F794 /* Coordinator.swift in Sources */,
+				7001129C2781ED4400C3F794 /* MainCoordinator.swift in Sources */,
 				700112692781E68B00C3F794 /* SceneDelegate.swift in Sources */,
 				700112972781E73C00C3F794 /* RootViewController.swift in Sources */,
 				70F2832D27A19E98009D4F52 /* ArticleViewController.swift in Sources */,

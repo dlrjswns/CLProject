@@ -20,9 +20,24 @@ class StockRepositoryImpl:StockRepository{
     }
     
     func fetchStocksPublisher(keyword: String) -> AnyPublisher<StockResult, Error> {
-        let url = getSearchCompanyOrSymbolURLComponents(keywords: keyword).url! //원래는 guard let으로 걸러내야하는데 Combine사용법을 잘 모름
+        guard let url = getSearchCompanyOrSymbolURLComponents(keywords: keyword).url else {
+//            let error = URLError(.badURL) 이 error를 아래 Fail인자로 넘겨줘도됨 ㅇㅇ
+            return Fail(error: StockError.urlNotFound).eraseToAnyPublisher()
+        }
         print("url = \(url)")
-        return session.dataTaskPublisher(for: url).map{$0.data}.decode(type: StockResult.self, decoder: decoder).receive(on: RunLoop.main).eraseToAnyPublisher()
+        return session.dataTaskPublisher(for: URLRequest(url: url))
+                    .mapError { _ in
+                        StockError.error("getStockAPI 에러")
+                    }
+                    .receive(on: DispatchQueue.main) //이 코드가 없으면 에러남, ㅇㅅ ㅇ
+                    .flatMap { [weak self] data in
+                        return Just(data.data)
+                            .decode(type: StockResult.self, decoder: self?.decoder ?? JSONDecoder())
+                            .mapError { _ in
+                                StockError.decodeFail
+                            }
+                    }
+                    .eraseToAnyPublisher()
     }
     
     func fetchStocksRxSwift(keyword: String) -> Observable<Result<StockResult, StockError>>{
