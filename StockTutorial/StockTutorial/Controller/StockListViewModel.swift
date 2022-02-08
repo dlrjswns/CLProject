@@ -8,7 +8,7 @@
 import RxSwift
 import Combine
 
-class StockListViewModel{
+class StockListViewModel: BaseViewModel {
     @Published var stocks:[Stock] = []
     @Published var errorMessage:String? //RxSwift든 Combine이든 error를 위한 subject나 published를 가지고 각각 내려보내는게 좋은듯, 보통 Result를 이용하니까
     @Published var loading:Bool = false
@@ -18,7 +18,7 @@ class StockListViewModel{
 //    var stocks:BehaviorSubject<[Stock]> = .init(value: [])
     var currentStocks:[Stock] = []
     
-    var subscriber:Set<AnyCancellable> = .init()
+//    var subscriber:Set<AnyCancellable> = .init()
     let usecase:StockUseCase
     
     func searchQueryChanged(query: String){
@@ -39,6 +39,7 @@ class StockListViewModel{
     
     init(usecase:StockUseCase) {
         self.usecase = usecase
+        super.init()
         reduce()
     }
     

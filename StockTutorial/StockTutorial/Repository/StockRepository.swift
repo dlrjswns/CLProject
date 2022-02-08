@@ -11,6 +11,7 @@ import RxSwift
 protocol StockRepository {
     func fetchStocksPublisher(keyword: String) -> AnyPublisher<StockResult, Error>
     func fetchStocksRxSwift(keyword: String) -> Observable<Result<StockResult, StockError>>
+    func fetchTimeSeriesPublisher(keyword: String) -> AnyPublisher<TimeSeriesMonthlyAdjusted, Error>
 //    func fetchStocksOriginal(keyword: String) -> Result<StockResult, StockError>
 }
 

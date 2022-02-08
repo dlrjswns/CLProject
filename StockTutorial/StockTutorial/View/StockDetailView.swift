@@ -11,6 +11,7 @@ class StockDetailView: BaseView {
     let scrollView = UIScrollView()
     let topView = StockDetailTopView()
     let bottomView = StockDetailBottomView()
+    let loadingView = LoadingView()
     
     override func configureUI() {
         backgroundColor = .systemBackground
@@ -34,5 +35,12 @@ class StockDetailView: BaseView {
         bottomView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         bottomView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         bottomView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -50).isActive = true //항상 마지막 뷰에 bottomAnchor를 추가하는 모습(앞서 cell의 높이변화라든지)
+        
+        addSubview(loadingView)
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        loadingView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
+        loadingView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        loadingView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        loadingView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
 }

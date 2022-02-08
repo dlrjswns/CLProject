@@ -40,7 +40,7 @@ class MemberViewController:UITableViewController{
             
             let student = PublishSubject<Student>()
             
-        Observable.of(1, 2, 3).subscri
+        
             
     }
     
