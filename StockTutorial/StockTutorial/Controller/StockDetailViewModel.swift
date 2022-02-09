@@ -11,10 +11,16 @@ class StockDetailViewModel: BaseViewModel {
     @Published var loading = false
     @Published var errorMessage: String?
     @Published var monthInfo: [MonthInfo]?
+    @Published var stock: Stock?
     
     let usecase: StockDetailUseCase
     
-    func viewDidLoad(symbol: String) {
+    func configureUI(stockDetailView: StockDetailView?, stock: Stock) {
+        usecase.configureUI(stockDetailView: stockDetailView, stock: stock)
+    }
+    
+    func viewDidLoad(symbol: String, stock: Stock) {
+        self.stock = stock
         loading = true
         usecase.fetchTimeSeriesPublisher(keyword: symbol).sink { completion in
             self.loading = false

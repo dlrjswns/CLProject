@@ -10,6 +10,13 @@ import Foundation
 
 class StockDetailUseCase {
     
+    func configureUI(stockDetailView: StockDetailView?, stock: Stock) {
+        guard let stockDetailView = stockDetailView else { return }
+        stockDetailView.topView.titleLabel.text = stock.symbol
+        stockDetailView.topView.subTitleLabel.text = stock.name
+        stockDetailView.topView.currentValueTextLabel.text = "Current Value (\(stock.currency ?? ""))"
+    }
+    
     func fetchTimeSeriesPublisher(keyword: String) -> AnyPublisher<TimeSeriesMonthlyAdjusted, Error> {
         return stockRepository.fetchTimeSeriesPublisher(keyword: keyword)
     }

@@ -31,10 +31,14 @@ class StockDetailBottomView: BaseView {
         investInputView.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
         investInputView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
         investInputView.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
+        investInputView.textField.keyboardType = .numberPad
+        investInputView.textField.addDoneButton()
         
         costInputView.topAnchor.constraint(equalTo: investInputView.bottomAnchor, constant: 8).isActive = true
         costInputView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
         costInputView.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
+        costInputView.textField.keyboardType = .numberPad
+        costInputView.textField.addDoneButton()
         
         dateInputView.topAnchor.constraint(equalTo: costInputView.bottomAnchor, constant: 8).isActive = true
         dateInputView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
@@ -44,6 +48,12 @@ class StockDetailBottomView: BaseView {
         slider.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
         slider.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
         slider.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
+    }
+    
+    func configureUI(currentcy: String) {
+        investInputView.valueLabel.text = "(\(currentcy))"
+        costInputView.valueLabel.text = "(\(currentcy))"
+        dateInputView.valueLabel.text = "(\(currentcy))"
     }
     
     class InputView: BaseView { //공통으로 사용할것이기때문에 재활용성을 위해 InputView 생성
