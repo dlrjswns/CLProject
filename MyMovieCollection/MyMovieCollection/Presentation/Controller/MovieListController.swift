@@ -30,6 +30,7 @@ class MovieListController: BaseViewController {
     }
     
     override func configureUI() {
+        title = "Movie Theater"
         view.addSubview(selfView)
         selfView.translatesAutoresizingMaskIntoConstraints = false
         selfView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -60,30 +61,12 @@ class MovieListController: BaseViewController {
         viewModel.$isLoading.sink { [weak self] isLoading in
             self?.selfView.loadingView.isHidden = !isLoading
         }.store(in: &subscriber)
+        
+        viewModel.$isEmpty.sink { [weak self] isEmpty in
+            self?.selfView.emptyView.isHidden = !isEmpty
+        }.store(in: &subscriber)
     }
     
-}
-
-extension MovieListController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentMovieList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MovieListCell.identifier, for: indexPath) as? MovieListCell ?? MovieListCell()
-        let currentMovie: MovieListModel  = currentMovieList[indexPath.row]
-//        print("currentMovie = \(currentMovie)")
-        cell.configureUI(currentMovie: currentMovie)
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return selfView.screenView
-    }
 }
 
 extension MovieListController: UISearchBarDelegate {

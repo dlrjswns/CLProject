@@ -29,6 +29,8 @@
 		70F2849027B6F637009D4F52 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2848F27B6F637009D4F52 /* LoadingView.swift */; };
 		70F2849327B6FB0B009D4F52 /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2849227B6FB0B009D4F52 /* Extension+UIImageView.swift */; };
 		70F2849527B7034C009D4F52 /* ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2849427B7034C009D4F52 /* ScreenView.swift */; };
+		70F2849727B707E3009D4F52 /* MovieListController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2849627B707E3009D4F52 /* MovieListController+UITableView.swift */; };
+		70F2849927B70AFD009D4F52 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2849827B70AFD009D4F52 /* EmptyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		70F2848F27B6F637009D4F52 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		70F2849227B6FB0B009D4F52 /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
 		70F2849427B7034C009D4F52 /* ScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenView.swift; sourceTree = "<group>"; };
+		70F2849627B707E3009D4F52 /* MovieListController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieListController+UITableView.swift"; sourceTree = "<group>"; };
+		70F2849827B70AFD009D4F52 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +203,7 @@
 				70F2848D27B69BB5009D4F52 /* Font.swift */,
 				70F2848F27B6F637009D4F52 /* LoadingView.swift */,
 				70F2849427B7034C009D4F52 /* ScreenView.swift */,
+				70F2849827B70AFD009D4F52 /* EmptyView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				70F2849227B6FB0B009D4F52 /* Extension+UIImageView.swift */,
+				70F2849627B707E3009D4F52 /* MovieListController+UITableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -282,6 +288,7 @@
 			files = (
 				70F2844E27B52501009D4F52 /* CompositionRoot.swift in Sources */,
 				70F2844627B4498F009D4F52 /* MovieListController.swift in Sources */,
+				70F2849927B70AFD009D4F52 /* EmptyView.swift in Sources */,
 				70F2845027B5271C009D4F52 /* MovieListView.swift in Sources */,
 				70F2845E27B535D9009D4F52 /* MovieListViewModel.swift in Sources */,
 				70F2844B27B449EF009D4F52 /* MainCoordinator.swift in Sources */,
@@ -289,6 +296,7 @@
 				70F2849327B6FB0B009D4F52 /* Extension+UIImageView.swift in Sources */,
 				70F2846127B5362D009D4F52 /* MovieListModel.swift in Sources */,
 				70F2844927B449BE009D4F52 /* Coordinator.swift in Sources */,
+				70F2849727B707E3009D4F52 /* MovieListController+UITableView.swift in Sources */,
 				70F2842D27B4465E009D4F52 /* SceneDelegate.swift in Sources */,
 				70F2845B27B533B6009D4F52 /* MovieListUsecase.swift in Sources */,
 				70F2848B27B6996E009D4F52 /* MovieListCell.swift in Sources */,

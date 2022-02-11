@@ -63,5 +63,8 @@ class MovieListCell: UITableViewCell {
         movieUserRatingLabel.text = "⭐️" + currentMovie.userRating
         accessoryType = .disclosureIndicator
         selectionStyle = .none
+        layer.cornerRadius = 30
+        layer.borderWidth = 1
+        clipsToBounds = true
     }
 }
