@@ -47,6 +47,7 @@ class MovieListController: BaseViewController {
     
     func bind() {
         viewModel.$movieListModel.sink { [weak self] movieList in
+//            print("movieList = \(movieList)")
             self?.currentMovieList = movieList
             self?.selfView.tableView.reloadData()
         }.store(in: &subscriber)
@@ -56,7 +57,9 @@ class MovieListController: BaseViewController {
             print("errorMessage = \(errorMessage)")
         }.store(in: &subscriber)
         
-        viewModel.searchQueryMovie(keyword: "starwars")
+        viewModel.$isLoading.sink { [weak self] isLoading in
+            self?.selfView.loadingView.isHidden = !isLoading
+        }.store(in: &subscriber)
     }
     
 }
@@ -69,8 +72,17 @@ extension MovieListController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieListCell.identifier, for: indexPath) as? MovieListCell ?? MovieListCell()
         let currentMovie: MovieListModel  = currentMovieList[indexPath.row]
+//        print("currentMovie = \(currentMovie)")
         cell.configureUI(currentMovie: currentMovie)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return selfView.screenView
     }
 }
 

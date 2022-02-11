@@ -10,6 +10,7 @@ import UIKit
 class MovieListCell: UITableViewCell {
     static let identifier = "MovieListCell"
     
+    let movieImageThumbnail = UIImageView()
     let movieTitleLabel = NormalBoldLabel()
     let moviePubDateLabel = NormalBoldLabel()
     let movieUserRatingLabel = NormalBoldLabel()
@@ -23,29 +24,44 @@ class MovieListCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        if highlighted {
+            alpha = 0.6
+        }else {
+            alpha = 1
+        }
+    }
+    
     func configureUI() {
-        addSubview(movieTitleLabel)
-        movieTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        movieTitleLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        movieTitleLabel.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        movieTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        addSubview(movieImageThumbnail)
+        movieImageThumbnail.translatesAutoresizingMaskIntoConstraints = false
+        movieImageThumbnail.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        movieImageThumbnail.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        movieImageThumbnail.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        movieImageThumbnail.contentMode = .scaleAspectFit
         
         addSubview(moviePubDateLabel)
         moviePubDateLabel.translatesAutoresizingMaskIntoConstraints = false
-        moviePubDateLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        moviePubDateLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        moviePubDateLabel.leftAnchor.constraint(equalTo: movieTitleLabel.rightAnchor, constant: 10).isActive = true
+        moviePubDateLabel.topAnchor.constraint(equalTo: movieImageThumbnail.topAnchor).isActive = true
+        moviePubDateLabel.leftAnchor.constraint(equalTo: movieImageThumbnail.rightAnchor, constant: 10).isActive = true
+        
+        addSubview(movieTitleLabel)
+        movieTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        movieTitleLabel.leftAnchor.constraint(equalTo: moviePubDateLabel.leftAnchor).isActive = true
+        movieTitleLabel.centerYAnchor.constraint(equalTo: movieImageThumbnail.centerYAnchor).isActive = true
         
         addSubview(movieUserRatingLabel)
         movieUserRatingLabel.translatesAutoresizingMaskIntoConstraints = false
-        movieUserRatingLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
         movieUserRatingLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        movieUserRatingLabel.leftAnchor.constraint(equalTo: moviePubDateLabel.rightAnchor, constant: 10).isActive = true
+        movieUserRatingLabel.leftAnchor.constraint(equalTo: movieImageThumbnail.rightAnchor, constant: 10).isActive = true
     }
     
     func configureUI(currentMovie: MovieListModel) {
+        movieImageThumbnail.loadImage(imageUrl: currentMovie.image)
         movieTitleLabel.text = currentMovie.title
         moviePubDateLabel.text = currentMovie.pubDate
-        movieUserRatingLabel.text = currentMovie.userRating
+        movieUserRatingLabel.text = "⭐️" + currentMovie.userRating
+        accessoryType = .disclosureIndicator
+        selectionStyle = .none
     }
 }
