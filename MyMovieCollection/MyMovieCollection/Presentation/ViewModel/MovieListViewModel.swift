@@ -19,14 +19,13 @@ class MovieListViewModel {
     }
     
     func searchQueryMovie(keyword: String) {
-        usecase.fetchMovieListWithCombine(keyword: "starwars").sink { [weak self] completion in
+        usecase.fetchMovieListWithCombine(keyword: keyword).sink { [weak self] completion in
             switch completion {
             case .failure(let error):
                 self?.errorMessage = error.errorMessage
             case .finished: break
             }
         } receiveValue: { [weak self] movieList in
-            print("movieList = \(movieList)")
             self?.movieListModel = self?.usecase.fetchMovieListModel(movies: movieList.items) ?? [MovieListModel]()
         }.store(in: &subscriber)
     }

@@ -80,7 +80,7 @@ class StockRepositoryImpl:StockRepository{
         case .success(let url):
             return session.dataTaskPublisher(for: url)
                         .mapError { _ in
-                        StockError.error("TimeSeries API Error")
+                            StockError.error("TimeSeries API Error")
                         }
                         .receive(on: DispatchQueue.main)
                         .flatMap { [weak self] data in

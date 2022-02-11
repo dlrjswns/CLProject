@@ -24,6 +24,8 @@
 		70F2845B27B533B6009D4F52 /* MovieListUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2845A27B533B6009D4F52 /* MovieListUsecase.swift */; };
 		70F2845E27B535D9009D4F52 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2845D27B535D9009D4F52 /* MovieListViewModel.swift */; };
 		70F2846127B5362D009D4F52 /* MovieListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2846027B5362D009D4F52 /* MovieListModel.swift */; };
+		70F2848B27B6996E009D4F52 /* MovieListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2848A27B6996E009D4F52 /* MovieListCell.swift */; };
+		70F2848E27B69BB5009D4F52 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2848D27B69BB5009D4F52 /* Font.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		70F2845A27B533B6009D4F52 /* MovieListUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListUsecase.swift; sourceTree = "<group>"; };
 		70F2845D27B535D9009D4F52 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		70F2846027B5362D009D4F52 /* MovieListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListModel.swift; sourceTree = "<group>"; };
+		70F2848A27B6996E009D4F52 /* MovieListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCell.swift; sourceTree = "<group>"; };
+		70F2848D27B69BB5009D4F52 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 		70F2842927B4465E009D4F52 /* MyMovieCollection */ = {
 			isa = PBXGroup;
 			children = (
+				70F2848C27B69BA8009D4F52 /* Components */,
 				70F2845F27B53626009D4F52 /* Model */,
 				70F2845927B53393009D4F52 /* Usecase */,
 				70F2845427B52845009D4F52 /* Entitiy */,
@@ -118,6 +123,7 @@
 			children = (
 				70F2844327B44955009D4F52 /* BaseView.swift */,
 				70F2844F27B5271C009D4F52 /* MovieListView.swift */,
+				70F2848A27B6996E009D4F52 /* MovieListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,6 +184,14 @@
 				70F2846027B5362D009D4F52 /* MovieListModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		70F2848C27B69BA8009D4F52 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				70F2848D27B69BB5009D4F52 /* Font.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +273,9 @@
 				70F2844927B449BE009D4F52 /* Coordinator.swift in Sources */,
 				70F2842D27B4465E009D4F52 /* SceneDelegate.swift in Sources */,
 				70F2845B27B533B6009D4F52 /* MovieListUsecase.swift in Sources */,
+				70F2848B27B6996E009D4F52 /* MovieListCell.swift in Sources */,
 				70F2844227B44872009D4F52 /* BaseViewController.swift in Sources */,
+				70F2848E27B69BB5009D4F52 /* Font.swift in Sources */,
 				70F2845827B531E0009D4F52 /* MovieRepository.swift in Sources */,
 				70F2845327B52814009D4F52 /* MovieRepositoryImpl.swift in Sources */,
 				70F2845627B5284B009D4F52 /* MovieList.swift in Sources */,

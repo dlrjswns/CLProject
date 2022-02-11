@@ -24,7 +24,7 @@ class MovieListUsecase {
         var movieListModels: [MovieListModel] = []
         if let movies = movies {
             _ = movies.map { movie in
-                let movie = MovieListModel(title: movie.title, image: movie.image, subtitle: movie.subtitle, pubDate: movie.pubDate, director: movie.director, actor: movie.actor)
+                let movie = MovieListModel(title: movie.title, image: movie.image, userRating: movie.userRating, pubDate: movie.pubDate, director: movie.director, actor: movie.actor)
                 movieListModels.append(movie)
             }
         }

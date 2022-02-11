@@ -40,7 +40,7 @@ struct Movie: Decodable {
 }
 
 
-//https://openapi.naver.com/v1/search/movie.json
+
 
 
 

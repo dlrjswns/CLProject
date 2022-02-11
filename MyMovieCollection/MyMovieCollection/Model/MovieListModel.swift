@@ -10,7 +10,7 @@ import Foundation
 struct MovieListModel {
     let title: String
     let image: String
-    let subtitle: String
+    let userRating: String
     let pubDate: String
     let director: String
     let actor: String
