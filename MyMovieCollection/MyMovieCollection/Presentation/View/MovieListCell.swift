@@ -11,7 +11,7 @@ class MovieListCell: UITableViewCell {
     static let identifier = "MovieListCell"
     
     let movieImageThumbnail = UIImageView()
-    let movieTitleLabel = NormalBoldLabel()
+    let movieTitleLabel = UILabel()
     let moviePubDateLabel = NormalBoldLabel()
     let movieUserRatingLabel = NormalBoldLabel()
     
@@ -49,6 +49,8 @@ class MovieListCell: UITableViewCell {
         movieTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         movieTitleLabel.leftAnchor.constraint(equalTo: moviePubDateLabel.leftAnchor).isActive = true
         movieTitleLabel.centerYAnchor.constraint(equalTo: movieImageThumbnail.centerYAnchor).isActive = true
+        movieTitleLabel.lineBreakMode = .byTruncatingTail
+        movieTitleLabel.widthAnchor.constraint(equalToConstant: 170).isActive = true
         
         addSubview(movieUserRatingLabel)
         movieUserRatingLabel.translatesAutoresizingMaskIntoConstraints = false

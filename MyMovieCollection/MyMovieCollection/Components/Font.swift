@@ -11,9 +11,9 @@ class NormalBoldLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         font = UIFont.systemFont(ofSize: 15, weight: .bold)
-        lineBreakMode = .byTruncatingTail
-        translatesAutoresizingMaskIntoConstraints = false
-        widthAnchor.constraint(equalToConstant: 170).isActive = true
+//        lineBreakMode = .byTruncatingTail
+//        translatesAutoresizingMaskIntoConstraints = false
+//        widthAnchor.constraint(equalToConstant: 170).isActive = true
     }
     
     required init?(coder: NSCoder) {

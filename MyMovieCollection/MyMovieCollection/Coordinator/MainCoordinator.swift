@@ -14,6 +14,7 @@ class MainCoordinator: FactoryModule {
     
     struct Dependency {
         let movieListControllerFactory: () -> MovieListController
+        let movieDetailControllerFactory: (MovieListModel) -> MovieDetailController
     }
 //    let rootViewController: MovieListController
 //    let movieListControllerFactory: () -> MovieListController
@@ -24,15 +25,12 @@ class MainCoordinator: FactoryModule {
 //    }
 //
 //    let movieListController: MovieListController
-    var movieListControllerFactory: () -> MovieListController
+    let movieListControllerFactory: () -> MovieListController
+    let movieDetailControllerFactory: (MovieListModel) -> MovieDetailController
     
     required init(dependency: Dependency, payload: ()) {
         movieListControllerFactory = dependency.movieListControllerFactory
-    }
-    
-    func cellTapped(movieListModel: MovieListModel) {
-        let vc = MovieDetailController()
-        navigationController?.pushViewController(vc, animated: true)
+        movieDetailControllerFactory = dependency.movieDetailControllerFactory
     }
     
     func start() {
@@ -42,5 +40,9 @@ class MainCoordinator: FactoryModule {
         navigationController?.setViewControllers([movieListController], animated: true)
     }
     
-    
+    func cellTapped(movieListModel: MovieListModel) {
+        let vc = movieDetailControllerFactory(movieListModel)
+//        vc.currentMovieListModel = movieListModel
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
