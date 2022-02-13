@@ -58,7 +58,7 @@ class MovieListCell: UITableViewCell {
     
     func configureUI(currentMovie: MovieListModel) {
         movieImageThumbnail.loadImage(imageUrl: currentMovie.image)
-        movieTitleLabel.text = currentMovie.title
+        movieTitleLabel.text = currentMovie.title.removeBandSlashB()
         moviePubDateLabel.text = currentMovie.pubDate
         movieUserRatingLabel.text = "⭐️" + currentMovie.userRating
         accessoryType = .disclosureIndicator

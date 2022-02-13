@@ -1,0 +1,18 @@
+PODS:
+  - Pure (1.1.4):
+    - Pure/Core (= 1.1.4)
+  - Pure/Core (1.1.4)
+
+DEPENDENCIES:
+  - Pure
+
+SPEC REPOS:
+  trunk:
+    - Pure
+
+SPEC CHECKSUMS:
+  Pure: 82d6f4438672a41d21ea6fadd126e1466db001c5
+
+PODFILE CHECKSUM: 37125cd5826167b3f66178310378a8bc4af888b9
+
+COCOAPODS: 1.11.2

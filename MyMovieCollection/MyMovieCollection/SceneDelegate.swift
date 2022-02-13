@@ -19,9 +19,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         let coordinator = AppDependency.resolve().mainCoordinator
         window = UIWindow(windowScene: scene)
-        if let window = window {
-            coordinator.start(window: window, rootViewController: MovieListController(viewModel: .init(usecase: .init(repository: MovieRepositoryImpl()))))
-        }
+        let nvc = UINavigationController()
+        coordinator.navigationController = nvc
+        coordinator.start()
+        window?.rootViewController = nvc
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

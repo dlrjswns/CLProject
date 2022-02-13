@@ -12,6 +12,7 @@ class MovieListController: BaseViewController {
     
     let selfView: MovieListView = .init()
     private let viewModel: MovieListViewModel
+    var coordinator: MainCoordinator?
     
     var currentMovieList: [MovieListModel] = []
     

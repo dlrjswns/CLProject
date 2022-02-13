@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import Pure
 
-class MainCoordinator {
+class MainCoordinator: FactoryModule {
+    
     var navigationController: UINavigationController?
     
+    struct Dependency {
+        let movieListControllerFactory: () -> MovieListController
+    }
 //    let rootViewController: MovieListController
 //    let movieListControllerFactory: () -> MovieListController
 //
@@ -18,11 +23,23 @@ class MainCoordinator {
 //        self.rootViewController = movieListControllerFactory()
 //    }
 //
-    func start(window: UIWindow, rootViewController: MovieListController) {
+//    let movieListController: MovieListController
+    var movieListControllerFactory: () -> MovieListController
+    
+    required init(dependency: Dependency, payload: ()) {
+        movieListControllerFactory = dependency.movieListControllerFactory
+    }
+    
+    func cellTapped(movieListModel: MovieListModel) {
+        let vc = MovieDetailController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func start() {
 //        navigationController?.setViewControllers([rootViewController], animated: true)
-        let rootViewController = UINavigationController(rootViewController: rootViewController)
-        window.rootViewController = rootViewController
-        window.makeKeyAndVisible()
+        let movieListController = movieListControllerFactory()
+        movieListController.coordinator = self
+        navigationController?.setViewControllers([movieListController], animated: true)
     }
     
     

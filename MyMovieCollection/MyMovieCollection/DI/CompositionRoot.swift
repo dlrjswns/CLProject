@@ -14,7 +14,12 @@ struct AppDependency {
 extension AppDependency {
     static func resolve() -> AppDependency {
         
-        let mainCoordinator: MainCoordinator = .init()
+        let movieRepository: MovieReqository = MovieRepositoryImpl()
+        let movieListControllerFactory: () -> MovieListController = {
+            return .init(viewModel: .init(usecase: .init(repository: movieRepository)))
+        }
+        
+        let mainCoordinator: MainCoordinator = .init(dependency: .init(movieListControllerFactory: movieListControllerFactory))
         return .init(mainCoordinator: mainCoordinator)
     }
 }

@@ -34,4 +34,9 @@ extension MovieListController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return selfView.screenView
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let movieListModel: MovieListModel = currentMovieList[indexPath.row]
+        coordinator?.cellTapped(movieListModel: movieListModel)
+    }
 }
