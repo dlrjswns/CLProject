@@ -32,6 +32,8 @@ class MovieListController: BaseViewController {
     
     override func configureUI() {
         title = "Movie Theater"
+        navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
         view.addSubview(selfView)
         selfView.translatesAutoresizingMaskIntoConstraints = false
         selfView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true

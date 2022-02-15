@@ -41,6 +41,7 @@ class MainCoordinator: FactoryModule {
     }
     
     func cellTapped(movieListModel: MovieListModel) {
+        print("cellTapped")
         let vc = movieDetailControllerFactory(movieListModel)
 //        vc.currentMovieListModel = movieListModel
         navigationController?.pushViewController(vc, animated: true)

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -43,10 +43,10 @@
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		89E327365BE185F35A2A122E61FEA0CA /* Configurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configurator.swift; path = Sources/Pure/Configurator.swift; sourceTree = "<group>"; };
 		91701E5875E25129E807F4A2E652D832 /* Pods-MyMovieCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyMovieCollection.release.xcconfig"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A21DDFEF2E24649481C657FF8980737F /* Pure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pure.debug.xcconfig; sourceTree = "<group>"; };
 		B79065C81F4EDB568EB2BA1EEF174F24 /* Pods-MyMovieCollection-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MyMovieCollection-frameworks.sh"; sourceTree = "<group>"; };
-		BB2A422F2102FD71393081E0E61DEBBD /* Pure */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pure; path = Pure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB2A422F2102FD71393081E0E61DEBBD /* Pure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE432E39C9F7ACD7C6E09DFEB5D6006 /* Pods-MyMovieCollection-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MyMovieCollection-umbrella.h"; sourceTree = "<group>"; };
 		D8EA4591BE404909372D1AC2DB2AFEB0 /* Pure-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pure-Info.plist"; sourceTree = "<group>"; };
 		E367BD09DF333E45FBAAB5DDC36E3807 /* Pure-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pure-prefix.pch"; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				FA5EE028F9495F1AD4C40362BF3A4B0D /* Pods-MyMovieCollection */,
-				BB2A422F2102FD71393081E0E61DEBBD /* Pure */,
+				BB2A422F2102FD71393081E0E61DEBBD /* Pure.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -180,7 +180,6 @@
 				EFAEA5D1BE82B373C6EA11EA6724FC3B /* Core */,
 				EBB11515018F4790A6F1CA59A701744E /* Support Files */,
 			);
-			name = Pure;
 			path = Pure;
 			sourceTree = "<group>";
 		};
@@ -221,7 +220,7 @@
 			);
 			name = Pure;
 			productName = Pure;
-			productReference = BB2A422F2102FD71393081E0E61DEBBD /* Pure */;
+			productReference = BB2A422F2102FD71393081E0E61DEBBD /* Pure.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		DD2DBE2CE43D3993068A392C61E8DAB2 /* Pods-MyMovieCollection */ = {
@@ -250,10 +249,10 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1250;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -337,7 +336,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Pure/Pure-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Pure/Pure-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -409,7 +408,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Pure/Pure-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Pure/Pure-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

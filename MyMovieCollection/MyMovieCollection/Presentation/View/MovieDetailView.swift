@@ -22,6 +22,12 @@ class MovieDetailView: BaseView {
         super.init(frame: frame)
         backgroundColor = .systemBackground
         
+        //dummy
+//        movieNameLabel.text = "dfdf"
+//        pubDateLabel.text = "dfsadf"
+//        directorLabel.text = "afaff"
+//        userRatingLabel.text = "fdfdff"
+        
         addSubview(movieThumbnailImageView)
         addSubview(movieNameLabelType)
         addSubview(movieNameLabel)
@@ -40,36 +46,52 @@ class MovieDetailView: BaseView {
         movieThumbnailImageView.contentMode = .scaleAspectFit
         
         movieNameLabelType.translatesAutoresizingMaskIntoConstraints = false
-        movieNameLabelType.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        movieNameLabelType.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
         movieNameLabelType.topAnchor.constraint(equalTo: movieThumbnailImageView.bottomAnchor).isActive = true
         movieNameLabelType.text = "Movie name:"
         
         movieNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        movieNameLabel.centerYAnchor.constraint(equalTo: movieNameLabelType.centerYAnchor).isActive = true
+        movieNameLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
         
         pubDateLabelType.translatesAutoresizingMaskIntoConstraints = false
-        pubDateLabelType.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        pubDateLabelType.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
         pubDateLabelType.topAnchor.constraint(equalTo: movieNameLabelType.bottomAnchor, constant: 10).isActive = true
         pubDateLabelType.text = "Pubdate:"
         
         pubDateLabel.translatesAutoresizingMaskIntoConstraints = false
+        pubDateLabel.centerYAnchor.constraint(equalTo: pubDateLabelType.centerYAnchor).isActive = true
+        pubDateLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
         
         directorLabelType.translatesAutoresizingMaskIntoConstraints = false
-        directorLabelType.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        directorLabelType.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
         directorLabelType.topAnchor.constraint(equalTo: pubDateLabelType.bottomAnchor, constant: 10).isActive = true
         directorLabelType.text = "Director name:"
         
         directorLabel.translatesAutoresizingMaskIntoConstraints = false
+        directorLabel.centerYAnchor.constraint(equalTo: directorLabelType.centerYAnchor).isActive = true
+        directorLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
         
         userRatingLabelType.translatesAutoresizingMaskIntoConstraints = false
         userRatingLabelType.translatesAutoresizingMaskIntoConstraints = false
-        userRatingLabelType.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        userRatingLabelType.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
         userRatingLabelType.topAnchor.constraint(equalTo: directorLabelType.bottomAnchor, constant: 10).isActive = true
         userRatingLabelType.text = "UserRating:"
         
         userRatingLabel.translatesAutoresizingMaskIntoConstraints = false
+        userRatingLabel.centerYAnchor.constraint(equalTo: userRatingLabelType.centerYAnchor).isActive = true
+        userRatingLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configureUI(currentMovieListModel: MovieListModel) {
+        movieThumbnailImageView.loadImage(imageUrl: currentMovieListModel.image)
+        movieNameLabel.text = currentMovieListModel.title.removeBandSlashB()
+        pubDateLabel.text = currentMovieListModel.pubDate
+        directorLabel.text = currentMovieListModel.director.removeVerticalLetter()
+        userRatingLabel.text = "⭐️" + currentMovieListModel.userRating
     }
 }

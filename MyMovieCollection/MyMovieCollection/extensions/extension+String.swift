@@ -12,4 +12,9 @@ extension String {
         let removeBString = self.components(separatedBy: "<b>").joined()
         return removeBString.components(separatedBy: "</b>").joined()
     }
+    
+    func removeVerticalLetter() -> String {
+        let removeVerticalLetter = self.components(separatedBy: "|").joined()
+        return removeVerticalLetter
+    }
 }

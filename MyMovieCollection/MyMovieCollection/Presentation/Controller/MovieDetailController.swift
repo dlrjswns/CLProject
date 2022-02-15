@@ -39,6 +39,6 @@ class MovieDetailController: BaseViewController, FactoryModule {
         selfView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         selfView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        selfView.movieThumbnailImageView.loadImage(imageUrl: currentMovieListModel.image)
+        selfView.configureUI(currentMovieListModel: currentMovieListModel)
     }
 }
