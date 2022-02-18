@@ -20,6 +20,7 @@ extension UITextField {
         toolbar.items = items
         toolbar.sizeToFit()
         inputAccessoryView = toolbar
+//        inputView = toolbar
     }
     
     @objc func dismissKeyboard() {

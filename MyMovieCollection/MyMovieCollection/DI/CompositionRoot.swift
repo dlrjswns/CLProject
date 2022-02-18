@@ -24,6 +24,7 @@ extension AppDependency {
         }
         
         let mainCoordinator: MainCoordinator = .init(dependency: .init(movieListControllerFactory: movieListControllerFactory, movieDetailControllerFactory: movieDetailControllerFactory))
+        
         return .init(mainCoordinator: mainCoordinator)
     }
 }
