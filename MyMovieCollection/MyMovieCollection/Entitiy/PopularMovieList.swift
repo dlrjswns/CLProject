@@ -8,19 +8,12 @@
 import Foundation
 
 struct PopularMovieList: Decodable {
-    let page: Int?
-    let popularMovieList: [PopularMovie]?
+    let page: Int
+    let popularMovieList: [PopularMovie]
     
     enum CodingKeys: String, CodingKey {
         case page
         case popularMovieList = "results"
-    }
-    
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        
-        self.page = try? values.decode(Int.self, forKey: .page)
-        self.popularMovieList = try? values.decode([PopularMovie].self, forKey: .popularMovieList)
     }
 }
 

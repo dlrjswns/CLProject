@@ -7,9 +7,11 @@
 
 import UIKit
 import Combine
+import RxSwift
 
 class BaseViewController: UIViewController {
     var subscriber: Set<AnyCancellable> = .init()
+    var disposeBag: DisposeBag = .init()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)

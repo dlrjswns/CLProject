@@ -5,8 +5,9 @@
 //  Created by 이건준 on 2022/02/10.
 //
 
-import Foundation
+
 import Combine
+import RxSwift
 
 protocol MovieReqository {
     func fetchMovieListWithCombine(keyword: String) -> AnyPublisher<MovieList, MovieError>
