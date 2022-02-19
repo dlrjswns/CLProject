@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxCocoa
 
 class MoviePopularController: BaseViewController {
     
@@ -24,16 +25,11 @@ class MoviePopularController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModel.moviePopularModelRelay.subscribe(onNext: { test in
-            print("test = \(test)")
-        }).disposed(by: disposeBag)
-        
+        bindUI()
     }
     
     override func configureUI() {
         title = "Popular Movie"
-        view.backgroundColor = .systemRed
         
         view.addSubview(selfView)
         selfView.translatesAutoresizingMaskIntoConstraints = false
@@ -41,5 +37,18 @@ class MoviePopularController: BaseViewController {
         selfView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         selfView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         selfView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        selfView.collectionView.register(MoviePopularCell.self, forCellWithReuseIdentifier: MoviePopularCell.identifier)
+        selfView.collectionView.delegate = self
+    }
+    
+    func bindUI() {
+        viewModel.moviePopularModelRelay.bind(to: selfView.collectionView.rx.items(cellIdentifier: MoviePopularCell.identifier, cellType: MoviePopularCell.self)) { index, item, cell in
+            cell.configureUI(item: item)
+        }.disposed(by: disposeBag)
+        
+        viewModel.errorMessage.subscribe(onNext: { error in
+            guard let error = error else { return }
+            print("error = \(error.errorMessage ?? "No defined error")")
+        }).disposed(by: disposeBag)
     }
 }

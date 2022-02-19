@@ -26,7 +26,7 @@ class MoviePopularViewModel {
                 self?.errorMessage.onNext(error)
             case .success(let popularMovieEntity):
                 let moviePopularModels = usecase.fetchMoviePopularModel(popularMovies: popularMovieEntity.popularMovieList)
-                print("popularModels = \(moviePopularModels)")
+//                print("popularModels = \(moviePopularModels)")
                 self?.moviePopularModelRelay.accept(moviePopularModels)
             }
         }).disposed(by: disposebag)

@@ -11,7 +11,7 @@ import Pure
 class MainCoordinator: FactoryModule {
     
     var navigationController: UINavigationController?
-    var tabBarController: UITabBarController?
+    var tabBarController: MainTabBarController?
     
     struct Dependency {
 //        let mainTabBarControllerFactory: MainTabBarController

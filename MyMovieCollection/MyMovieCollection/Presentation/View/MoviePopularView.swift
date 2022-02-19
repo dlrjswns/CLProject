@@ -9,9 +9,17 @@ import UIKit
 
 class MoviePopularView: BaseView {
     
-    let collectionView: UICollectionView = .init(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     
     override func configureUI() {
-        backgroundColor = .systemRed
+        backgroundColor = .systemBackground
+        
+        addSubview(collectionView)
+        collectionView.backgroundColor = .systemBackground
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
+        collectionView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        collectionView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
 }

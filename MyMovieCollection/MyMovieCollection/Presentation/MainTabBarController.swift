@@ -31,12 +31,7 @@ class MainTabBarController: UITabBarController {
     }
     
     func configureUI() {
-        print("Dfsdfsfd")
-        if let items = tabBarController?.tabBar.items {
-            print("Dfd")
-            for index in 0..<items.count {
-                items[index].badgeValue = "dfd"
-            }
-        }
+        tabBar.tintColor = UIColor.systemPink
+        tabBar.unselectedItemTintColor = UIColor.systemBlue
     }
 }
