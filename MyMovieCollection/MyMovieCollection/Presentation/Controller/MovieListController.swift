@@ -28,6 +28,7 @@ class MovieListController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
+//        dismissKeyboardWhenTappedAround(selfView: selfView.emptyView)
     }
     
     override func configureUI() {

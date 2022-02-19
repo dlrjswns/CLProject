@@ -17,6 +17,7 @@ class MainCoordinator: FactoryModule {
 //        let mainTabBarControllerFactory: MainTabBarController
         let movieListControllerFactory: () -> MovieListController
         let movieDetailControllerFactory: (MovieListModel) -> MovieDetailController
+        let moviePopularControllerFactory: () -> MoviePopularController
     }
 //    let rootViewController: MovieListController
 //    let movieListControllerFactory: () -> MovieListController
@@ -30,21 +31,22 @@ class MainCoordinator: FactoryModule {
 //    let mainTabBarControllerFactory: MainTabBarController
     let movieListControllerFactory: () -> MovieListController
     let movieDetailControllerFactory: (MovieListModel) -> MovieDetailController
+    let moviePopularControllerFactory: () -> MoviePopularController
     let rootViewController: MovieListController
     
     required init(dependency: Dependency, payload: ()) {
 //        mainTabBarControllerFactory = dependency.mainTabBarControllerFactory
         movieListControllerFactory = dependency.movieListControllerFactory
         movieDetailControllerFactory = dependency.movieDetailControllerFactory
+        moviePopularControllerFactory = dependency.moviePopularControllerFactory
         rootViewController = movieListControllerFactory()
     }
     
     func start() {
-//        navigationController?.setViewControllers([rootViewController], animated: true)
-//        let movieListController = movieListControllerFactory()
+        let moviePopularController = moviePopularControllerFactory()
         rootViewController.coordinator = self
         navigationController?.setViewControllers([rootViewController], animated: true)
-        tabBarController?.setViewControllers([navigationController!], animated: true)
+        tabBarController?.setViewControllers([navigationController!, moviePopularController], animated: true)
     }
     
     func cellTapped(movieListModel: MovieListModel) {

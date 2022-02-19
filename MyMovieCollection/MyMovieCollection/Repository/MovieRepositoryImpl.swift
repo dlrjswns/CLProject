@@ -7,6 +7,8 @@
 
 import Combine
 import Foundation
+import RxSwift
+import RxCocoa
 
 class MovieRepositoryImpl: MovieReqository {
     
@@ -14,6 +16,23 @@ class MovieRepositoryImpl: MovieReqository {
     
     init(session: URLSession = .shared) {
         self.session = session
+    }
+    
+    func fetchMoviePopularWithRxSwift() -> Observable<Result<PopularMovieList, MovieError>>{
+        guard let url = getMoviePopularURLComponents().url else {
+            let error = MovieError.urlError
+            return .just(.failure(error))
+        }
+        
+        return session.rx.data(request: URLRequest(url: url)).map { data in
+            do {
+                let popularMovieList = try JSONDecoder().decode(PopularMovieList.self, from: data)
+                return .success(popularMovieList)
+            }catch {
+                let error = MovieError.decodeError
+                return .failure(error)
+            }
+        }
     }
     
     func fetchMovieListWithCombine(keyword: String) -> AnyPublisher<MovieList, MovieError> {
@@ -42,6 +61,23 @@ extension MovieRepositoryImpl {
         static let path = "/v1/search/movie.json"
         static let clientID = "o6h5Wlhgb309uisyslEX"
         static let clientSecret = "c1WvQUksjQ"
+    }
+    
+    struct MyMovieDB {
+        static let scheme = "https"
+        static let host = "api.themoviedb.org"
+        static let path = "/3/movie/popular"
+    }
+    
+    func getMoviePopularURLComponents() -> URLComponents {
+        var components = URLComponents()
+        components.scheme = MyMovieDB.scheme
+        components.host = MyMovieDB.host
+        components.path = MyMovieDB.path
+        components.queryItems = [
+            URLQueryItem(name: "api_key", value: "5dfb363e92ea551484beb33ec87c3cb2")
+        ]
+        return components
     }
     
     func getMovieListURLRequest(keyword: String) -> Result<URLRequest, MovieError> {

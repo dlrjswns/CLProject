@@ -18,8 +18,7 @@ class MovieDetailView: BaseView {
     let userRatingLabelType = NormalBoldLabel()
     let userRatingLabel = NormalBoldLabel()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override func configureUI() {
         backgroundColor = .systemBackground
         
         //dummy
@@ -81,10 +80,6 @@ class MovieDetailView: BaseView {
         userRatingLabel.translatesAutoresizingMaskIntoConstraints = false
         userRatingLabel.centerYAnchor.constraint(equalTo: userRatingLabelType.centerYAnchor).isActive = true
         userRatingLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     func configureUI(currentMovieListModel: MovieListModel) {

@@ -2,17 +2,31 @@ PODS:
   - Pure (1.1.4):
     - Pure/Core (= 1.1.4)
   - Pure/Core (1.1.4)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
 
 DEPENDENCIES:
   - Pure
+  - RxCocoa (= 6.5.0)
+  - RxSwift (= 6.5.0)
 
 SPEC REPOS:
   trunk:
     - Pure
+    - RxCocoa
+    - RxRelay
+    - RxSwift
 
 SPEC CHECKSUMS:
   Pure: 82d6f4438672a41d21ea6fadd126e1466db001c5
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
 
-PODFILE CHECKSUM: 37125cd5826167b3f66178310378a8bc4af888b9
+PODFILE CHECKSUM: 8c6adb257a952167fe8ad09001cabba1848b230b
 
 COCOAPODS: 1.11.2

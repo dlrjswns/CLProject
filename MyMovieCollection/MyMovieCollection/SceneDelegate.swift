@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let coordinator = AppDependency.resolve().mainCoordinator
         window = UIWindow(windowScene: scene)
         let nvc = UINavigationController()
-        let tabBarController = UITabBarController()
+        let tabBarController = MainTabBarController()
         coordinator.navigationController = nvc
         coordinator.tabBarController = tabBarController
         coordinator.start()

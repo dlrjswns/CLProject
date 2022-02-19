@@ -10,6 +10,7 @@ import Combine
 
 protocol MovieReqository {
     func fetchMovieListWithCombine(keyword: String) -> AnyPublisher<MovieList, MovieError>
+    func fetchMoviePopularWithRxSwift() -> Observable<Result<PopularMovieList, MovieError>>
 }
 
 enum MovieError: Error {

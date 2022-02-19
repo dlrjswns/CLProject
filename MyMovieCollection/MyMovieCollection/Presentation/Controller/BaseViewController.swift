@@ -28,5 +28,14 @@ class BaseViewController: UIViewController {
     func configureUI() {
         view.backgroundColor = .systemBackground
     }
+    
+//    func dismissKeyboardWhenTappedAround(selfView: UIView) {
+//        let tap = UITapGestureRecognizer(target: selfView, action: #selector(UIView.endEditing(_:)))
+//        view.addGestureRecognizer(tap)
+//    }
+//    
+//    @objc func dismissKeyboard() {
+//
+//    }
 }
 
