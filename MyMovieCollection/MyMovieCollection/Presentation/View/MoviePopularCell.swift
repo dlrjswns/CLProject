@@ -12,6 +12,7 @@ class MoviePopularCell: UICollectionViewCell {
     static let identifier = "MoviePopularCell"
     
     let movieImageView = UIImageView()
+    var cellModel: MoviePopularModel?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,6 +33,7 @@ class MoviePopularCell: UICollectionViewCell {
     }
     
     func configureUI(item: MoviePopularModel) {
+        cellModel = item
         movieImageView.contentMode = .scaleAspectFill
         movieImageView.loadImage(imageUrl: item.posterPath)
     }

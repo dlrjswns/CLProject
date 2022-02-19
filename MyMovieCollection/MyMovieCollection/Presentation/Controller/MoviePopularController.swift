@@ -12,6 +12,7 @@ class MoviePopularController: BaseViewController {
     
     private let viewModel: MoviePopularViewModel
     
+    var coordinator: MainCoordinator?
     let selfView: MoviePopularView = .init()
     
     init(viewModel: MoviePopularViewModel) {
@@ -26,6 +27,7 @@ class MoviePopularController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindUI()
+        
     }
     
     override func configureUI() {

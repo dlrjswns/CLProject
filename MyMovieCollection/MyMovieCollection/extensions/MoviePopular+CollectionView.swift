@@ -9,7 +9,9 @@ import UIKit
 
 extension MoviePopularController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("tapped")
+        let cell = collectionView.cellForItem(at: indexPath) as? MoviePopularCell
+        guard let cellModel = cell?.cellModel else { return }
+        coordinator?.cellTapped(moviePopularModel: cellModel)
     }
 }
 

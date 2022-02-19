@@ -31,7 +31,7 @@ class MainTabBarController: UITabBarController {
     }
     
     func configureUI() {
-        tabBar.tintColor = UIColor.systemPink
-        tabBar.unselectedItemTintColor = UIColor.systemBlue
+        tabBar.tintColor = UIColor.darkGray
+        tabBar.unselectedItemTintColor = UIColor.lightGray
     }
 }

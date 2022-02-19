@@ -27,7 +27,12 @@ extension AppDependency {
             return .init(viewModel: .init(usecase: .init(repository: movieRepository)))
         }
         
-        let mainCoordinator: MainCoordinator = .init(dependency: .init(movieListControllerFactory: movieListControllerFactory, movieDetailControllerFactory: movieDetailControllerFactory, moviePopularControllerFactory: moviePopularControllerFactory))
+        let movieInforControllerFactory: (MoviePopularModel) -> MovieInforController = { moviePopularModel in
+            let movieInforController = MovieInforController(dependency: .init(moviePopularModel: moviePopularModel))
+            return movieInforController
+        }
+        
+        let mainCoordinator: MainCoordinator = .init(dependency: .init(movieListControllerFactory: movieListControllerFactory, movieDetailControllerFactory: movieDetailControllerFactory, moviePopularControllerFactory: moviePopularControllerFactory, movieInforControllerFactory: movieInforControllerFactory))
         
         return .init(mainCoordinator: mainCoordinator)
     }
