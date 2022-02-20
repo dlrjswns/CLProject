@@ -15,7 +15,15 @@ class MovieInforView: BaseView {
     let releaseDateLabel = NormalBoldLabel()
     let voteAverageLabel = NormalBoldLabel()
     let movieOverviewLabel = NormalBoldLabel()
+    let moreButton: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setTitle("More...", for: .normal)
+        btn.tintColor = .systemGray
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        return btn
+    }()
     
+    //MARK: -Configure
     override func configureUI() {
         //dummy data
 //        movieThumbnailView.image = UIImage(systemName: "heart.fill")
@@ -61,7 +69,13 @@ class MovieInforView: BaseView {
         movieOverviewLabel.topAnchor.constraint(equalTo: voteAverageLabel.bottomAnchor).isActive = true
         movieOverviewLabel.leftAnchor.constraint(equalTo: scrollView.leftAnchor).isActive = true
         movieOverviewLabel.rightAnchor.constraint(equalTo: scrollView.rightAnchor).isActive = true
-        movieOverviewLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+//        movieOverviewLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        
+        scrollView.addSubview(moreButton)
+        moreButton.translatesAutoresizingMaskIntoConstraints = false
+        moreButton.topAnchor.constraint(equalTo: movieOverviewLabel.bottomAnchor).isActive = true
+        moreButton.centerXAnchor.constraint(equalTo: movieOverviewLabel.centerXAnchor).isActive = true
+        moreButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
     }
     
     func configureUI(moviePopularModel: MoviePopularModel) {
@@ -73,8 +87,7 @@ class MovieInforView: BaseView {
         voteAverageLabel.text = "⭐️\(moviePopularModel.voteAverage)"
         movieOverviewLabel.text = moviePopularModel.overview
         movieOverviewLabel.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
-        movieOverviewLabel.numberOfLines = 5
+        movieOverviewLabel.numberOfLines = 3
 //        movieOverviewLabel.numberOfLines = .max  -> 이 코드를 더보기 버튼을 누르면 해준다던지 이런식으로 UX에 대한 추가를 해주면 좋을듯
     }
-    
 }

@@ -25,6 +25,7 @@ class MovieInforController: BaseViewController, FactoryModule {
     
     let selfView = MovieInforView()
     let moviePopularModel: MoviePopularModel // VC에 뿌리기위한 Model
+    var isExpandable: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,17 @@ class MovieInforController: BaseViewController, FactoryModule {
         selfView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
         selfView.configureUI(moviePopularModel: moviePopularModel)
+        
+        selfView.moreButton.addTarget(self, action: #selector(moreButtonTapped), for: .touchUpInside)
+    }
+    
+    //MARK: -Objc
+    @objc func moreButtonTapped(_ sender: UIButton) {
+        if !isExpandable {
+            selfView.movieOverviewLabel.numberOfLines = .max
+            sender.isHidden = !isExpandable
+            isExpandable = true
+        }
     }
 }
 
