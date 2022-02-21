@@ -24,7 +24,7 @@ extension UIImageView {
             URLSession.shared.dataTask(with: imageUrl) { data, response, error in
                 if let _ = error {
                     DispatchQueue.main.async { [weak self] in
-                        self?.image = UIImage()
+                        self?.image = UIImage(named: "blankImage.png")?.withRenderingMode(.alwaysOriginal)
                     }
                 }
                 

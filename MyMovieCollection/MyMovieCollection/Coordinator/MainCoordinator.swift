@@ -8,8 +8,9 @@
 import UIKit
 import Pure
 
-class MainCoordinator: FactoryModule {
-    
+class MainCoordinator: Coordinator, FactoryModule {
+    typealias T = Model
+
     var navigationController: UINavigationController?
     var tabBarController: MainTabBarController?
     
@@ -54,11 +55,11 @@ class MainCoordinator: FactoryModule {
         tabBarController?.setViewControllers([navigationController!, moviePopularController], animated: true)
         if let items = tabBarController?.tabBar.items {
             items[0].title = "Movie Theater"
-            items[0].image = resizeImage(image: UIImage(named: "search.png")!, targetSize: CGSize(width: 35, height: 35))
-            items[0].selectedImage = resizeImage(image: UIImage(named: "searchFill.png")!, targetSize: CGSize(width: 35, height: 35))
+            items[0].image = resizeImage(image: UIImage(named: "search.png")!, targetSize: CGSize(width: 30, height: 30))
+            items[0].selectedImage = resizeImage(image: UIImage(named: "searchFill.png")!, targetSize: CGSize(width: 30, height: 30))
             items[1].title = "Popular Movie"
-            items[1].image = resizeImage(image: UIImage(named: "popularity.png")!, targetSize: CGSize(width: 35, height: 35))
-            items[1].selectedImage = resizeImage(image: UIImage(named: "popularityFill.png")!, targetSize: CGSize(width: 35, height: 35))
+            items[1].image = resizeImage(image: UIImage(named: "popularity.png")!, targetSize: CGSize(width: 30, height: 30))
+            items[1].selectedImage = resizeImage(image: UIImage(named: "popularityFill.png")!, targetSize: CGSize(width: 30, height: 30))
         }
     }
     
@@ -88,16 +89,26 @@ class MainCoordinator: FactoryModule {
         return newImage!
     }
     
-    func cellTapped(movieListModel: MovieListModel) {
-        print("cellTapped")
-        let vc = movieDetailControllerFactory(movieListModel)
-        
-//        vc.currentMovieListModel = movieListModel
-        navigationController?.pushViewController(vc, animated: true)
+    func cellTapped(with model: T) {
+        if model is MovieListModel {
+            let vc = movieDetailControllerFactory(model as! MovieListModel)
+            navigationController?.pushViewController(vc, animated: true)
+        }else if model is MoviePopularModel {
+            let movieInforController = movieInforControllerFactory(model as! MoviePopularModel)
+            navigationController?.present(movieInforController, animated: true, completion: nil)
+        }
     }
     
-    func cellTapped(moviePopularModel: MoviePopularModel) {
-        let movieInforController = movieInforControllerFactory(moviePopularModel)
-        navigationController?.present(movieInforController, animated: true, completion: nil)
-    }
+//    func cellTapped(movieListModel: MovieListModel) {
+//        print("cellTapped")
+//        let vc = movieDetailControllerFactory(movieListModel)
+//
+////        vc.currentMovieListModel = movieListModel
+//        navigationController?.pushViewController(vc, animated: true)
+//    }
+//
+//    func cellTapped(moviePopularModel: MoviePopularModel) {
+//        let movieInforController = movieInforControllerFactory(moviePopularModel)
+//        navigationController?.present(movieInforController, animated: true, completion: nil)
+//    }
 }

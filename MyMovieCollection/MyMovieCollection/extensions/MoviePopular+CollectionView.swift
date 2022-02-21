@@ -11,7 +11,7 @@ extension MoviePopularController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as? MoviePopularCell
         guard let cellModel = cell?.cellModel else { return }
-        coordinator?.cellTapped(moviePopularModel: cellModel)
+        coordinator?.cellTapped(with: cellModel)
     }
 }
 

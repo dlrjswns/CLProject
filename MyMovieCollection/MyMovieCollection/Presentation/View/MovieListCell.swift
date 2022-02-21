@@ -39,6 +39,7 @@ class MovieListCell: UITableViewCell {
         movieImageThumbnail.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         movieImageThumbnail.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         movieImageThumbnail.contentMode = .scaleAspectFit
+//        movieImageThumbnail.clipsToBounds = true
         
         addSubview(moviePubDateLabel)
         moviePubDateLabel.translatesAutoresizingMaskIntoConstraints = false

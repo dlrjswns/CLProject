@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MoviePopularModel {
+struct MoviePopularModel: Model {
     let originalTitle: String
     let overview: String
     let posterPath: String

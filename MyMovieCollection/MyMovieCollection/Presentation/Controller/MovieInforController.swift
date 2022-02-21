@@ -48,8 +48,11 @@ class MovieInforController: BaseViewController, FactoryModule {
     @objc func moreButtonTapped(_ sender: UIButton) {
         if !isExpandable {
             selfView.movieOverviewLabel.numberOfLines = .max
-            sender.isHidden = !isExpandable
+            sender.setTitle("Done", for: .normal)
+            sender.setTitleColor(.systemRed, for: .normal)
             isExpandable = true
+        }else {
+            dismiss(animated: true, completion: nil)
         }
     }
 }

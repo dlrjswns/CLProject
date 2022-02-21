@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MovieListModel {
+struct MovieListModel: Model {
     let title: String
     let image: String
     let userRating: String

@@ -37,7 +37,7 @@ extension MovieListController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let movieListModel: MovieListModel = currentMovieList[indexPath.row]
-        coordinator?.cellTapped(movieListModel: movieListModel)
+        coordinator?.cellTapped(with: movieListModel)
         print("tapped")
     }
 }

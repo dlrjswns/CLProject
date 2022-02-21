@@ -32,6 +32,8 @@ class MovieDetailController: BaseViewController, FactoryModule {
     }
     
     override func configureUI() {
+        title = currentMovieListModel.title
+        
         view.addSubview(selfView)
         selfView.translatesAutoresizingMaskIntoConstraints = false
         selfView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
