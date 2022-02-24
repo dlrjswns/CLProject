@@ -90,6 +90,7 @@ class MainCoordinator: Coordinator, FactoryModule {
     }
     
     func cellTapped(with model: T) {
+        print("cellTapped")
         if model is MovieListModel {
             let vc = movieDetailControllerFactory(model as! MovieListModel)
             navigationController?.pushViewController(vc, animated: true)
