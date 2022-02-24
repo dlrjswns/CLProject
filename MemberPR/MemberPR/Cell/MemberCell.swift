@@ -25,7 +25,7 @@ class MemberCell:UITableViewCell{
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
-        configureUI()
+//        configureUI()
     }
     
     required init?(coder: NSCoder) {

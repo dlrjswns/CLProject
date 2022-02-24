@@ -12,7 +12,7 @@ class MoviePopularController: BaseViewController {
     
     private let viewModel: MoviePopularViewModel
     
-    var coordinator: MainCoordinator?
+    weak var coordinator: MainCoordinator?
     let selfView: MoviePopularView = .init()
     
     init(viewModel: MoviePopularViewModel) {

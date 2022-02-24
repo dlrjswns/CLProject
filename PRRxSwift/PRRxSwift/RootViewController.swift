@@ -1,65 +1,44 @@
-//
-//  RootViewController.swift
-//  PRRxSwift
-//
-//  Created by 이건준 on 2022/01/02.
-//
-
 import UIKit
 import RxSwift
-import RxCocoa
 
-struct Product {
-    let imageName:String
-    let title:String
-}
-
-struct ProductViewModel {
-    var items = PublishSubject<[Product]>()
+class RootViewController: UIViewController {
     
-    func fetchItems(){
-        let products = [
-            Product(imageName: "house", title: "Home"),
-            Product(imageName: "gear", title: "Settings"),
-            Product(imageName: "person.ircle", title: "Profile"),
-            Product(imageName: "airplane", title: "Flights"),
-            Product(imageName: "bell", title: "Activity")
-        ]
-        
-        items.onNext(products)
-        items.onCompleted()
+    private let viewModel: RootViewModel
+    var disposeBag = DisposeBag()
+    
+    init(viewModel: RootViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
     }
-}
-class RootViewController:UIViewController{
-    private let tableView:UITableView={
-        let table = UITableView()
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        return table
-    }()
     
-    private var viewModel = ProductViewModel()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
-    private var bag = DisposeBag()
+    
+    let button = UIButton(frame: .init(x: 0, y: 0, width: 220, height: 55))
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(tableView)
-        tableView.frame = view.bounds
-        bindTableData()
+        configureUI()
+        view.addSubview(button)
+        button.center = view.center
+        button.setTitle("bind", for: .normal)
+        button.setTitleColor(.systemPink, for: .normal)
+        button.addTarget(self, action: #selector(bind), for: .touchUpInside)
     }
     
-    func bindTableData(){
-        viewModel.items.bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)){row, model, cell in
-            cell.textLabel?.text = model.title
-            cell.imageView?.image = UIImage(systemName: model.imageName)
-        }.disposed(by: bag)
-        
-        tableView.rx.modelSelected(Product.self).bind { product in
-            print(product.title)
-        }.disposed(by: bag)
-        
-        viewModel.fetchItems()
+    func configureUI() {
+        view.backgroundColor = .systemBackground
     }
     
-    
+    @objc func bind() {
+        viewModel.createSingle().subscribe(onSuccess: { str in
+            print("single onSuccess called - \(str)")
+        }, onFailure: { err in
+            print("single onFailure called - \(err.localizedDescription)")
+        }, onDisposed: {
+            print("single onDisposed called")
+        }).disposed(by: disposeBag)
+    }
 }

@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  PRRxSwift
+//  TableView&CollectionView
 //
-//  Created by 이건준 on 2022/01/02.
+//  Created by 이건준 on 2022/02/23.
 //
 
 import UIKit
@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = RootViewController(viewModel: .init())
+        window?.rootViewController = TableViewController()
         window?.makeKeyAndVisible()
     }
 
