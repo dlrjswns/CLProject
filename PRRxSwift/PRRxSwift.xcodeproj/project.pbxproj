@@ -28,6 +28,7 @@
 		70F2833327A3F215009D4F52 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2833227A3F215009D4F52 /* ArticleViewModel.swift */; };
 		70F2833627A3FC1F009D4F52 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2833527A3FC1F009D4F52 /* ArticleCell.swift */; };
 		70F283CF27AEC0C5009D4F52 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F283CE27AEC0C5009D4F52 /* Coordinator.swift */; };
+		70F2865127CD0CF5009D4F52 /* PPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2865027CD0CF5009D4F52 /* PPViewController.swift */; };
 		AB86BEF6E5F152FEFD5A5B1C /* Pods_PRRxSwift_PRRxSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933589B913B0144D1344CD32 /* Pods_PRRxSwift_PRRxSwiftUITests.framework */; };
 		C495224F5B38CDE0D1329926 /* Pods_PRRxSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18AD00B01769CAA9B9399925 /* Pods_PRRxSwiftTests.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 		70F2833227A3F215009D4F52 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		70F2833527A3FC1F009D4F52 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		70F283CE27AEC0C5009D4F52 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		70F2865027CD0CF5009D4F52 /* PPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPViewController.swift; sourceTree = "<group>"; };
 		8FB14F585E38B419DB15A2A0 /* Pods-PRRxSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PRRxSwiftTests.release.xcconfig"; path = "Target Support Files/Pods-PRRxSwiftTests/Pods-PRRxSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		933589B913B0144D1344CD32 /* Pods_PRRxSwift_PRRxSwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PRRxSwift_PRRxSwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1BDFDB3F2AA3A11A90A8DA3 /* Pods-PRRxSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PRRxSwiftTests.debug.xcconfig"; path = "Target Support Files/Pods-PRRxSwiftTests/Pods-PRRxSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				700113A127939C5400C3F794 /* NextViewController.swift */,
 				70F2832C27A19E97009D4F52 /* ArticleViewController.swift */,
 				70F283CE27AEC0C5009D4F52 /* Coordinator.swift */,
+				70F2865027CD0CF5009D4F52 /* PPViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				70F283CF27AEC0C5009D4F52 /* Coordinator.swift in Sources */,
 				7001129A2781ECF400C3F794 /* RootViewController1.swift in Sources */,
 				700112672781E68B00C3F794 /* AppDelegate.swift in Sources */,
+				70F2865127CD0CF5009D4F52 /* PPViewController.swift in Sources */,
 				700113A027939BDE00C3F794 /* PRViewController.swift in Sources */,
 				700112A4278490DE00C3F794 /* RXViewController.swift in Sources */,
 				7001129F2781F08B00C3F794 /* Article.swift in Sources */,

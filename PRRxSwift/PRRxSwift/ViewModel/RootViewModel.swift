@@ -4,6 +4,24 @@ import RxSwift
 import RxCocoa
 
 class RootViewModel {
+    
+    let prObserver: AnyObserver<String>
+    let prObservable: Observable<String>
+    var disposeBag = DisposeBag()
+    
+    init() {
+        let prSubject = BehaviorSubject<String>(value: "")
+        prObserver = prSubject.asObserver()
+        prObservable = prSubject.asObservable()
+        
+        prObservable.subscribe(onNext: { prStr in
+            print("prStr = \(prStr)")
+        }).disposed(by: disposeBag)
+        
+        
+    }
+    
+    
     func createSingle() -> Single<String> {
         return Single.create() { emitter -> Disposable in
             let str = "Single Practice"
@@ -22,7 +40,5 @@ class RootViewModel {
         }
     }
     
-    func createSignal() -> Signal<String> {
-        
-    }
+    
 }

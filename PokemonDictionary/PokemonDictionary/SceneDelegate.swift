@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  PRRxSwift
+//  PokemonDictionary
 //
-//  Created by 이건준 on 2022/01/02.
+//  Created by 이건준 on 2022/03/02.
 //
 
 import UIKit
@@ -17,8 +17,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let scene = (scene as? UIWindowScene) else { return }
+        let pokeBookViewControllerFactory: () -> PokeBookController = {
+            return .init()
+        }
+        let mainCoordinator = MainCoordinator(dependency: .init(pokeBookViewControllerFactory: pokeBookViewControllerFactory))
+        let navigationController = UINavigationController()
+        mainCoordinator.navigationController = navigationController
+        mainCoordinator.start()
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = PPViewController()
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 

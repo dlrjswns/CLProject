@@ -1,10 +1,14 @@
 import UIKit
 import RxSwift
+import RxCocoa
 
 class RootViewController: UIViewController {
     
     private let viewModel: RootViewModel
     var disposeBag = DisposeBag()
+    let relayExp2 = BehaviorSubject<String>(value: "d")
+    let relayExp = BehaviorSubject<String>(value: "s")
+//    var observerExp: AnyObserver<String>
     
     init(viewModel: RootViewModel) {
         self.viewModel = viewModel
@@ -26,6 +30,23 @@ class RootViewController: UIViewController {
         button.setTitle("bind", for: .normal)
         button.setTitleColor(.systemPink, for: .normal)
         button.addTarget(self, action: #selector(bind), for: .touchUpInside)
+        
+        let sig = relayExp.asSignal(onErrorJustReturn: "")
+        let dri = relayExp2.asDriver(onErrorJustReturn: "")
+        
+        sig.emit(onNext: { str in
+            print("signal = \(str)")
+        }).disposed(by: disposeBag)
+        
+        dri.drive(onNext: { str in
+            print("driver = \(str)")
+        }).disposed(by: disposeBag)
+        
+        relayExp2.onNext("dri1")
+        relayExp2.onNext("dri2")
+        relayExp.onNext("sig1")
+        relayExp.onNext("sig2")
+    
     }
     
     func configureUI() {
@@ -33,12 +54,14 @@ class RootViewController: UIViewController {
     }
     
     @objc func bind() {
-        viewModel.createSingle().subscribe(onSuccess: { str in
-            print("single onSuccess called - \(str)")
-        }, onFailure: { err in
-            print("single onFailure called - \(err.localizedDescription)")
-        }, onDisposed: {
-            print("single onDisposed called")
-        }).disposed(by: disposeBag)
+        print("tap")
+        
+//        viewModel.createSingle().subscribe(onSuccess: { str in
+//            print("single onSuccess called - \(str)")
+//        }, onFailure: { err in
+//            print("single onFailure called - \(err.localizedDescription)")
+//        }, onDisposed: {
+//            print("single onDisposed called")
+//        }).disposed(by: disposeBag)
     }
 }
