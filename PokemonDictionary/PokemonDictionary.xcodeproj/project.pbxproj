@@ -17,6 +17,8 @@
 		70F2868727CE894F009D4F52 /* PokeBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2868627CE894F009D4F52 /* PokeBookView.swift */; };
 		70F2868A27CE8A27009D4F52 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2868927CE8A27009D4F52 /* Coordinator.swift */; };
 		70F2868C27CE8A60009D4F52 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2868B27CE8A60009D4F52 /* MainCoordinator.swift */; };
+		70F286BA27D1FB0C009D4F52 /* PokeBook+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F286B927D1FB0C009D4F52 /* PokeBook+UICollectionView.swift */; };
+		70F286BC27D1FBB0009D4F52 /* PokeBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F286BB27D1FBB0009D4F52 /* PokeBookCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		70F2868627CE894F009D4F52 /* PokeBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeBookView.swift; sourceTree = "<group>"; };
 		70F2868927CE8A27009D4F52 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		70F2868B27CE8A60009D4F52 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		70F286B927D1FB0C009D4F52 /* PokeBook+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PokeBook+UICollectionView.swift"; sourceTree = "<group>"; };
+		70F286BB27D1FBB0009D4F52 /* PokeBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeBookCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 		70F2866527CE87AF009D4F52 /* PokemonDictionary */ = {
 			isa = PBXGroup;
 			children = (
+				70F286B827D1FAFA009D4F52 /* extension */,
 				70F2868827CE8A1F009D4F52 /* Coordinator */,
 				70F2867E27CE8839009D4F52 /* Entity */,
 				70F2867D27CE8829009D4F52 /* Repository */,
@@ -100,6 +105,7 @@
 			children = (
 				70F2868427CE8925009D4F52 /* BaseView.swift */,
 				70F2868627CE894F009D4F52 /* PokeBookView.swift */,
+				70F286BB27D1FBB0009D4F52 /* PokeBookCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -125,6 +131,14 @@
 				70F2868B27CE8A60009D4F52 /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		70F286B827D1FAFA009D4F52 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				70F286B927D1FB0C009D4F52 /* PokeBook+UICollectionView.swift */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,10 +212,12 @@
 			files = (
 				70F2868727CE894F009D4F52 /* PokeBookView.swift in Sources */,
 				70F2868C27CE8A60009D4F52 /* MainCoordinator.swift in Sources */,
+				70F286BA27D1FB0C009D4F52 /* PokeBook+UICollectionView.swift in Sources */,
 				70F2866727CE87AF009D4F52 /* AppDelegate.swift in Sources */,
 				70F2868327CE88B5009D4F52 /* PokeBookController.swift in Sources */,
 				70F2868527CE8925009D4F52 /* BaseView.swift in Sources */,
 				70F2866927CE87AF009D4F52 /* SceneDelegate.swift in Sources */,
+				70F286BC27D1FBB0009D4F52 /* PokeBookCell.swift in Sources */,
 				70F2868027CE8850009D4F52 /* BaseViewController.swift in Sources */,
 				70F2868A27CE8A27009D4F52 /* Coordinator.swift in Sources */,
 			);

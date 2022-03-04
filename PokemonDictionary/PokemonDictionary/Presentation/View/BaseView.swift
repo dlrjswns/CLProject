@@ -24,6 +24,6 @@ class BaseView: UIView {
     }
     
     func attribute() {
-        
+        backgroundColor = .systemBackground
     }
 }
