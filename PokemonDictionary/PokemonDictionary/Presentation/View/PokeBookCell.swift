@@ -46,10 +46,7 @@ class PokeBookCell: UICollectionViewCell {
     func attribute() {
         backgroundColor = .systemRed
         layer.cornerRadius = 10
-        //dummy data
-        pokeImageView.image = UIImage(systemName: "person.fill")
-        pokeNameLabel.text = "이건준"
-        pokeTypeLabel.text = "공격"
+        //포켓몬 타입에 따라 배경색분기처리
     }
 }
 

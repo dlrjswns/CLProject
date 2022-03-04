@@ -9,7 +9,7 @@ import RxSwift
 import Foundation
 
 protocol PokeBookRepository {
-    func fetchPokeBookObservable() -> Observable<Result<PokeEntity, PokeError>>
+    func fetchPokeEntityObservable() -> Observable<Result<[PokeEntity], PokeError>>
 }
 
 enum PokeError: Error {

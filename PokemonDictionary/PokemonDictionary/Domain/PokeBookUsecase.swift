@@ -15,7 +15,16 @@ class PokeBookUsecase {
         self.repository = repository
     }
     
-    func fetchPokeBookObservable() -> Observable<Result<PokeEntity, PokeError>> {
-        return repository.fetchPokeBookObservable()
+    func fetchPokeEntityObservable() -> Observable<Result<[PokeEntity], PokeError>> {
+        return repository.fetchPokeEntityObservable()
+    }
+    
+    func fetchPokeModel(pokeEntities: [PokeEntity]) -> [PokeBookModel] {
+        var pokeBookModels = [PokeBookModel]()
+        pokeEntities.forEach { pokeEntity in
+            let pokeBookModel = PokeBookModel(imageUrl: pokeEntity.imageUrl ?? "", name: pokeEntity.name ?? "", type: pokeEntity.type ?? "")
+            pokeBookModels.append(pokeBookModel)
+        }
+        return pokeBookModels
     }
 }

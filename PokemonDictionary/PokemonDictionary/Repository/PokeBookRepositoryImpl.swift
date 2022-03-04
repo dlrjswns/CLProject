@@ -8,14 +8,14 @@
 import RxSwift
 import RxCocoa
 
-class PokeBookRepositoryImpl {
+class PokeBookRepositoryImpl: PokeBookRepository {
     private let session: URLSession
     
     init(session: URLSession = .shared) {
         self.session = session
     }
     
-    func fetchPokeBookObservable() -> Observable<Result<PokeEntity, PokeError>> {
+    func fetchPokeEntityObservable() -> Observable<Result<[PokeEntity], PokeError>> {
         guard let url = getPokemonURLComponents().url else {
             let error = PokeError.urlError
             return .just(.failure(error))
@@ -30,7 +30,7 @@ class PokeBookRepositoryImpl {
             }
             
             do{
-                let pokeEntity = try JSONDecoder().decode(PokeEntity.self, from: data)
+                let pokeEntity = try JSONDecoder().decode([PokeEntity].self, from: data)
                 return .success(pokeEntity)
             }catch{
                 let error = PokeError.decodeError
@@ -45,7 +45,7 @@ extension PokeBookRepositoryImpl {
     struct PokeAPI {
         static let scheme = "https"
         static let host = "pokedex-bb36f.firebaseio.com"
-        static let path = "pokemon.json"
+        static let path = "/pokemon.json"
     }
     func getPokemonURLComponents() -> URLComponents {
         var components = URLComponents()
