@@ -25,14 +25,14 @@ extension PokeBookController: UICollectionViewDelegate {
 
 extension PokeBookController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (UIScreen.main.bounds.width - 90) / 2, height: (UIScreen.main.bounds.height - 210) / 6)
+        return CGSize(width: (UIScreen.main.bounds.width - 30) / 2, height: (UIScreen.main.bounds.height - 70) / 6)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 30
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 30
+        return 10
     }
 }

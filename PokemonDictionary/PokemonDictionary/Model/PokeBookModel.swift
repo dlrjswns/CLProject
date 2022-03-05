@@ -10,5 +10,5 @@ import Foundation
 struct PokeBookModel {
     let imageUrl: String
     let name: String
-    let type: String
+    let type: PokeType
 }

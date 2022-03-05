@@ -22,9 +22,50 @@ class PokeBookUsecase {
     func fetchPokeModel(pokeEntities: [PokeEntity]) -> [PokeBookModel] {
         var pokeBookModels = [PokeBookModel]()
         pokeEntities.forEach { pokeEntity in
-            let pokeBookModel = PokeBookModel(imageUrl: pokeEntity.imageUrl ?? "", name: pokeEntity.name ?? "", type: pokeEntity.type ?? "")
+            let pokeBookModel = PokeBookModel(imageUrl: pokeEntity.imageUrl ?? "", name: pokeEntity.name ?? "", type: fetchPokeType(pokeEntityType: pokeEntity.type ?? ""))
             pokeBookModels.append(pokeBookModel)
         }
         return pokeBookModels
     }
+    
+    func fetchPokeType(pokeEntityType: String) -> PokeType {
+        switch pokeEntityType {
+            case "poison":
+                return .poison
+            case "fire":
+                return .fire
+            case "water":
+                return .water
+            case "bug":
+                return .bug
+            case "flying":
+                return .flying
+            case "normal":
+                return .normal
+            case "electric":
+                return .electric
+            case "ground":
+                return .ground
+            case "grass":
+                return .grass
+            case "fighting":
+                return .fighting
+            case "psychic":
+                return .psychic
+            case "ice":
+                return .ice
+            case "dragon":
+                return .dragon
+            case "rock":
+                return .rock
+            case "fairy":
+                return .fairy
+            case "steel":
+                return .steel
+            default:
+                return .normal
+        }
+    }
 }
+
+

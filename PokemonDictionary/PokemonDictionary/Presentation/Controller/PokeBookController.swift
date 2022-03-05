@@ -29,10 +29,8 @@ class PokeBookController: BaseViewController {
         
         viewModel.fetchInput.onNext(())
         
-        viewModel.pokeModelOutput.asObservable().bind(to: selfView.collectionView.rx.items(cellIdentifier: PokeBookCell.identifier, cellType: PokeBookCell.self)){ item, index, cell in
-            cell.pokeImageView.image = UIImage(systemName: "person.fill")
-            cell.pokeNameLabel.text = "이건준"
-            cell.pokeTypeLabel.text = "공격"
+        viewModel.pokeModelOutput.asObservable().bind(to: selfView.collectionView.rx.items(cellIdentifier: PokeBookCell.identifier, cellType: PokeBookCell.self)){ index, item, cell in
+            cell.configureUI(item: item)
         }.disposed(by: disposeBag)
     }
     
