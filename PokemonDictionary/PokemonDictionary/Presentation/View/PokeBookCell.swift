@@ -14,6 +14,7 @@ class PokeBookCell: UICollectionViewCell {
     let pokeImageView = PokeImageView()
     let pokeNameLabel = PokeNameLabel()
     let pokeTypeLabel = PokeTypeLabel()
+    let visualEffectView = UIVisualEffectView()
     
     var currentPokeType: PokeType = .normal {
         didSet{
@@ -82,12 +83,21 @@ class PokeBookCell: UICollectionViewCell {
         pokeTypeLabel.translatesAutoresizingMaskIntoConstraints = false
         pokeTypeLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
         pokeTypeLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+        
+        pokeTypeLabel.addSubview(visualEffectView)
+        visualEffectView.translatesAutoresizingMaskIntoConstraints = false
+        visualEffectView.topAnchor.constraint(equalTo: pokeTypeLabel.topAnchor).isActive = true
+        visualEffectView.leftAnchor.constraint(equalTo: pokeTypeLabel.leftAnchor).isActive = true
+        visualEffectView.rightAnchor.constraint(equalTo: pokeTypeLabel.rightAnchor).isActive = true
+        visualEffectView.bottomAnchor.constraint(equalTo: pokeTypeLabel.bottomAnchor).isActive = true
     }
     
     func attribute() {
         backgroundColor = .systemRed
         layer.cornerRadius = 10
-        //포켓몬 타입에 따라 배경색분기처리
+        
+        let blurEffect = UIBlurEffect(style: .light)
+        visualEffectView.effect = blurEffect
     }
     
     func configureUI(item: PokeBookModel) {
@@ -104,9 +114,6 @@ extension PokeBookCell {
         override init(frame: CGRect = .zero) {
             super.init(frame: frame)
             contentMode = .scaleAspectFit
-            print("frame = \(frame)")
-//            widthAnchor.constraint(equalToConstant: ).isActive = true
-//            heightAnchor.constraint(equalToConstant: frame.height / 3).isActive = true
         }
         
         required init?(coder: NSCoder) {
@@ -129,18 +136,37 @@ extension PokeBookCell {
     
     class PokeTypeLabel: UILabel {
         
+//        let visualEffectView = UIVisualEffectView()
         
         override init(frame: CGRect) {
             super.init(frame: frame)
-            textColor = .white
-            layer.cornerRadius = 10
-            layer.borderWidth = 1
-            layer.borderColor = UIColor.white.cgColor
-            
+//            layout()
+            attribute()
         }
         
         required init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
+        }
+        
+//        func layout() {
+//            addSubview(visualEffectView)
+//            visualEffectView.translatesAutoresizingMaskIntoConstraints = false
+//            visualEffectView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+//            visualEffectView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+//            visualEffectView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+//            visualEffectView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+//        }
+        
+        func attribute() {
+            textColor = .white
+            layer.cornerRadius = 10
+//            layer.borderWidth = 1
+//            layer.borderColor = UIColor.white.cgColor
+            
+//            let visualEffect = UIBlurEffect(style: .regular)
+//            visualEffectView.effect = visualEffect
+//            visualEffectView.layer.cornerRadius = 10
+//            visualEffectView.alpha = 1
         }
     }
 }
