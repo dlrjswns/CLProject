@@ -20,6 +20,10 @@ extension AppDependency {
             return .init(viewModel: .init(usecase: .init(repository: pokeBookRepository)))
         }
         
-        return .init(mainCoordinator: .init(dependency: .init(pokeBookViewControllerFactory: pokeBookViewControllerFactory)))
+        let pokeDetailViewControllerFactory: (PokeBookModel) -> PokeDetailController = { pokeBookModel in
+            return .init(dependency: .init(currentPokeBookModel: pokeBookModel))
+        }
+        
+        return .init(mainCoordinator: .init(dependency: .init(pokeBookViewControllerFactory: pokeBookViewControllerFactory, pokeDetailViewControllerFactory: pokeDetailViewControllerFactory)))
     }
 }

@@ -22,7 +22,8 @@ class PokeBookUsecase {
     func fetchPokeModel(pokeEntities: [PokeEntity]) -> [PokeBookModel] {
         var pokeBookModels = [PokeBookModel]()
         pokeEntities.forEach { pokeEntity in
-            let pokeBookModel = PokeBookModel(imageUrl: pokeEntity.imageUrl ?? "", name: pokeEntity.name ?? "", type: fetchPokeType(pokeEntityType: pokeEntity.type ?? ""))
+//            let pokeBookModel = PokeBookModel(imageUrl: pokeEntity.imageUrl ?? "", name: pokeEntity.name ?? "", type: fetchPokeType(pokeEntityType: pokeEntity.type ?? ""))
+            let pokeBookModel = PokeBookModel(imageUrl: pokeEntity.imageUrl ?? "", name: pokeEntity.name ?? "", type: fetchPokeType(pokeEntityType: pokeEntity.type ?? ""), attack: pokeEntity.attack ?? 0, defense: pokeEntity.defense ?? 0, description: pokeEntity.description ?? "", evolutionChain: pokeEntity.evolutionChain ?? [], height: pokeEntity.height ?? 0, weight: pokeEntity.weight ?? 0, id: pokeEntity.id ?? 0)
             pokeBookModels.append(pokeBookModel)
         }
         return pokeBookModels

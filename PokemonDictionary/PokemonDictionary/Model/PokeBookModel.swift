@@ -11,4 +11,11 @@ struct PokeBookModel {
     let imageUrl: String
     let name: String
     let type: PokeType
+    let attack: Int
+    let defense: Int
+    let description: String
+    let evolutionChain: [Evolution]
+    let height: Int
+    let weight: Int
+    let id: Int
 }

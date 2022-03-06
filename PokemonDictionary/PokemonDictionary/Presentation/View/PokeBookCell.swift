@@ -8,7 +8,7 @@
 import UIKit
 
 class PokeBookCell: UICollectionViewCell {
-
+    
     static let identifier = "PokebookCell"
     
     let pokeImageView = PokeImageView()
@@ -16,6 +16,25 @@ class PokeBookCell: UICollectionViewCell {
     let pokeTypeLabel = PokeTypeLabel()
     let visualEffectView = UIVisualEffectView()
     
+    override var isHighlighted: Bool {
+        didSet{
+            if isHighlighted {
+                print("tapped")
+                //tapped
+                self.layer.borderWidth = 2
+                self.layer.borderColor = UIColor.gray.cgColor
+            }else {
+                print("no tapped")
+                //none tapped
+                DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                    self.layer.borderWidth = 0
+                    self.layer.borderColor = UIColor.systemPink.cgColor
+                }
+            }
+        }
+    }
+    
+    var currentPoke: PokeBookModel?
     var currentPokeType: PokeType = .normal {
         didSet{
             switch currentPokeType {
@@ -79,25 +98,34 @@ class PokeBookCell: UICollectionViewCell {
         pokeNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
         pokeNameLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
         
+//        addSubview(pokeTypeLabel)
+//        pokeTypeLabel.translatesAutoresizingMaskIntoConstraints = false
+//        pokeTypeLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
+//        pokeTypeLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+        
+        addSubview(visualEffectView)
+        visualEffectView.translatesAutoresizingMaskIntoConstraints = false
+        visualEffectView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
+        visualEffectView.centerYAnchor.constraint(equalTo: pokeImageView.centerYAnchor).isActive = true
+        
         addSubview(pokeTypeLabel)
         pokeTypeLabel.translatesAutoresizingMaskIntoConstraints = false
-        pokeTypeLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
-        pokeTypeLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
-        
-        pokeTypeLabel.addSubview(visualEffectView)
-        visualEffectView.translatesAutoresizingMaskIntoConstraints = false
-        visualEffectView.topAnchor.constraint(equalTo: pokeTypeLabel.topAnchor).isActive = true
-        visualEffectView.leftAnchor.constraint(equalTo: pokeTypeLabel.leftAnchor).isActive = true
-        visualEffectView.rightAnchor.constraint(equalTo: pokeTypeLabel.rightAnchor).isActive = true
-        visualEffectView.bottomAnchor.constraint(equalTo: pokeTypeLabel.bottomAnchor).isActive = true
+        pokeTypeLabel.centerYAnchor.constraint(equalTo: pokeImageView.centerYAnchor).isActive = true
+        pokeTypeLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: -12).isActive = true
+        pokeTypeLabel.widthAnchor.constraint(equalToConstant: (frame.width / 3) * 2).isActive = true
+        pokeTypeLabel.heightAnchor.constraint(equalToConstant: (frame.height / 3) * 2).isActive = true
     }
     
     func attribute() {
         backgroundColor = .systemRed
-        layer.cornerRadius = 10
+        layer.cornerRadius = 15
         
         let blurEffect = UIBlurEffect(style: .light)
         visualEffectView.effect = blurEffect
+        visualEffectView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        visualEffectView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        visualEffectView.layer.cornerRadius = 10
+        visualEffectView.clipsToBounds = true
     }
     
     func configureUI(item: PokeBookModel) {
@@ -105,10 +133,14 @@ class PokeBookCell: UICollectionViewCell {
         pokeNameLabel.text = item.name.fetchFirstUpperCased()
         pokeTypeLabel.text = item.type.toString
         currentPokeType = item.type
+        currentPoke = item
     }
+    
+    
 }
 
 extension PokeBookCell {
+    //MARK: -PokeImageView Component
     class PokeImageView: UIImageView {
         
         override init(frame: CGRect = .zero) {
@@ -121,12 +153,13 @@ extension PokeBookCell {
         }
     }
     
+    //MARK: -PokeNameLabel Component
     class PokeNameLabel: UILabel {
         
         override init(frame: CGRect) {
             super.init(frame: frame)
             textColor = .white
-            font = UIFont.boldSystemFont(ofSize: 17)
+            font = UIFont.boldSystemFont(ofSize: 15)
         }
         
         required init?(coder: NSCoder) {
@@ -134,9 +167,8 @@ extension PokeBookCell {
         }
     }
     
+    //MARK: -PokeTypeLabel Component
     class PokeTypeLabel: UILabel {
-        
-//        let visualEffectView = UIVisualEffectView()
         
         override init(frame: CGRect) {
             super.init(frame: frame)
@@ -148,18 +180,11 @@ extension PokeBookCell {
             fatalError("init(coder:) has not been implemented")
         }
         
-//        func layout() {
-//            addSubview(visualEffectView)
-//            visualEffectView.translatesAutoresizingMaskIntoConstraints = false
-//            visualEffectView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-//            visualEffectView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-//            visualEffectView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-//            visualEffectView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-//        }
-        
         func attribute() {
             textColor = .white
             layer.cornerRadius = 10
+            textAlignment = .center
+            font = UIFont.boldSystemFont(ofSize: 15)
 //            layer.borderWidth = 1
 //            layer.borderColor = UIColor.white.cgColor
             

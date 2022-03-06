@@ -15,6 +15,8 @@ class PokeBookController: BaseViewController {
     
     let selfView: PokeBookView = PokeBookView()
     
+    var coordinator: MainCoordinator?
+    
     init(viewModel: PokeBookViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -46,6 +48,7 @@ class PokeBookController: BaseViewController {
     override func attribute() {
         title = "PokeBook"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
         selfView.collectionView.backgroundColor = .systemBackground
         selfView.collectionView.delegate = self
 //        selfView.collectionView.dataSource = self
