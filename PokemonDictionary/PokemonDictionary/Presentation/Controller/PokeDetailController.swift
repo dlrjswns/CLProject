@@ -39,4 +39,13 @@ class PokeDetailController: BaseViewController {
         selfView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         selfView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
+    
+    override func attribute() {
+        selfView.pokeDetailTopView.backgroundColor = currentPokeBookModel.type.getPokeColor
+        selfView.pokeDetailTopView.pokeImageView.fetchImage(imageUrl: currentPokeBookModel.imageUrl)
+        selfView.pokeDetailBottomView.pokeNameLabel.text = currentPokeBookModel.name
+        selfView.pokeDetailBottomView.pokeTypeLabel.text = currentPokeBookModel.type.toString
+        selfView.pokeDetailBottomView.pokeDescriptionLabel.text = currentPokeBookModel.description
+        selfView.pokeDetailBottomView.pokeTypeLabel.backgroundColor = currentPokeBookModel.type.getPokeColor
+    }
 }

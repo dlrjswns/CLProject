@@ -15,6 +15,7 @@ class PokeBookCell: UICollectionViewCell {
     let pokeNameLabel = PokeNameLabel()
     let pokeTypeLabel = PokeTypeLabel()
     let visualEffectView = UIVisualEffectView()
+    var currentPoke: PokeBookModel?
     
     override var isHighlighted: Bool {
         didSet{
@@ -30,46 +31,6 @@ class PokeBookCell: UICollectionViewCell {
                     self.layer.borderWidth = 0
                     self.layer.borderColor = UIColor.systemPink.cgColor
                 }
-            }
-        }
-    }
-    
-    var currentPoke: PokeBookModel?
-    var currentPokeType: PokeType = .normal {
-        didSet{
-            switch currentPokeType {
-                case .bug:
-                    backgroundColor = .systemGreen
-                case .dragon:
-                    backgroundColor = .systemTeal
-                case .electric:
-                    backgroundColor = .systemYellow
-                case .fighting:
-                    backgroundColor = .purple
-                case .fire:
-                    backgroundColor = .systemRed
-                case .flying:
-                    backgroundColor = .blue
-                case .grass:
-                    backgroundColor = .systemPurple
-                case .ground:
-                    backgroundColor = .brown
-                case .ice:
-                    backgroundColor = .systemBlue
-                case .normal:
-                    backgroundColor = .systemOrange
-                case .poison:
-                    backgroundColor = .systemGreen
-                case .psychic:
-                    backgroundColor = .systemGray3
-                case .water:
-                    backgroundColor = .systemBlue
-                case .rock:
-                    backgroundColor = .systemPurple
-                case .fairy:
-                    backgroundColor = .systemPink
-                case .steel:
-                    backgroundColor = .systemGray6
             }
         }
     }
@@ -117,7 +78,7 @@ class PokeBookCell: UICollectionViewCell {
     }
     
     func attribute() {
-        backgroundColor = .systemRed
+//        backgroundColor = .systemRed
         layer.cornerRadius = 15
         
         let blurEffect = UIBlurEffect(style: .light)
@@ -132,8 +93,8 @@ class PokeBookCell: UICollectionViewCell {
         pokeImageView.fetchImage(imageUrl: item.imageUrl)
         pokeNameLabel.text = item.name.fetchFirstUpperCased()
         pokeTypeLabel.text = item.type.toString
-        currentPokeType = item.type
         currentPoke = item
+        backgroundColor = item.type.getPokeColor
     }
     
     

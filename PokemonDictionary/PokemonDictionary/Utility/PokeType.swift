@@ -5,7 +5,7 @@
 //  Created by 이건준 on 2022/03/05.
 //
 
-import Foundation
+import UIKit
 
 enum PokeType {
     case poison
@@ -24,6 +24,43 @@ enum PokeType {
     case rock
     case fairy
     case steel
+    
+    var getPokeColor: UIColor {
+        switch self {
+            case .bug:
+                return .systemGreen
+            case .dragon:
+                return .systemTeal
+            case .electric:
+                return .systemYellow
+            case .fighting:
+                return .purple
+            case .fire:
+                return .systemRed
+            case .flying:
+                return .blue
+            case .grass:
+                return .systemPurple
+            case .ground:
+                return .brown
+            case .ice:
+                return .systemBlue
+            case .normal:
+                return .systemOrange
+            case .poison:
+                return .systemGreen
+            case .psychic:
+                return .systemGray3
+            case .water:
+                return .systemBlue
+            case .rock:
+                return .systemPurple
+            case .fairy:
+                return .systemPink
+            case .steel:
+                return .systemGray6
+                }
+            }
     
     var toString: String {
         switch self {
@@ -60,5 +97,6 @@ enum PokeType {
         case .steel:
             return "steel"
         }
-    }
+    } //toString end
 }
+
