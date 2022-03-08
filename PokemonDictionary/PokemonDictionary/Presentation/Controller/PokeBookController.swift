@@ -53,5 +53,17 @@ class PokeBookController: BaseViewController {
         selfView.collectionView.delegate = self
 //        selfView.collectionView.dataSource = self
         selfView.collectionView.register(PokeBookCell.self, forCellWithReuseIdentifier: PokeBookCell.identifier)
+//        selfView.pokeMainButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
+    }
+    
+    @objc func tappedButton() {
+//        selfView.pokeSubButton.isHidden = false
+//        UIView.animate(withDuration: 10) {
+//            self.selfView.pokeSubButton.centerXAnchor.constraint(equalTo: self.selfView.pokeMainButton.centerXAnchor).isActive = true
+//            self.selfView.pokeSubButton.bottomAnchor.constraint(equalTo: self.selfView.pokeMainButton.topAnchor).isActive = true
+//        }
+        
+        
+        
     }
 }

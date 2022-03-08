@@ -43,9 +43,13 @@ class PokeDetailController: BaseViewController {
     override func attribute() {
         selfView.pokeDetailTopView.backgroundColor = currentPokeBookModel.type.getPokeColor
         selfView.pokeDetailTopView.pokeImageView.fetchImage(imageUrl: currentPokeBookModel.imageUrl)
-        selfView.pokeDetailBottomView.pokeNameLabel.text = currentPokeBookModel.name
+        selfView.pokeDetailBottomView.pokeNameLabel.text = currentPokeBookModel.name.fetchFirstUpperCased()
         selfView.pokeDetailBottomView.pokeTypeLabel.text = currentPokeBookModel.type.toString
         selfView.pokeDetailBottomView.pokeDescriptionLabel.text = currentPokeBookModel.description
         selfView.pokeDetailBottomView.pokeTypeLabel.backgroundColor = currentPokeBookModel.type.getPokeColor
+        selfView.pokeDetailBottomView.statAttackView.pokeStat = currentPokeBookModel.attack
+        selfView.pokeDetailBottomView.statDefenseView.pokeStat = currentPokeBookModel.defense
+        selfView.pokeDetailBottomView.statHeightView.pokeStat = currentPokeBookModel.height
+        selfView.pokeDetailBottomView.statWeightView.pokeStat = currentPokeBookModel.weight
     }
 }

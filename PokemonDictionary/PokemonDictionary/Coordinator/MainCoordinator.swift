@@ -34,6 +34,7 @@ class MainCoordinator: Coordinator {
     func cellTapped(cellData: PokeBookModel) {
         print("cellTafsaf")
         let pokeDetailVC = pokeDetailViewControllerFactory(cellData)
-        rootViewController.present(pokeDetailVC, animated: true, completion: nil)
+//        rootViewController.present(pokeDetailVC, animated: true, completion: nil)
+        navigationController?.pushViewController(pokeDetailVC, animated: true)
     }
 }
