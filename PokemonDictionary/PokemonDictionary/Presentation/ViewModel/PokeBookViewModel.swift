@@ -19,6 +19,7 @@ class PokeBookViewModel {
     let fetchOutput: Signal<Void>
     let pokeModelOutput: Driver<[PokeBookModel]>
     let pokeErrorOutput: Signal<PokeError?>
+    let emptyOutput: Driver<Bool>
     
     init(usecase: PokeBookUsecase) {
         self.usecase = usecase
@@ -26,11 +27,13 @@ class PokeBookViewModel {
         let fetching = PublishSubject<Void>()
         let pokeModel = PublishRelay<[PokeBookModel]>()
         let pokeError = PublishSubject<PokeError?>()
+        let isEmpty = BehaviorSubject<Bool>(value: true)
         
         fetchInput = fetching.asObserver()
         fetchOutput = fetching.asSignal(onErrorJustReturn: ())
         pokeModelOutput = pokeModel.asDriver(onErrorJustReturn: [])
         pokeErrorOutput = pokeError.asSignal(onErrorJustReturn: nil)
+        emptyOutput = isEmpty.asDriver(onErrorJustReturn: true)
         
         fetching
             .flatMap{usecase.fetchPokeEntityObservable()}
@@ -41,8 +44,20 @@ class PokeBookViewModel {
                    case .success(let pokeEntity):
                        let pokeBookModels = usecase.fetchPokeModel(pokeEntities: pokeEntity)
                        pokeModel.accept(pokeBookModels)
+                    isEmpty.onNext(false)
                    }
             }).disposed(by: disposeBag)
+        
+//        usecase.fetchPokeEntityObservable()
+//            .subscribe(onNext: { result in
+//                switch result {
+//                   case .failure(let error):
+//                       pokeError.onNext(error)
+//                   case .success(let pokeEntity):
+//                       let pokeBookModels = usecase.fetchPokeModel(pokeEntities: pokeEntity)
+//                       pokeModel.accept(pokeBookModels)
+//                   }
+//            }).disposed(by: disposeBag)
         
 //        usecase.fetchPokeBookObservable().map { result in
 //            switch result {

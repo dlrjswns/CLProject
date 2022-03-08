@@ -34,6 +34,9 @@
 		70F2874627D58FB5009D4F52 /* PokeDetailTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2874527D58FB5009D4F52 /* PokeDetailTopView.swift */; };
 		70F2874927D592D6009D4F52 /* PokeDetailBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2874827D592D6009D4F52 /* PokeDetailBottomView.swift */; };
 		70F2874C27D73B75009D4F52 /* PokeUtilButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2874B27D73B74009D4F52 /* PokeUtilButton.swift */; };
+		70F2874E27D74819009D4F52 /* PokeProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2874D27D74819009D4F52 /* PokeProfileView.swift */; };
+		70F2875027D7603C009D4F52 /* pikachuLoading.json in Resources */ = {isa = PBXBuildFile; fileRef = 70F2874F27D7603C009D4F52 /* pikachuLoading.json */; };
+		70F2875227D760D3009D4F52 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2875127D760D3009D4F52 /* LoadingView.swift */; };
 		99A3B8587FA932485A4E6992 /* Pods_PokemonDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 744FE4D5A8473D1A28135EF6 /* Pods_PokemonDictionary.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +70,9 @@
 		70F2874527D58FB5009D4F52 /* PokeDetailTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDetailTopView.swift; sourceTree = "<group>"; };
 		70F2874827D592D6009D4F52 /* PokeDetailBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDetailBottomView.swift; sourceTree = "<group>"; };
 		70F2874B27D73B74009D4F52 /* PokeUtilButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeUtilButton.swift; sourceTree = "<group>"; };
+		70F2874D27D74819009D4F52 /* PokeProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeProfileView.swift; sourceTree = "<group>"; };
+		70F2874F27D7603C009D4F52 /* pikachuLoading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pikachuLoading.json; sourceTree = "<group>"; };
+		70F2875127D760D3009D4F52 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		744FE4D5A8473D1A28135EF6 /* Pods_PokemonDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokemonDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE866735C63B6EF13121608D /* Pods-PokemonDictionary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonDictionary.debug.xcconfig"; path = "Target Support Files/Pods-PokemonDictionary/Pods-PokemonDictionary.debug.xcconfig"; sourceTree = "<group>"; };
 		D4F3BFFA4FCCC851C1CB1CB0 /* Pods-PokemonDictionary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonDictionary.release.xcconfig"; path = "Target Support Files/Pods-PokemonDictionary/Pods-PokemonDictionary.release.xcconfig"; sourceTree = "<group>"; };
@@ -229,8 +235,11 @@
 		70F286F227D35D8C009D4F52 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				70F2874F27D7603C009D4F52 /* pikachuLoading.json */,
 				70F286F327D35D98009D4F52 /* PokeType.swift */,
 				70F2874B27D73B74009D4F52 /* PokeUtilButton.swift */,
+				70F2874D27D74819009D4F52 /* PokeProfileView.swift */,
+				70F2875127D760D3009D4F52 /* LoadingView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -310,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70F2867327CE87B0009D4F52 /* LaunchScreen.storyboard in Resources */,
+				70F2875027D7603C009D4F52 /* pikachuLoading.json in Resources */,
 				70F2867027CE87B0009D4F52 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,9 +381,11 @@
 				70F2868C27CE8A60009D4F52 /* MainCoordinator.swift in Sources */,
 				70F286C027D240BA009D4F52 /* PokeEntity.swift in Sources */,
 				70F2874C27D73B75009D4F52 /* PokeUtilButton.swift in Sources */,
+				70F2875227D760D3009D4F52 /* LoadingView.swift in Sources */,
 				70F2874927D592D6009D4F52 /* PokeDetailBottomView.swift in Sources */,
 				70F286BA27D1FB0C009D4F52 /* PokeBook+UICollectionView.swift in Sources */,
 				70F286C227D242E5009D4F52 /* PokeBookRepository.swift in Sources */,
+				70F2874E27D74819009D4F52 /* PokeProfileView.swift in Sources */,
 				70F286F627D369A8009D4F52 /* extension+String.swift in Sources */,
 				70F2866727CE87AF009D4F52 /* AppDelegate.swift in Sources */,
 				70F2868327CE88B5009D4F52 /* PokeBookController.swift in Sources */,

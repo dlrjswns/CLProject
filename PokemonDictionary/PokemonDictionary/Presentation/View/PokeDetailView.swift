@@ -11,6 +11,7 @@ class PokeDetailView: BaseView {
     
     let pokeDetailTopView = PokeDetailTopView()
     let pokeDetailBottomView = PokeDetailBottomView()
+    let pokeProfileView = PokeProfileView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,15 +30,21 @@ class PokeDetailView: BaseView {
         
         addSubview(pokeDetailBottomView)
         pokeDetailBottomView.translatesAutoresizingMaskIntoConstraints = false
-        pokeDetailBottomView.topAnchor.constraint(equalTo: pokeDetailTopView.bottomAnchor, constant: -10).isActive = true
+        pokeDetailBottomView.topAnchor.constraint(equalTo: pokeDetailTopView.bottomAnchor).isActive = true
         pokeDetailBottomView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         pokeDetailBottomView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         pokeDetailBottomView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        
+//        addSubview(pokeProfileView)
+//        pokeProfileView.translatesAutoresizingMaskIntoConstraints = false
+//        pokeProfileView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+//        pokeProfileView.topAnchor.constraint(equalTo: pokeDetailBottomView.topAnchor, constant: -50).isActive = true
     }
     
     override func attribute() { 
         backgroundColor = .systemBackground
-        pokeDetailBottomView.layer.cornerRadius = 10
-        pokeDetailBottomView.clipsToBounds = true
+        pokeDetailBottomView.layer.cornerRadius = 250
+//        pokeDetailBottomView.clipsToBounds = true
+//        bringSubviewToFront(pokeDetailBottomView)
     }
 }

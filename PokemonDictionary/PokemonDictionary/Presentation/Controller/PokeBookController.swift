@@ -34,6 +34,10 @@ class PokeBookController: BaseViewController {
         viewModel.pokeModelOutput.asObservable().bind(to: selfView.collectionView.rx.items(cellIdentifier: PokeBookCell.identifier, cellType: PokeBookCell.self)){ index, item, cell in
             cell.configureUI(item: item)
         }.disposed(by: disposeBag)
+        
+        viewModel.emptyOutput.drive(onNext: { [weak self] isEmpty in
+            self?.selfView.loadingView.isHidden = !isEmpty
+        }).disposed(by: disposeBag)
     }
     
     override func layout() {

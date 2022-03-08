@@ -8,4 +8,5 @@ target 'PokemonDictionary' do
   # Pods for PokemonDictionary
   pod 'RxSwift'
   pod 'RxCocoa' 
+  pod 'lottie-ios'
 end

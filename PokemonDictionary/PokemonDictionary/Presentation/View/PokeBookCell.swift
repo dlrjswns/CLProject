@@ -24,7 +24,7 @@ class PokeBookCell: UICollectionViewCell {
                 //tapped
                 self.layer.borderWidth = 2
                 self.layer.borderColor = UIColor.gray.cgColor
-            }else {
+            }else if !isHighlighted {
                 print("no tapped")
                 //none tapped
                 DispatchQueue.main.asyncAfter(deadline: .now()+1) {
@@ -58,11 +58,6 @@ class PokeBookCell: UICollectionViewCell {
         pokeNameLabel.translatesAutoresizingMaskIntoConstraints = false
         pokeNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
         pokeNameLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
-        
-//        addSubview(pokeTypeLabel)
-//        pokeTypeLabel.translatesAutoresizingMaskIntoConstraints = false
-//        pokeTypeLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
-//        pokeTypeLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
         
         addSubview(visualEffectView)
         visualEffectView.translatesAutoresizingMaskIntoConstraints = false

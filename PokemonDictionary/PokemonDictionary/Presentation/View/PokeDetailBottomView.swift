@@ -70,10 +70,10 @@ class PokeDetailBottomView: BaseView {
         
         addSubview(statWeightView)
         statWeightView.translatesAutoresizingMaskIntoConstraints = false
-        statWeightView.topAnchor.constraint(equalTo: (statHeightView).bottomAnchor).isActive = true
+        statWeightView.topAnchor.constraint(equalTo: statHeightView.bottomAnchor).isActive = true
         statWeightView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         statWeightView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        statWeightView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -90).isActive = true
+        statWeightView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -70).isActive = true
         
     }
     
@@ -101,21 +101,19 @@ class PokeDetailBottomView: BaseView {
         
         var pokeStat: Int = 0 {
             didSet{
+                if(pokeStat <= 100) {
                 pokeStatCountLabel.text = "\(pokeStat)"
-                
-                UIView.animate(withDuration: 300) { [weak self] in
-                    guard let self = self else { return }
-                    self.pokeStatProgressBar.setProgress(Float(self.pokeStat) * 0.01, animated: true)
+                self.pokeStatProgressBar.setProgress(Float(self.pokeStat) * 0.01, animated: true)
+                }else if(pokeStat>100) {
+                    pokeStatCountLabel.text = "\(pokeStat)"
+                    self.pokeStatProgressBar.setProgress(1, animated: true)
                 }
             }
         }
         
         override init(frame: CGRect) {
             super.init(frame: frame)
-//            pokeStatNameLabel.text = "dfdf"
-//            pokeStatCountLabel.text = "100"
-//            pokeStatProgressBar.progress = 0.5
-//            pokeStatProgressBar.setProgress(0.1, animated: true)
+
             pokeStatProgressBar.trackTintColor = UIColor.systemGray
             pokeStatProgressBar.progressTintColor = UIColor.systemBlue
             pokeStatProgressBar.layer.cornerRadius = 10

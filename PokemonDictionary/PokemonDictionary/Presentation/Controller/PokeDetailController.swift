@@ -51,5 +51,10 @@ class PokeDetailController: BaseViewController {
         selfView.pokeDetailBottomView.statDefenseView.pokeStat = currentPokeBookModel.defense
         selfView.pokeDetailBottomView.statHeightView.pokeStat = currentPokeBookModel.height
         selfView.pokeDetailBottomView.statWeightView.pokeStat = currentPokeBookModel.weight
+        
+        selfView.pokeProfileView.pokeImageView.fetchImage(imageUrl: currentPokeBookModel.imageUrl)
+        selfView.pokeProfileView.pokeNameLabel.text = currentPokeBookModel.name.fetchFirstUpperCased()
+        selfView.pokeProfileView.pokeTypeLabel.text = currentPokeBookModel.type.toString
+        selfView.pokeProfileView.pokeTypeLabel.backgroundColor = currentPokeBookModel.type.getPokeColor
     }
 }

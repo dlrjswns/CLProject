@@ -10,6 +10,7 @@ import UIKit
 class PokeBookView: BaseView {
    
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    let loadingView = LoadingView()
     let pokeMainButton = PokeUtilButton(type: .system)
     let pokeSubButton = PokeUtilButton(type: .system)
     let pokeSub1Button = PokeUtilButton(type: .system)
@@ -29,12 +30,12 @@ class PokeBookView: BaseView {
         pokeMainButton.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         pokeMainButton.backgroundColor = .systemRed
         
-//        addSubview(pokeSubButton)
-//        pokeSubButton.translatesAutoresizingMaskIntoConstraints = false
-//        pokeMainButton.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-//        pokeMainButton.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-//        pokeSubButton.centerXAnchor.constraint(equalTo: pokeMainButton.centerXAnchor).isActive = true
-//        pokeSubButton.bottomAnchor.constraint(equalTo: pokeMainButton.topAnchor).isActive = true
+        addSubview(loadingView)
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        loadingView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        loadingView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        loadingView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        loadingView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
     override func attribute() {
