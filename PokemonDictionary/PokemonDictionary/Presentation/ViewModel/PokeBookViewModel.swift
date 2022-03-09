@@ -53,11 +53,11 @@ class PokeBookViewModel {
                    }
             }).disposed(by: disposeBag)
         
-        fireFetching
-            .flatMap{pokeModel}
-            .map { pokeBookModels in
-                return pokeBookModels.forEach{$0}
-            }
+//        fireFetching
+//            .flatMap{pokeModel}
+//            .map { pokeBookModels in
+//                return pokeBookModels.forEach{$0}
+//            }
             
             
             

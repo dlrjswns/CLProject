@@ -73,15 +73,17 @@ class PokeBookCell: UICollectionViewCell {
     }
     
     func attribute() {
-//        backgroundColor = .systemRed
         layer.cornerRadius = 15
-        
         let blurEffect = UIBlurEffect(style: .light)
         visualEffectView.effect = blurEffect
         visualEffectView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         visualEffectView.heightAnchor.constraint(equalToConstant: 20).isActive = true
         visualEffectView.layer.cornerRadius = 10
         visualEffectView.clipsToBounds = true
+        
+        layer.shadowRadius = 1
+        layer.shadowOpacity = 1
+        layer.shadowOffset = CGSize(width: 1, height: 1)
     }
     
     func configureUI(item: PokeBookModel) {
