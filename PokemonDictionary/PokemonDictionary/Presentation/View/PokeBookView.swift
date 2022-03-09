@@ -6,15 +6,13 @@
 //
 
 import UIKit
+import JJFloatingActionButton
 
 class PokeBookView: BaseView {
    
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     let loadingView = LoadingView()
-    let pokeMainButton = PokeUtilButton(type: .system)
-    let pokeSubButton = PokeUtilButton(type: .system)
-    let pokeSub1Button = PokeUtilButton(type: .system)
-    let pokeSub2Button = PokeUtilButton(type: .system)
+    let pokeUtilButton = JJFloatingActionButton()
     
     override func layout() {
         addSubview(collectionView)
@@ -24,11 +22,10 @@ class PokeBookView: BaseView {
         collectionView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
-        addSubview(pokeMainButton)
-        pokeMainButton.translatesAutoresizingMaskIntoConstraints = false
-        pokeMainButton.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        pokeMainButton.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        pokeMainButton.backgroundColor = .systemRed
+        addSubview(pokeUtilButton)
+        pokeUtilButton.translatesAutoresizingMaskIntoConstraints = false
+        pokeUtilButton.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        pokeUtilButton.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
         addSubview(loadingView)
         loadingView.translatesAutoresizingMaskIntoConstraints = false
@@ -39,7 +36,20 @@ class PokeBookView: BaseView {
     }
     
     override func attribute() {
-//        pokeSubButton.isHidden = true
-//        pokeSubButton.backgroundColor = .systemBlue
+        pokeUtilButton.addItem(title: nil, image: UIImage(named: "Fire"), action: {_ in print("tapped")})
+        pokeUtilButton.addItem(title: nil, image: UIImage(named: "Water"), action: nil)
+        pokeUtilButton.addItem(title: nil, image: UIImage(named: "Glass"), action: nil)
+        pokeUtilButton.addItem(title: nil, image: UIImage(named: "Electric"), action: nil)
+        pokeUtilButton.buttonColor = .systemPurple
+        pokeUtilButton.buttonImage = UIImage(named: "PokeLaunchImage")
+        pokeUtilButton.highlightedButtonColor = .systemRed
+        pokeUtilButton.shadowColor = .systemGray
+        pokeUtilButton.itemAnimationConfiguration = .circularSlideIn(withRadius: 100)
+        pokeUtilButton.buttonDiameter = 85
+        pokeUtilButton.shadowRadius = 1
+        pokeUtilButton.shadowOffset = CGSize(width: 2, height: 2)
+        pokeUtilButton.shadowColor = .purple
+        pokeUtilButton.shadowOpacity = 1
+        
     }
 }

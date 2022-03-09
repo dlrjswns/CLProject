@@ -9,4 +9,5 @@ target 'PokemonDictionary' do
   pod 'RxSwift'
   pod 'RxCocoa' 
   pod 'lottie-ios'
+  pod 'JJFloatingActionButton'
 end

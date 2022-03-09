@@ -38,6 +38,8 @@ class PokeBookController: BaseViewController {
         viewModel.emptyOutput.drive(onNext: { [weak self] isEmpty in
             self?.selfView.loadingView.isHidden = !isEmpty
         }).disposed(by: disposeBag)
+        
+        viewModel.fireFetchInput.onNext(())
     }
     
     override func layout() {
@@ -55,19 +57,6 @@ class PokeBookController: BaseViewController {
         navigationItem.largeTitleDisplayMode = .always
         selfView.collectionView.backgroundColor = .systemBackground
         selfView.collectionView.delegate = self
-//        selfView.collectionView.dataSource = self
         selfView.collectionView.register(PokeBookCell.self, forCellWithReuseIdentifier: PokeBookCell.identifier)
-//        selfView.pokeMainButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
-    }
-    
-    @objc func tappedButton() {
-//        selfView.pokeSubButton.isHidden = false
-//        UIView.animate(withDuration: 10) {
-//            self.selfView.pokeSubButton.centerXAnchor.constraint(equalTo: self.selfView.pokeMainButton.centerXAnchor).isActive = true
-//            self.selfView.pokeSubButton.bottomAnchor.constraint(equalTo: self.selfView.pokeMainButton.topAnchor).isActive = true
-//        }
-        
-        
-        
     }
 }
