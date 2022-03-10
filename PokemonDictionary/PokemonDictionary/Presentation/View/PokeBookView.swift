@@ -36,10 +36,10 @@ class PokeBookView: BaseView {
     }
     
     override func attribute() {
-        pokeUtilButton.addItem(title: nil, image: UIImage(named: "Fire"), action: {_ in print("tapped")})
-        pokeUtilButton.addItem(title: nil, image: UIImage(named: "Water"), action: nil)
-        pokeUtilButton.addItem(title: nil, image: UIImage(named: "Glass"), action: nil)
-        pokeUtilButton.addItem(title: nil, image: UIImage(named: "Electric"), action: nil)
+//        pokeUtilButton.addItem(title: nil, image: UIImage(named: "Fire"), action: nil)
+//        pokeUtilButton.addItem(title: nil, image: UIImage(named: "Water"), action: nil)
+//        pokeUtilButton.addItem(title: nil, image: UIImage(named: "Glass"), action: nil)
+//        pokeUtilButton.addItem(title: nil, image: UIImage(named: "Electric"), action: nil)
         pokeUtilButton.buttonColor = .systemPurple
         pokeUtilButton.buttonImage = UIImage(named: "PokeLaunchImage")
         pokeUtilButton.highlightedButtonColor = .systemRed

@@ -58,5 +58,12 @@ class PokeBookController: BaseViewController {
         selfView.collectionView.backgroundColor = .systemBackground
         selfView.collectionView.delegate = self
         selfView.collectionView.register(PokeBookCell.self, forCellWithReuseIdentifier: PokeBookCell.identifier)
+        
+        
+        selfView.pokeUtilButton.addItem(title: nil, image: UIImage(named: "Fire"), action: nil)
+        selfView.pokeUtilButton.addItem(title: nil, image: UIImage(named: "Water"), action: nil)
+        selfView.pokeUtilButton.addItem(title: nil, image: UIImage(named: "Glass"), action: nil)
+        selfView.pokeUtilButton.addItem(title: nil, image: UIImage(named: "Electric"), action: nil)
     }
+    
 }

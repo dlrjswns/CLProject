@@ -31,6 +31,7 @@ class PokeBookViewModel {
         let pokeError = PublishSubject<PokeError?>()
         let isEmpty = BehaviorSubject<Bool>(value: true)
         let fireFetching = PublishSubject<Void>()
+        let firePokemon = BehaviorRelay<[PokeBookModel]>(value: [])
         
         fetchInput = fetching.asObserver()
         fetchOutput = fetching.asSignal(onErrorJustReturn: ())
@@ -48,16 +49,26 @@ class PokeBookViewModel {
                    case .success(let pokeEntity):
                        let pokeBookModels = usecase.fetchPokeModel(pokeEntities: pokeEntity)
                        pokeModel.accept(pokeBookModels)
-                    self?.initialPokeModel = pokeBookModels
-                    isEmpty.onNext(false)
+                       self?.initialPokeModel = pokeBookModels
+                       isEmpty.onNext(false)
                    }
             }).disposed(by: disposeBag)
         
+        pokeModel.asDriver(onErrorJustReturn: [])
+            .map { pokeBookModels in
+                return pokeBookModels.filter{$0.type == .fire}
+            }
+            .drive(onNext: { firePoke in
+                firePokemon.accept(firePoke)
+            }).disposed(by: disposeBag)
+            
+        
 //        fireFetching
-//            .flatMap{pokeModel}
-//            .map { pokeBookModels in
-//                return pokeBookModels.forEach{$0}
-//            }
+//            .withLatestFrom(pokeModel)
+//            .do(onNext: {_ in print("fireFething?")})
+//            .flatMap{_ in firePokemon}
+//            .bind(to: pokeModel)
+//            .disposed(by: disposeBag)
             
             
             

@@ -20,12 +20,12 @@ class PokeBookCell: UICollectionViewCell {
     override var isHighlighted: Bool {
         didSet{
             if isHighlighted {
-                print("tapped")
+//                print("tapped")
                 //tapped
                 self.layer.borderWidth = 2
                 self.layer.borderColor = UIColor.gray.cgColor
             }else if !isHighlighted {
-                print("no tapped")
+//                print("no tapped")
                 //none tapped
                 DispatchQueue.main.asyncAfter(deadline: .now()+1) {
                     self.layer.borderWidth = 0
