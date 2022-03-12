@@ -26,10 +26,15 @@ class PokeBookController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.fetchInput.onNext(())
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.fetchInput.onNext(())
+//        viewModel.fetchInput.onNext(())
         
         viewModel.pokeModelOutput.asObservable().bind(to: selfView.collectionView.rx.items(cellIdentifier: PokeBookCell.identifier, cellType: PokeBookCell.self)){ index, item, cell in
             cell.configureUI(item: item)
@@ -39,7 +44,6 @@ class PokeBookController: BaseViewController {
             self?.selfView.loadingView.isHidden = !isEmpty
         }).disposed(by: disposeBag)
         
-        viewModel.fireFetchInput.onNext(())
     }
     
     override func layout() {
@@ -60,7 +64,7 @@ class PokeBookController: BaseViewController {
         selfView.collectionView.register(PokeBookCell.self, forCellWithReuseIdentifier: PokeBookCell.identifier)
         
         
-        selfView.pokeUtilButton.addItem(title: nil, image: UIImage(named: "Fire"), action: nil)
+        selfView.pokeUtilButton.addItem(title: nil, image: UIImage(named: "Fire"), action: { [weak self] _ in self?.viewModel.fireFetchInput.onNext(())} )
         selfView.pokeUtilButton.addItem(title: nil, image: UIImage(named: "Water"), action: nil)
         selfView.pokeUtilButton.addItem(title: nil, image: UIImage(named: "Glass"), action: nil)
         selfView.pokeUtilButton.addItem(title: nil, image: UIImage(named: "Electric"), action: nil)

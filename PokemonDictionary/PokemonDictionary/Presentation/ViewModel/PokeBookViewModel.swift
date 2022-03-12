@@ -11,7 +11,7 @@ import RxCocoa
 class PokeBookViewModel {
     private let usecase: PokeBookUsecase
     var disposeBag = DisposeBag()
-    var initialPokeModel: [PokeBookModel]?
+    var initialPokeModel: [PokeBookModel] = []
     
     //input
     let fetchInput: AnyObserver<Void>
@@ -31,7 +31,8 @@ class PokeBookViewModel {
         let pokeError = PublishSubject<PokeError?>()
         let isEmpty = BehaviorSubject<Bool>(value: true)
         let fireFetching = PublishSubject<Void>()
-        let firePokemon = BehaviorRelay<[PokeBookModel]>(value: [])
+        let firePokemon = BehaviorSubject<[PokeBookModel]>(value: [])
+        let initPokemon = BehaviorSubject<[PokeBookModel]>(value: [])
         
         fetchInput = fetching.asObserver()
         fetchOutput = fetching.asSignal(onErrorJustReturn: ())
@@ -42,26 +43,34 @@ class PokeBookViewModel {
         
         fetching
             .flatMap{usecase.fetchPokeEntityObservable()}
-            .subscribe(onNext: { [weak self] result in
+            .subscribe(onNext: { result in
                 switch result {
                    case .failure(let error):
                        pokeError.onNext(error)
                    case .success(let pokeEntity):
                        let pokeBookModels = usecase.fetchPokeModel(pokeEntities: pokeEntity)
                        pokeModel.accept(pokeBookModels)
-                       self?.initialPokeModel = pokeBookModels
+                       initPokemon.onNext(pokeBookModels)
                        isEmpty.onNext(false)
                    }
             }).disposed(by: disposeBag)
         
-        pokeModel.asDriver(onErrorJustReturn: [])
-            .map { pokeBookModels in
-                return pokeBookModels.filter{$0.type == .fire}
-            }
-            .drive(onNext: { firePoke in
-                firePokemon.accept(firePoke)
-            }).disposed(by: disposeBag)
+//        pokeModel.asDriver(onErrorJustReturn: [])
+//            .map { pokeBookModels in
+//                return pokeBookModels.filter{$0.type == .fire}
+//            }
+//            .drive(onNext: { firePoke in
+//                firePokemon.accept(firePoke)
+//            }).disposed(by: disposeBag)
+        
+        fireFetching
+            .flatMap {initPokemon.asObservable()}
+            .map{$0.filter{$0.type == .fire}}
+            .bind(to: pokeModel)
+            .disposed(by: disposeBag)
             
+        
+    
         
 //        fireFetching
 //            .withLatestFrom(pokeModel)
