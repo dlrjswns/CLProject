@@ -11,13 +11,13 @@ import RxCocoa
 
 class PokeBookController: BaseViewController {
     
-    private let viewModel: PokeBookViewModel
+    private let viewModel: PokeBookViewModelType
     
     let selfView: PokeBookView = PokeBookView()
     
     var coordinator: MainCoordinator?
     
-    init(viewModel: PokeBookViewModel) {
+    init(viewModel: PokeBookViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -64,10 +64,17 @@ class PokeBookController: BaseViewController {
         selfView.collectionView.register(PokeBookCell.self, forCellWithReuseIdentifier: PokeBookCell.identifier)
         
         
-        selfView.pokeUtilButton.addItem(title: nil, image: UIImage(named: "Fire"), action: { [weak self] _ in self?.viewModel.fireFetchInput.onNext(())} )
-        selfView.pokeUtilButton.addItem(title: nil, image: UIImage(named: "Water"), action: nil)
-        selfView.pokeUtilButton.addItem(title: nil, image: UIImage(named: "Glass"), action: nil)
-        selfView.pokeUtilButton.addItem(title: nil, image: UIImage(named: "Electric"), action: nil)
+        selfView.pokeUtilButton.addItem(title: nil, image: UIImage(named: "Fire"), action: { [weak self] _ in self?.viewModel.fireFetchInput.onNext(())
+            
+        })
+        selfView.pokeUtilButton.addItem(title: nil, image: UIImage(named: "Water"), action: { [weak self] _ in self?.viewModel.waterFetchInput.onNext(())
+        })
+        selfView.pokeUtilButton.addItem(title: nil, image: UIImage(named: "Grass"), action: { [weak self] _ in self?.viewModel.poisonFetchInput.onNext(())
+        })
+        selfView.pokeUtilButton.addItem(title: nil, image: UIImage(named: "Electric"), action: { [weak self] _ in self?.viewModel.electricFetchInput.onNext(())
+        })
+        selfView.pokeUtilButton.addItem(title: nil, image: UIImage(named: "All"), action: { [weak self] _ in self?.viewModel.allFetchInput.onNext(())
+        })
     }
     
 }

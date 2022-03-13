@@ -20,6 +20,11 @@ class PPViewController: UIViewController {
         layout()
         attribute()
         bind()
+        
+        Observable<Int>.range(start: 1, count: 10)
+            .subscribe(onNext: { num in
+                print(num)
+            }).disposed(by: disposeBag)
     }
     
     func attribute() {

@@ -16,8 +16,12 @@ extension AppDependency {
         
         let pokeBookRepository = PokeBookRepositoryImpl()
         
+        let pokeBookViewModelFactory: () -> PokeBookViewModel = {
+            .init(usecase: .init(repository: pokeBookRepository))
+        }
+        
         let pokeBookViewControllerFactory: () -> PokeBookController = {
-            return .init(viewModel: .init(usecase: .init(repository: pokeBookRepository)))
+            return .init(viewModel: pokeBookViewModelFactory())
         }
         
         let pokeDetailViewControllerFactory: (PokeBookModel) -> PokeDetailController = { pokeBookModel in
