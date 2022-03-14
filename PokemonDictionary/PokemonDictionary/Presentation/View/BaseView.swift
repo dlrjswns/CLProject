@@ -26,4 +26,10 @@ class BaseView: UIView {
     func attribute() {
         backgroundColor = .systemBackground
     }
+    
+//    func makeShadow(view: UIView) {
+//        view.layer.shadowRadius = 1
+//        view.layer.shadowOffset = CGSize(width: 1, height: 1)
+//        view.layer.shadowOpacity = 1
+//    }
 }

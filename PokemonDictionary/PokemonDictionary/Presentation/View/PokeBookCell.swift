@@ -81,9 +81,10 @@ class PokeBookCell: UICollectionViewCell {
         visualEffectView.layer.cornerRadius = 10
         visualEffectView.clipsToBounds = true
         
-        layer.shadowRadius = 1
-        layer.shadowOpacity = 1
-        layer.shadowOffset = CGSize(width: 1, height: 1)
+        makeShadow(view: self)
+        makeShadow(view: pokeImageView)
+//        makeShadow(view: pokeNameLabel)
+//        makeShadow(view: pokeTypeLabel)
     }
     
     func configureUI(item: PokeBookModel) {

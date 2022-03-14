@@ -46,10 +46,8 @@ class PokeBookView: BaseView {
         pokeUtilButton.shadowColor = .systemGray
         pokeUtilButton.itemAnimationConfiguration = .circularSlideIn(withRadius: 100)
         pokeUtilButton.buttonDiameter = 85
-        pokeUtilButton.shadowRadius = 1
-        pokeUtilButton.shadowOffset = CGSize(width: 2, height: 2)
-        pokeUtilButton.shadowColor = .purple
-        pokeUtilButton.shadowOpacity = 1
+        
+        makeShadow(view: pokeUtilButton)
         
     }
 }

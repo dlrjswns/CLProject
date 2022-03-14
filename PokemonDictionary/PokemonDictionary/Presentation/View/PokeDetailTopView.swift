@@ -30,5 +30,6 @@ class PokeDetailTopView: BaseView {
     
     override func attribute() {
         pokeImageView.contentMode = .scaleAspectFit
+        makeShadow(view: pokeImageView)
     }
 }
