@@ -20,12 +20,12 @@ class PokeBookCell: UICollectionViewCell {
     override var isHighlighted: Bool {
         didSet{
             if isHighlighted {
-//                print("tapped")
+                //print("tapped")
                 //tapped
                 self.layer.borderWidth = 2
                 self.layer.borderColor = UIColor.gray.cgColor
             }else if !isHighlighted {
-//                print("no tapped")
+                //print("no tapped")
                 //none tapped
                 DispatchQueue.main.asyncAfter(deadline: .now()+1) {
                     self.layer.borderWidth = 0
@@ -44,6 +44,14 @@ class PokeBookCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        pokeImageView.image = nil
+        pokeNameLabel.text = nil
+        pokeTypeLabel.text = nil
+        visualEffectView.effect = nil
     }
     
     func layout() {
