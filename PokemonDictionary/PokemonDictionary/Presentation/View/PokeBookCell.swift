@@ -56,28 +56,48 @@ class PokeBookCell: UICollectionViewCell {
     
     func layout() {
         addSubview(pokeImageView)
-        pokeImageView.translatesAutoresizingMaskIntoConstraints = false
-        pokeImageView.rightAnchor.constraint(equalTo: rightAnchor, constant: 10).isActive = true
-        pokeImageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        pokeImageView.widthAnchor.constraint(equalToConstant: (frame.width / 3) * 2).isActive = true
-        pokeImageView.heightAnchor.constraint(equalToConstant: (frame.height / 3) * 2).isActive = true
+//        pokeImageView.translatesAutoresizingMaskIntoConstraints = false
+//        pokeImageView.rightAnchor.constraint(equalTo: rightAnchor, constant: 10).isActive = true
+//        pokeImageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+//        pokeImageView.widthAnchor.constraint(equalToConstant: (frame.width / 3) * 2).isActive = true
+//        pokeImageView.heightAnchor.constraint(equalToConstant: (frame.height / 3) * 2).isActive = true
+        pokeImageView.snp.makeConstraints { make in
+            make.right.equalTo(self).offset(10)
+            make.bottom.equalTo(self)
+            make.width.equalTo((frame.width / 3) * 2)
+            make.height.equalTo((frame.height / 3) * 2)
+        }
         
         addSubview(pokeNameLabel)
-        pokeNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        pokeNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
-        pokeNameLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
+//        pokeNameLabel.translatesAutoresizingMaskIntoConstraints = false
+//        pokeNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
+//        pokeNameLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
+        pokeNameLabel.snp.makeConstraints { make in
+            make.top.equalTo(self).offset(10)
+            make.left.equalTo(self).offset(10)
+        }
         
         addSubview(visualEffectView)
-        visualEffectView.translatesAutoresizingMaskIntoConstraints = false
-        visualEffectView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
-        visualEffectView.centerYAnchor.constraint(equalTo: pokeImageView.centerYAnchor).isActive = true
+//        visualEffectView.translatesAutoresizingMaskIntoConstraints = false
+//        visualEffectView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
+//        visualEffectView.centerYAnchor.constraint(equalTo: pokeImageView.centerYAnchor).isActive = true
+        visualEffectView.snp.makeConstraints { make in
+            make.left.equalTo(self).offset(10)
+            make.centerY.equalTo(pokeImageView.snp.centerY)
+        }
         
         addSubview(pokeTypeLabel)
-        pokeTypeLabel.translatesAutoresizingMaskIntoConstraints = false
-        pokeTypeLabel.centerYAnchor.constraint(equalTo: pokeImageView.centerYAnchor).isActive = true
-        pokeTypeLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: -12).isActive = true
-        pokeTypeLabel.widthAnchor.constraint(equalToConstant: (frame.width / 3) * 2).isActive = true
-        pokeTypeLabel.heightAnchor.constraint(equalToConstant: (frame.height / 3) * 2).isActive = true
+//        pokeTypeLabel.translatesAutoresizingMaskIntoConstraints = false
+//        pokeTypeLabel.centerYAnchor.constraint(equalTo: pokeImageView.centerYAnchor).isActive = true
+//        pokeTypeLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: -12).isActive = true
+//        pokeTypeLabel.widthAnchor.constraint(equalToConstant: (frame.width / 3) * 2).isActive = true
+//        pokeTypeLabel.heightAnchor.constraint(equalToConstant: (frame.height / 3) * 2).isActive = true
+        pokeTypeLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(pokeImageView.snp.centerY)
+            make.left.equalTo(self).offset(-12)
+            make.width.equalTo((frame.width / 3) * 2)
+            make.height.equalTo((frame.height / 3) * 2)
+        }
     }
     
     func attribute() {

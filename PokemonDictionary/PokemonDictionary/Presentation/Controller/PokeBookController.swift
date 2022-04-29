@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SnapKit
 
 class PokeBookController: BaseViewController {
     
@@ -48,11 +49,14 @@ class PokeBookController: BaseViewController {
     
     override func layout() {
         view.addSubview(selfView)
-        selfView.translatesAutoresizingMaskIntoConstraints = false
-        selfView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        selfView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        selfView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        selfView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//        selfView.translatesAutoresizingMaskIntoConstraints = false
+//        selfView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+//        selfView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+//        selfView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+//        selfView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        selfView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     override func attribute() {

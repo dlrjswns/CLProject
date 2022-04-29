@@ -16,23 +16,32 @@ class PokeBookView: BaseView {
     
     override func layout() {
         addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        collectionView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        collectionView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+//        collectionView.translatesAutoresizingMaskIntoConstraints = false
+//        collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+//        collectionView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+//        collectionView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+//        collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
         
         addSubview(pokeUtilButton)
-        pokeUtilButton.translatesAutoresizingMaskIntoConstraints = false
-        pokeUtilButton.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        pokeUtilButton.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+//        pokeUtilButton.translatesAutoresizingMaskIntoConstraints = false
+//        pokeUtilButton.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+//        pokeUtilButton.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        pokeUtilButton.snp.makeConstraints { make in
+            make.right.bottom.equalTo(self)
+        }
         
         addSubview(loadingView)
-        loadingView.translatesAutoresizingMaskIntoConstraints = false
-        loadingView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        loadingView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        loadingView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        loadingView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+//        loadingView.translatesAutoresizingMaskIntoConstraints = false
+//        loadingView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+//        loadingView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+//        loadingView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+//        loadingView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        loadingView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     override func attribute() {

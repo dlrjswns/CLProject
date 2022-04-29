@@ -10,4 +10,5 @@ target 'PokemonDictionary' do
   pod 'RxCocoa' 
   pod 'lottie-ios'
   pod 'JJFloatingActionButton'
+  pod 'SnapKit', '~> 5.6.0'
 end

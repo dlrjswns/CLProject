@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class PokeDetailController: BaseViewController {
     
@@ -33,11 +34,14 @@ class PokeDetailController: BaseViewController {
     
     override func layout() {
         view.addSubview(selfView)
-        selfView.translatesAutoresizingMaskIntoConstraints = false
-        selfView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        selfView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        selfView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        selfView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//        selfView.translatesAutoresizingMaskIntoConstraints = false
+//        selfView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+//        selfView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+//        selfView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+//        selfView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        selfView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     override func attribute() {

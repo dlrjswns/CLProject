@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class PokeDetailView: BaseView {
     
@@ -23,17 +24,24 @@ class PokeDetailView: BaseView {
     
     override func layout() {
         addSubview(pokeDetailTopView)
-        pokeDetailTopView.translatesAutoresizingMaskIntoConstraints = false
-        pokeDetailTopView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        pokeDetailTopView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        pokeDetailTopView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+//        pokeDetailTopView.translatesAutoresizingMaskIntoConstraints = false
+//        pokeDetailTopView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+//        pokeDetailTopView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+//        pokeDetailTopView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        pokeDetailTopView.snp.makeConstraints { make in
+            make.top.left.right.equalTo(self)
+        }
         
         addSubview(pokeDetailBottomView)
-        pokeDetailBottomView.translatesAutoresizingMaskIntoConstraints = false
-        pokeDetailBottomView.topAnchor.constraint(equalTo: pokeDetailTopView.bottomAnchor).isActive = true
-        pokeDetailBottomView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        pokeDetailBottomView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        pokeDetailBottomView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+//        pokeDetailBottomView.translatesAutoresizingMaskIntoConstraints = false
+//        pokeDetailBottomView.topAnchor.constraint(equalTo: pokeDetailTopView.bottomAnchor).isActive = true
+//        pokeDetailBottomView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+//        pokeDetailBottomView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+//        pokeDetailBottomView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        pokeDetailBottomView.snp.makeConstraints { make in
+            make.top.equalTo(pokeDetailTopView.snp.bottom)
+            make.left.right.bottom.equalTo(self)
+        }
         
 //        addSubview(pokeProfileView)
 //        pokeProfileView.translatesAutoresizingMaskIntoConstraints = false
