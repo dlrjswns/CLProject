@@ -15,15 +15,15 @@ class ArtistRepositoryImpl{
         self.session = session
     }
     
-    func getArtistWithCombine()->AnyPublisher<Artist, Error> {
-        let url = getArtistSongsURLComponents().url
-        var request = URLRequest(url: url!)
-        request.allHTTPHeaderFields = [
-            "x-rapidapi-host": "genius.p.rapidapi.com",
-            "x-rapidapi-key": "08bf196f28msha213091208ea7e8p130159jsn16a67c6c46f7"
-        ]
-        return session.dataTaskPublisher(for: request).map{ $0.data }
-    }
+//    func getArtistWithCombine()->AnyPublisher<Artist, Error> {
+//        let url = getArtistSongsURLComponents().url
+//        var request = URLRequest(url: url!)
+//        request.allHTTPHeaderFields = [
+//            "x-rapidapi-host": "genius.p.rapidapi.com",
+//            "x-rapidapi-key": "08bf196f28msha213091208ea7e8p130159jsn16a67c6c46f7"
+//        ]
+//        return session.dataTaskPublisher(for: request).map{ $0.data }
+//    }
 }
 
 extension ArtistRepositoryImpl{

@@ -26,9 +26,9 @@ class StockListViewModel: BaseViewModel {
         usecase.fetchStocksPublisher(keyword: query).sink { [weak self] completion in //그리고 개인적으로 RxSwift에선 각각의 이벤트에 대한 처리를 switch로 해줘서 조금 난잡했는데 Combine에서는 값을 받는 부분과 나머지 처리과 나눠져있어 좀 더 보기편함
             self?.loading = false
             switch completion{
-            case .failure(let error):
-                self?.errorMessage = error.localizedDescription
-            case .finished: break
+                case .failure(let error):
+                    self?.errorMessage = error.localizedDescription
+                case .finished: break
             }
         } receiveValue: { [weak self] stockResult in
             self?.currentStocks = stockResult.items

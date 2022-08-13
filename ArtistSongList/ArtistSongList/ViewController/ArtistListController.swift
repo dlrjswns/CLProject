@@ -13,6 +13,36 @@ class ArtistListController: BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let serialQueue = DispatchQueue(label: "gunjun")
+        
+        serialQueue.async {
+            for a in 1...5 {
+                print("Serial Queue async = \(a)")
+            }
+        }
+        
+        serialQueue.async {
+            for a in 9...10 {
+                print("Serial Queue async2 = \(a)")
+            }
+        }
+        
+        DispatchQueue.global().async {
+            for a in 6...8 {
+                print("Concurrent Queue async = \(a)")
+            }
+            print("i'm a serious")
+        }
+        
+        DispatchQueue.global().async {
+            for a in 11...16 {
+                print("Concurrent Queue async = \(a)")
+            }
+            print("who are you")
+        }
+       
+        
     }
     
     override func configureUI() {

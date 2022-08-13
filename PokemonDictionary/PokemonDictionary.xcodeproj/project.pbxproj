@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70CB8891282CA06500C4293A /* Pods_PokemonDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4636A8DBCBF21A3D18E89386 /* Pods_PokemonDictionary.framework */; };
 		70F2866727CE87AF009D4F52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2866627CE87AF009D4F52 /* AppDelegate.swift */; };
 		70F2866927CE87AF009D4F52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2866827CE87AF009D4F52 /* SceneDelegate.swift */; };
 		70F2867027CE87B0009D4F52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70F2866F27CE87B0009D4F52 /* Assets.xcassets */; };
@@ -39,10 +40,10 @@
 		70F2875227D760D3009D4F52 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2875127D760D3009D4F52 /* LoadingView.swift */; };
 		70F287E127DD9EF6009D4F52 /* PokeBookViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F287E027DD9EF6009D4F52 /* PokeBookViewModelType.swift */; };
 		70F2880927DEE151009D4F52 /* extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2880827DEE151009D4F52 /* extension+UIView.swift */; };
-		99A3B8587FA932485A4E6992 /* Pods_PokemonDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 744FE4D5A8473D1A28135EF6 /* Pods_PokemonDictionary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4636A8DBCBF21A3D18E89386 /* Pods_PokemonDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokemonDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F2866327CE87AF009D4F52 /* PokemonDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F2866627CE87AF009D4F52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70F2866827CE87AF009D4F52 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,9 +78,8 @@
 		70F2875127D760D3009D4F52 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		70F287E027DD9EF6009D4F52 /* PokeBookViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeBookViewModelType.swift; sourceTree = "<group>"; };
 		70F2880827DEE151009D4F52 /* extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+UIView.swift"; sourceTree = "<group>"; };
-		744FE4D5A8473D1A28135EF6 /* Pods_PokemonDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokemonDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE866735C63B6EF13121608D /* Pods-PokemonDictionary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonDictionary.debug.xcconfig"; path = "Target Support Files/Pods-PokemonDictionary/Pods-PokemonDictionary.debug.xcconfig"; sourceTree = "<group>"; };
-		D4F3BFFA4FCCC851C1CB1CB0 /* Pods-PokemonDictionary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonDictionary.release.xcconfig"; path = "Target Support Files/Pods-PokemonDictionary/Pods-PokemonDictionary.release.xcconfig"; sourceTree = "<group>"; };
+		BEBC3E6E757C5F02122D1779 /* Pods-PokemonDictionary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonDictionary.debug.xcconfig"; path = "Target Support Files/Pods-PokemonDictionary/Pods-PokemonDictionary.debug.xcconfig"; sourceTree = "<group>"; };
+		E71C862B966FFB3F01AA25B5 /* Pods-PokemonDictionary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonDictionary.release.xcconfig"; path = "Target Support Files/Pods-PokemonDictionary/Pods-PokemonDictionary.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99A3B8587FA932485A4E6992 /* Pods_PokemonDictionary.framework in Frameworks */,
+				70CB8891282CA06500C4293A /* Pods_PokemonDictionary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,10 +97,18 @@
 		582C85AF8F0439C6C223A2F6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CE866735C63B6EF13121608D /* Pods-PokemonDictionary.debug.xcconfig */,
-				D4F3BFFA4FCCC851C1CB1CB0 /* Pods-PokemonDictionary.release.xcconfig */,
+				BEBC3E6E757C5F02122D1779 /* Pods-PokemonDictionary.debug.xcconfig */,
+				E71C862B966FFB3F01AA25B5 /* Pods-PokemonDictionary.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		69A4DEE82645175A9BD4A31B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4636A8DBCBF21A3D18E89386 /* Pods_PokemonDictionary.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		70F2865A27CE87AF009D4F52 = {
@@ -109,7 +117,7 @@
 				70F2866527CE87AF009D4F52 /* PokemonDictionary */,
 				70F2866427CE87AF009D4F52 /* Products */,
 				582C85AF8F0439C6C223A2F6 /* Pods */,
-				FC39F3CB353CBDE82E8D3661 /* Frameworks */,
+				69A4DEE82645175A9BD4A31B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -257,14 +265,6 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
-		FC39F3CB353CBDE82E8D3661 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				744FE4D5A8473D1A28135EF6 /* Pods_PokemonDictionary.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -272,11 +272,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70F2867727CE87B0009D4F52 /* Build configuration list for PBXNativeTarget "PokemonDictionary" */;
 			buildPhases = (
-				4FC39611C9BA8E9B88F041C8 /* [CP] Check Pods Manifest.lock */,
+				3CDEE65FE9969063131333BA /* [CP] Check Pods Manifest.lock */,
 				70F2865F27CE87AF009D4F52 /* Sources */,
 				70F2866027CE87AF009D4F52 /* Frameworks */,
 				70F2866127CE87AF009D4F52 /* Resources */,
-				36D905995CAEFA42CBABB2D3 /* [CP] Embed Pods Frameworks */,
+				9A50649D5EAF01186AF28ED7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -333,24 +333,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		36D905995CAEFA42CBABB2D3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PokemonDictionary/Pods-PokemonDictionary-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PokemonDictionary/Pods-PokemonDictionary-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PokemonDictionary/Pods-PokemonDictionary-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4FC39611C9BA8E9B88F041C8 /* [CP] Check Pods Manifest.lock */ = {
+		3CDEE65FE9969063131333BA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -370,6 +353,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A50649D5EAF01186AF28ED7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PokemonDictionary/Pods-PokemonDictionary-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PokemonDictionary/Pods-PokemonDictionary-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PokemonDictionary/Pods-PokemonDictionary-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -534,6 +534,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -543,11 +544,13 @@
 		};
 		70F2867827CE87B0009D4F52 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE866735C63B6EF13121608D /* Pods-PokemonDictionary.debug.xcconfig */;
+			baseConfigurationReference = BEBC3E6E757C5F02122D1779 /* Pods-PokemonDictionary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = PokemonDictionary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -562,16 +565,19 @@
 		};
 		70F2867927CE87B0009D4F52 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4F3BFFA4FCCC851C1CB1CB0 /* Pods-PokemonDictionary.release.xcconfig */;
+			baseConfigurationReference = E71C862B966FFB3F01AA25B5 /* Pods-PokemonDictionary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = PokemonDictionary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = Jun.PokemonDictionary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

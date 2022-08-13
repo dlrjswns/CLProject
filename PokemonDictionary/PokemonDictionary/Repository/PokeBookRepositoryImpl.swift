@@ -15,7 +15,7 @@ class PokeBookRepositoryImpl: PokeBookRepository {
         self.session = session
     }
     
-    func fetchPokeEntityObservable() -> Observable<Result<[PokeEntity], PokeError>> {
+    func fetchPokeEntityObservable<T: Decodable>() -> Observable<Result<[T], PokeError>> {
         guard let url = getPokemonURLComponents().url else {
             let error = PokeError.urlError
             return .just(.failure(error))
@@ -30,7 +30,7 @@ class PokeBookRepositoryImpl: PokeBookRepository {
             }
             
             do{
-                let pokeEntity = try JSONDecoder().decode([PokeEntity].self, from: data)
+                let pokeEntity = try JSONDecoder().decode([T].self, from: data)
                 return .success(pokeEntity)
             }catch{
                 let error = PokeError.decodeError
